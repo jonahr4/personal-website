@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonah Rothman Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="x-icon" href="photos/logo.png">
+
+    <script src="https://kit.fontawesome.com/aa828e5de8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="photos/logo (1).png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#portfolio">PORTFOLIO</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Boston University Computer Science Student</p>
+            <h1>Hi, I'm <span>Jonah</span><br> Rothman from Boston</h1>
+        </div>
+    </div>
+</div>
+
+<!--------ABOUT--------->
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="photos/about.jpg" class="about-photo">  
+            </div>          
+            <div class="about-col-2">
+                <h1 class="subtitle">About Me</h1>
+                <p>Hi, I'm Jonah Rothman, a current student at Boston University pursuing a BA/MS in Computer Science with a minor in Economics.
+                    I have a passion for web development and artificial intelegence and love working on various projects in my spare time. I also have a keen interest in film,
+                    3D design, and printing. I'm always eager to learn and explore new areas within and beyond my field</p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('expierence')">Expierence</p>
+                    <p class="tab-links"onclick="opentab('education')">Education</p>
+                </div>
+                <!----Skills--->
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Programming Langueges</span><br>Java, Python, C++</li>
+                        <li><span>Web Development</span><br>HTML, CSS, Javascript</li>
+                        <li><span>Frameworks</span><br>React, Node.js</li>
+                    </ul>
+                </div>
+                <!----Expierence--->
+                <div class="tab-contents" id="expierence">
+                    <ul>
+                        <li><span>Information and Technology Intern</span><br>First Cambridge Realty</li>
+                        <li><span>Assistant to The Director</span><br>Massachusettes Housing Coalition</li>
+                    </ul>
+                </div>
+                <!----Education--->
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>Thayer Academy</span><br>2018 - 2022</li>
+                        <li><span>Boston University</span><br>MS. Computer Science, BA. Computer Science, Minor in Economics<br>2022 - 2026</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--------Portfolio--------->   
+<div id="portfolio">
+    <div class="container">
+        <h1 class="subtitle">My Portfolio</h1>
+        <div class="worklist">
+            <div class="work">
+                <img src="photos/work1.jpg">
+                <div class="layer">
+                    <h3>My Online Game</h3>
+                    <p>Check out this game I programmed</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="photos/work2.jpg">
+                <div class="layer">
+                    <h3>Stock Market Predictor</h3>
+                    <p>Check out this stock predictor I made using OpenAI API</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="photos/work3.png">
+                <div class="layer">
+                    <h3>Spotify to MP3 Converter</h3>
+                    <p>Check out this converter I programmed</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See More</a>
+    </div>
+</div>
+
+<!---------contact------>
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="subtitle">Contact Me</h1>
+                <p><i class="fa-regular fa-paper-plane"></i> jonahrothman@me.com</p>
+                <p><i class="fa-solid fa-phone"></i> (781) 366 5290</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/jonah-rothman/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/jonah_rothman/"><i class="fa-brands fa-square-instagram"></i></a>
+                </div>
+                <a href="Jonah Rothman Resume.pdf" download class="btn btn2">Download Resume</a>
+            </div>
+            <div class="content-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>This page was written in HTML and CSS by Jonah Rothman</p>
+    </div>
+</div>
+
+
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyf6Knp_uB5ZnFFzzxbCb5lcsZCBlhFH37ORRJl1219saBETsf7Wa4dhMM_5yTTVoOw/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Sent Successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            }, 5000)
+            form.reset();
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+</script>
+
+</body>
+</html>
