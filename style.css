@@ -25,8 +25,10 @@ body{
 .container{
     padding: 10px 6%;
 }
+
 .logo{
-    width: 150px;
+    padding: 7px;
+    width: 300px;
     margin-left: 3%;
 }
 
@@ -355,7 +357,14 @@ nav .fa-solid{
     display: none;
 }
 
-@media only screen and (max-width:600px) {
+@media only screen and (max-width:840px) {
+    .logo{
+        width: 130px;
+        padding: 0px;
+    }
+}
+
+@media only screen and (max-width:665px) {
     #header{
         background-image: url(photos/background-phone.png);
     }
