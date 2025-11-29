@@ -1,0 +1,302 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    padding: 10px;
+    flex-grow: 1;
+}
+
+body {
+    background: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/*------Header---*/
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header{
+    /*background: #c6daf0;*/
+    background: #9c9c9c;
+}
+
+h1{
+    font-size: 23px;
+    padding: 10px;
+    color: black;
+    
+}
+
+#sidemenu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    list-style-type: none;
+}
+
+#spotify-btn{
+    display: flex;
+    align-items: center;
+    gap: 10px; /* space between the icon and text */
+    background: black;
+    color: #fff;
+    font-size: 23px;
+    padding: 7px;
+    border-radius: 15px;
+    border: 5px solid black; /* Semi-opaque border */
+    transition: 0.5s;
+    margin-right: -35px;
+
+}
+
+#spotify-btn:hover{
+    color: #1db954;
+    scale: 1.1
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.overlay-content i {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+#instructions-btn{
+    display: block;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+    color: rgb(238, 238, 238);
+    background-color: black;
+    border-radius: 15px;
+    border: 5px solid black; /* Semi-opaque border */
+    transition: 0.5s;
+}
+
+#instructions-btn:hover{
+    color: #1db954;
+    scale: 1.1
+}
+
+.btn {
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #ca8114;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ca9f5f;
+}
+
+/*---Start Button----*/
+
+.start-btn-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+#start-btn{
+    width: 300px;
+    height: 120px;
+    margin-bottom: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #00d13f; /* Example background color */
+    border-radius: 20px; /* Example border radius */
+    font-size: 40px;
+    transition: 0.5s;
+    
+}
+
+#start-btn:hover {
+    scale: 1.05;
+}
+
+#start-game-btn{
+    font-size: 60px;
+    text-decoration: none;
+    padding: 30px 50px;
+    background-color: #ffffff00;
+    color: rgb(3, 3, 3);
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+    text-align: center;
+}
+
+#start-game-btn:hover {
+    scale: 1.1;
+}
+/*----GAME INTERFACE--*/
+
+.hidden{
+    display: none;
+}
+
+#game-interface {
+    text-align: center;
+    margin: 20px;
+}
+
+#score-counter h1 {
+    margin: 10px;
+    font-size: 30px;
+    color: #555;
+    padding: 0;
+}
+
+#score-counter h2 {
+    margin: 0;
+    padding: 0;
+}
+
+#album-cover img {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    filter: drop-shadow(10px 10px 50px rgba(1, 1, 1, 0.534));
+}
+
+.blur{
+    filter: blur(20px) invert(0.3);
+}
+
+#audio-controls {
+    margin: 10px 0;
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.option-btn {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.option-btn:hover {
+    background-color: #555;
+}
+
+
+/*Incorrect and correct buttons */
+.correct{
+    color: #00d13f;
+}
+
+.incorrect{
+    color: #e40909;
+}
+
+
+
+.copyright {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    padding: 7px 0;
+    background: #9c9c9c;
+    box-shadow: 0 0 15px 7px rgba(0, 0, 0, 0.171);
+    color: #e9e9e9;
+    font-size: 20px;
+}
+
+/* For small screens */
+@media only screen and (max-width:700px) {
+    #album-cover img {
+        width: 190px;
+        height: 190px;
+        border-radius: 10px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        filter: drop-shadow(10px 10px 50px rgba(1, 1, 1, 0.534));
+    }
+
+    #score-counter h1 {
+        margin: 10px;
+        font-size: 25px;
+        color: #555;
+        padding: 0;
+    }
+
+    #header h1{
+        font-size: 20px;
+    }
+
+    #instructions-btn{
+        font-size:  20px;
+    }
+
+    #spotify-txt{
+        display: none;
+    }
+
+    #spotify-btn{
+        background: black;
+        color: #fff;
+        font-size: 30px;
+        padding: 7px;
+        border-radius: 15px;
+        border: 5px solid black; /* Semi-opaque border */
+        transition: 0.5s;
+        margin-right: -35px;
+    }
+}
+

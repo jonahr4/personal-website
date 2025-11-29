@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Music Guesser</title>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <h1>Music Guesser by Jonah Rothman</h1>
+            <ul id="sidemenu">
+                <li><a href="#" id="instructions-btn">Instructions</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="overlay" class="overlay">
+        <div class="overlay-content">
+            <i class="fa-solid fa-x" id="close-btn"></i>
+            <h2>Instructions</h2>
+            <p>In this game there are ten rounds. In each round you will hear a 5 second part of a top 100 song and you will have to guess it out of 4 songs. For every song you get right, you get a point. Click start to start</p>
+        </div>
+    </div>
+</div>
+
+<div id="game-interface" class="hidden">
+    <div id="score-counter">
+        <h1>High Score: <span id="highscore">0</span></h1>
+        <h2>Score: <span id="score">0</span></h2>
+        <h2>Round: <span id="round">1</span>/10</h2>
+    </div>
+    <div id="album-cover" class="blur">
+        <img id="cover-image" src="" alt="Loading Error">
+    </div>
+    <div id="audio-controls">
+        <audio id="audio-player" controls></audio>
+    </div>
+    <div id="options">
+        <button class="option-btn" id="option1">Option 1</button>
+        <button class="option-btn" id="option2">Option 2</button>
+        <button class="option-btn" id="option3">Option 3</button>
+        <button class="option-btn" id="option4">Option 4</button>
+    </div>
+    <button id="next-btn" class="hidden btn">Next</button>
+    <button id="retry-btn" class="hidden btn">Retry</button>
+
+</div>
+
+<!---Start Button--->
+<div class="start-btn-wrapper">
+    <div id="start-btn">
+        <button id="start-game-btn">START</button>
+    </div>
+</div>
+<div class="copyright">
+    <p>This page was written in HTML, CSS and Javascript with the Spotify API by Jonah Rothman</p>
+</div>
+
+
+<script src="config.js"></script>
+<script src="https://kit.fontawesome.com/aa828e5de8.js" crossorigin="anonymous"></script>
+<script type="module" src="script.js"></script>
+
+</body>
+</html>

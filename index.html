@@ -23,9 +23,14 @@
             </ul>
             <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
-        <div class="header-text">
-            <p>Boston University Computer Science Student</p>
-            <h1>Hi, I'm <span>Jonah</span><br> Rothman from Boston</h1>
+        <div class="header-content">
+            <div class="header-image">
+                <img src="photos/Rothman_Jonah_434-_023-Retouched.jpg" alt="Jonah Rothman">
+            </div>
+            <div class="header-text">
+                <p>MS/BA Computer Science Student at Boston University</p>
+                <h1>Hi, I'm <span>Jonah</span><br> Rothman from Boston</h1>
+            </div>
         </div>
     </div>
 </div>
@@ -40,9 +45,9 @@
             </div>          
             <div class="about-col-2">
                 <h1 class="subtitle">About Me</h1>
-                <p>Hi, I'm Jonah Rothman, a current student at Boston University pursuing a BA/MS in Computer Science with a minor in Economics.
-                    I have a passion for web development and artificial intelegence and love working on various projects in my spare time. I also have a keen interest in film,
-                    3D design, and printing. I'm always eager to learn and explore new areas within and beyond my field</p>
+                <p>Hi, I'm Jonah Rothman, a student at Boston University pursuing a BA/MS in Computer Science with a minor in Economics.
+                    I specialize in web development and AI, with experience in QA automation, full-stack development, and CI/CD pipelines. I've built production applications like The Study Buddy
+                    and VibeScape, and completed internships at PanelClaw and ClearWatt. I'm passionate about creating scalable software solutions and exploring new technologies.</p>
 
                 <div class="tab-titles">
                     <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
@@ -52,14 +57,16 @@
                 <!----Skills--->
                 <div class="tab-contents active-tab" id="skills">
                     <ul>
-                        <li><span>Programming Langueges</span><br>Java, Python, C++</li>
-                        <li><span>Web Development</span><br>HTML, CSS, Javascript</li>
-                        <li><span>Frameworks</span><br>React, Node.js</li>
+                        <li><span>Programming Languages</span><br>Java, Python, C/C++, JavaScript, TypeScript, Kotlin, OCaml</li>
+                        <li><span>Web Development</span><br>React, Next.js, Express.js, Node.js, HTML/CSS, TailwindCSS</li>
+                        <li><span>Tools & Platforms</span><br>GitHub Actions, MongoDB Atlas, Microsoft Azure, Firebase, Cypress, Jest, Maestro</li>
                     </ul>
                 </div>
                 <!----Expierence--->
                 <div class="tab-contents" id="expierence">
                     <ul>
+                        <li><span>Junior Front End Development Intern</span><br>PanelClaw (May 2025 – Aug 2025)<br>Led Cypress QA automation, reducing test time from 1 day to ~1 hour</li>
+                        <li><span>Software Development Intern</span><br>ClearWatt (Feb 2025 – Apr 2025)<br>Built first automated testing suite using Maestro and Azure DevOps CI/CD</li>
                         <li><span>Information and Technology Intern</span><br>First Cambridge Realty</li>
                         <li><span>Assistant to The Director</span><br>Massachusettes Housing Coalition</li>
                     </ul>
@@ -67,8 +74,8 @@
                 <!----Education--->
                 <div class="tab-contents" id="education">
                     <ul>
+                        <li><span>Boston University</span><br>MS & BA Computer Science, Minor in Economics<br>2022 - Dec 2026 | GPA 3.73, Dean's List (all terms)</li>
                         <li><span>Thayer Academy</span><br>2018 - 2022</li>
-                        <li><span>Boston University</span><br>MS. Computer Science, BA. Computer Science, Minor in Economics<br>2022 - 2026</li>
                     </ul>
                 </div>
             </div>
@@ -76,37 +83,150 @@
     </div>
 </div>
 
-<!--------Portfolio--------->   
+<!--------Portfolio--------->
 <div id="portfolio">
     <div class="container">
-        <h1 class="subtitle">My Portfolio</h1>
-        <div class="worklist">
-            <div class="work">
-                <img src="photos/Msuic Guesser Logo-01.png">
-                <div class="layer">
-                    <h3>Music Guesser Game</h3>
-                    <p>Guess songs titles based off of a short preview and beat your High Score!</p>
-                    <a href="music-guesser/"><i class="fa-solid fa-up-right-from-square"></i></a>
+        <h1 class="subtitle">Projects</h1>
+        <div class="timeline">
+            <!-- The Study Buddy -->
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-date">November 2025</div>
+                    <h3>The Study Buddy</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/jonahr4/TheStudyBuddy" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
+                        <a href="https://thestudybuddy.app" target="_blank"><i class="fa-solid fa-globe"></i> Visit Site</a>
+                    </div>
+                    <ul class="project-bullets">
+                        <li>Deployed an AI study platform using React, Vite, TypeScript, and Express backend, running across Azure app services, DigitalOcean, and Google Firebase supporting 50+ users</li>
+                        <li>Developed a scalable Express.js backend using Azure Blob Storage for PDF handling and Azure OpenAI to generate flashcards and context-aware subject-specific chat responses</li>
+                        <li>Designed a MongoDB Atlas schema with 7 collections, compound indexes, and repository pattern architecture supporting 100+ notes, 50+ flashcard sets, and 200+ chat messages</li>
+                        <li>Implemented CI/CD with GitHub Actions for automated builds and deployments</li>
+                    </ul>
+                    <div class="collaborator">Collaborator: Sean Tomany</div>
                 </div>
             </div>
-            <div class="work">
-                <img src="photos/StockBot Logo-01.png">
-                <div class="layer">
-                    <h3>StockBot: Stock Advisor Chatbot</h3>
-                    <p>Check out this stock advisor chatbot I made using OpenAI API. Feel Free to ask it any questions you have about the market!</p>
-                    <a href="StockBot/"><i class="fa-solid fa-up-right-from-square"></i></a>
+
+            <!-- VibeScape -->
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fa-solid fa-music"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-date">August 2025</div>
+                    <h3>VibeScape</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/jonahr4/VibeScape" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
+                        <a href="#" target="_blank"><i class="fa-solid fa-video"></i> Demo Video</a>
+                    </div>
+                    <ul class="project-bullets">
+                        <li>Built a Next.js and React powered interactive Spotify song map that visualizes a user's library as clusters of songs and playlists with the ability to compare music with friends and create custom blended playlists</li>
+                        <li>Created an AI-powered playlist chooser via prompt and designed a unique ranking model for Top Songs</li>
+                        <li>Harnessed SOTA AI tools like OpenAI Codex CLI to accelerate development time and enhance the UI/UX</li>
+                    </ul>
                 </div>
             </div>
-            <div class="work">
-                <img src="photos/Poker Calculator Logo-01.png">
-                <div class="layer">
+
+            <!-- Java Terminal Game Engine -->
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fa-solid fa-gamepad"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Sep 2024 – Dec 2024</div>
+                    <h3>Java Terminal Game Engine</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/jonahr4/CS611-Terminal-Based-Games" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
+                    </div>
+                    <ul class="project-bullets">
+                        <li>Developed a terminal-based game engine ranging from simple games to complex turn-based gameplay, including DnD-style mechanics</li>
+                        <li>Implemented 50+ Java classes to build a scalable, object-oriented architecture</li>
+                        <li>Utilized Strategy, Factory, and Singleton design patterns to enhance flexibility and reduce code duplication</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- StockBot -->
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-date">August 2024</div>
+                    <h3>StockBot</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/jonahr4/StockBot" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
+                        <a href="StockBot/" target="_blank"><i class="fa-solid fa-globe"></i> Visit Site</a>
+                    </div>
+                    <ul class="project-bullets">
+                        <li>Constructed a chatbot utilizing the OpenAI API to provide users with stock advice and financial information</li>
+                        <li>Integrated economic principles to create stock advice trained on data from 100,000+ stock and price combinations</li>
+                        <li>Configured Node.js and Render.com to create a secure local server and backend, ensuring data privacy between client and server</li>
+                        <li>Designed an intuitive user interface using HTML and CSS, enhancing user experience and engagement</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Poker Payout Calculator -->
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fa-solid fa-coins"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-date">August 2024</div>
                     <h3>Poker Payout Calculator</h3>
-                    <p>Calculator to find out who pays who after a poker game!</p>
-                    <a href="StockBot/"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <div class="project-links">
+                        <a href="https://github.com/jonahr4/PokerPayoutCalculator" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
+                        <a href="poker-payout-calculator/" target="_blank"><i class="fa-solid fa-globe"></i> Visit Site</a>
+                    </div>
+                    <ul class="project-bullets">
+                        <li>Created a calculator to find poker payouts and track player net results</li>
+                        <li>Streamlined payout calculations, saving users time and reducing errors in real-world poker games</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Music Guesser Game -->
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fa-solid fa-headphones"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-date">July 2024</div>
+                    <h3>Music Guesser Game</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/jonahr4/music-guesser" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
+                        <a href="music-guesser/" target="_blank"><i class="fa-solid fa-globe"></i> Visit Site</a>
+                    </div>
+                    <ul class="project-bullets">
+                        <li>Built an interactive music guessing game challenging users to identify tracks based on short audio clips</li>
+                        <li>Implemented the Spotify API to fetch Billboard Top 100 songs and dynamically load song data, increasing user engagement</li>
+                        <li>Programmed a scoring system in JavaScript to track high scores and give feedback</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Rain or Shine -->
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fa-solid fa-cloud-sun-rain"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Sep 2023 – Dec 2023</div>
+                    <h3>Rain or Shine</h3>
+                    <ul class="project-bullets">
+                        <li>Developed a full-stack web application giving users local event recommendations based on location and date</li>
+                        <li>Pulled data from RapidAPI and Tomorrow.io API to read local events and weather data</li>
+                        <li>Implemented Google OAuth to gather data from user and configured MongoDB connection to store user data</li>
+                        <li>Gained valuable collaboration skills by working with a team of four</li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <a onclick=" window.open('https://github.com/jonahr4','_blank')" class="btn">GitHub</a>
+        <a onclick="window.open('https://github.com/jonahr4','_blank')" class="btn">View All on GitHub</a>
     </div>
 </div>
 

@@ -1,0 +1,167 @@
+@font-face {
+    font-family: 'Nexa';
+    src: url('fonts/Nexa/Nexa-Heavy.ttf') format('truetype'); /* Adjust the path to your actual font file location */
+    font-weight: 700; /* Adjust the weight if necessary */
+    font-style: normal; /* Use 'italic' if the font is italic */
+}
+
+/* Define the Cocogoose font family for the logo */
+@font-face {
+    font-family: 'Cocogoose';
+    src: url('fonts/Cocogoose/Cocogoose-Pro-Letterpress-Regular-trial.ttf') format('truetype'); /* Adjust the path to your actual font file location */
+    font-weight: normal; /* Adjust the weight if necessary */
+    font-style: normal; /* Use 'italic' if the font is italic */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nexa', sans-serif;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-size: 20px;
+}
+
+body{
+    background: #292542;
+    color:#dceafc;
+}
+
+/*----HEADER----*/
+
+#header{
+    background-color: #6d63b3e0;
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-between;
+    padding: 4px;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#newchat-btn{
+    text-decoration: none;
+}
+
+#logo-txt{
+    font-size: 35px;
+    color: #bbe6c8;
+    font-family: 'Cocogoose', sans-serif; /* Apply the Cocogoose font to the logo */
+}
+
+/*-------Button Style-----*/
+.btn{
+    background: #dceafc;
+    color: black;
+    padding: 10px;
+    border-radius: 18px;
+    border-color: #3a355ee0;
+    border-width: 5px;
+    border-style: solid;
+    transition:  0.5s;
+    display: inline-block; 
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/*----CHAT BOX----*/
+#text-box {
+    margin: 20px;
+    margin-top: 40px;
+    margin-bottom: 22px;
+    padding: 20px;
+    background: #6d63b3e0;
+    border-radius: 15px;
+    box-shadow: 0 0 15px 7px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 190px); /* Adjust height to fit viewport */
+}
+
+#chat-display {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+    background: #292542;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    scrollbar-width: 20px; /* Sets the width of the scrollbar */
+    scrollbar-color: #6d63b3 #292542; /* Sets the thumb and track color */
+}
+
+
+#chat-input {
+    width: calc(100% - 100px);
+    padding: 10px;
+    border-radius: 18px;
+    border: 4px solid #3a355ee0;
+    margin-right: 10px;
+    background-color: #dceafc;
+    outline: none;
+}
+
+
+#send-btn {
+    padding: 10px 20px;
+    align-self: flex-end;
+
+}
+
+.user-message {
+    background-color: #dceafc;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+    align-self: flex-end; /* Align user messages to the right */
+    max-width: 60%; /* Limit the maximum width */
+    word-wrap: break-word; /* Ensure long words break to a new line */
+    margin-left: auto; /* Push the message to the right */
+    text-align: right; /* Text alignment inside the bubble */
+}
+
+.bot-message {
+    background-color: #857dbb;
+    color: #dceafc;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+    align-self: flex-start; /* Align bot messages to the left */
+    max-width: 60%; /* Limit the maximum width */
+    word-wrap: break-word; /* Ensure long words break to a new line */
+    margin-right: auto; /* Push the message to the left */
+    text-align: left; /* Text alignment inside the bubble */
+}
+
+
+
+.copyright
+{
+    width: 100%;
+    text-align: center;
+    padding: 7px 0;
+    background: #6d63b3;
+    box-shadow: 0 0 15px 7px rgba(0, 0, 0, 0.5);
+    color: #e9e9e9;
+    font-size: 13px;
+}
+
+@media only screen and (max-width: 540px) {
+    #author-tag {
+        display: none; /* This should hide the author-tag */
+    }
+}
