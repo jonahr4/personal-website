@@ -87,18 +87,76 @@
 <div id="portfolio">
     <div class="container">
         <h1 class="subtitle">Projects</h1>
+        <div class="top-projects">
+            <h3>Top Projects</h3>
+            <div class="top-projects-row">
+                <a class="top-project-card" href="#project-studybuddy">
+                    <div class="top-rank">01</div>
+                    <div class="top-info">
+                        <div class="top-title">Study Buddy</div>
+                        <div class="top-desc">Idea to deployment of web app. Project manager and developer.</div>
+                    </div>
+                </a>
+                <a class="top-project-card" href="#project-mealmap">
+                    <div class="top-rank">02</div>
+                    <div class="top-info">
+                        <div class="top-title">MealMap</div>
+                        <div class="top-desc">Android development focus on nutrition and planning.</div>
+                    </div>
+                </a>
+                <a class="top-project-card" href="#project-java-terminal">
+                    <div class="top-rank">03</div>
+                    <div class="top-info">
+                        <div class="top-title">Java Terminal Engine</div>
+                        <div class="top-desc">Software design with OOP and design patterns.</div>
+                    </div>
+                </a>
+            </div>
+        </div>
         <div class="timeline">
+            <!-- MealMap -->
+            <div class="timeline-item" id="project-mealmap">
+                <div class="timeline-icon">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="top-badge" aria-label="Top project">
+                        <i class="fa-solid fa-star"></i>
+                        <span class="top-tooltip">Top project</span>
+                    </div>
+                    <div class="timeline-date">December 2025</div>
+                    <h3>MealMap</h3>
+                    <div class="project-tagline">Plan meals, discover recipes, auto-generate shopping lists, log via barcode/planner/custom, and track calories on a dashboard.</div>
+                    <div class="project-links">
+                        <a href="https://github.com/jonahr4/CS501-FinalProject" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
+                        <a class="gallery-btn" type="button" onclick="openGallery('mealMap')"><i class="fa-solid fa-images"></i> View Pictures</a>
+                    </div>
+                    <ul class="project-bullets">
+                        <li>Built a Jetpack Compose Android app for smart meal planning, nutrition tracking, and shopping list generation using Material 3 design</li>
+                        <li>Integrated TheMealDB and OpenFoodFacts APIs with Retrofit, Room, and StateFlow to power recipe discovery, barcode scanning, and persistent weekly meal plans</li>
+                        <li>Delivered a real-time nutrition dashboard, onboarding flow, and robust error handling across camera permissions, offline states, and data entry</li>
+                    </ul>
+                    <div class="collaborator">Collaborator: Abidul Islam<br>Class: CS501 Mobile Application Development (Fall 2024)</div>
+                </div>
+            </div>
+
             <!-- The Study Buddy -->
-            <div class="timeline-item">
+            <div class="timeline-item" id="project-studybuddy">
                 <div class="timeline-icon">
                     <i class="fa-solid fa-brain"></i>
                 </div>
                 <div class="timeline-content">
+                    <div class="top-badge" aria-label="Top project">
+                        <i class="fa-solid fa-star"></i>
+                        <span class="top-tooltip">Top project</span>
+                    </div>
                     <div class="timeline-date">November 2025</div>
                     <h3>The Study Buddy</h3>
+                    <div class="project-tagline">Upload notes, generate AI flashcards, play study games, and chat with a course-aware assistant.</div>
                     <div class="project-links">
                         <a href="https://github.com/jonahr4/TheStudyBuddy" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
                         <a href="https://thestudybuddy.app" target="_blank"><i class="fa-solid fa-globe"></i> Visit Site</a>
+                        <a class="gallery-btn" type="button" onclick="openGallery('studyBuddy')"><i class="fa-solid fa-images"></i> View Pictures</a>
                     </div>
                     <ul class="project-bullets">
                         <li>Deployed an AI study platform using React, Vite, TypeScript, and Express backend, running across Azure app services, DigitalOcean, and Google Firebase supporting 50+ users</li>
@@ -110,6 +168,28 @@
                 </div>
             </div>
 
+            <!-- NBA Team Outcome Prediction -->
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fa-solid fa-basketball-ball"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-date">November 2025</div>
+                    <h3>NBA Team Outcome Prediction</h3>
+                    <div class="project-tagline">Predicts team scores and winners with a linear regression pipeline on nba_api data, halving error and reaching 0.818 accuracy.</div>
+                    <div class="project-links">
+                        <a href="https://github.com/justin9668/cs506-final-project" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
+                        <a href="https://github.com/justin9668/nba-team-outcome-prediction/blob/main/final_report.md" target="_blank"><i class="fa-solid fa-file-lines"></i> Final Report</a>
+                    </div>
+                    <ul class="project-bullets">
+                        <li>Modeled NBA team scores and winners using nba_api game logs with a reproducible Makefile-driven pipeline</li>
+                        <li>Engineered features for rest days, home/away context, and opponent stats to train and benchmark regression and classification models</li>
+                        <li>Achieved strong accuracy and visualized trends with notebooks that output cleaned datasets, predictions, and validation plots</li>
+                    </ul>
+                    <div class="collaborator">Collaborators: Alim Ackura, Ash Payal, Justin Liu, Shawn Xiang, Jonah Rothman<br>Class: CS506 Data Science and Applications (Fall 2025)</div>
+                </div>
+            </div>
+
             <!-- VibeScape -->
             <div class="timeline-item">
                 <div class="timeline-icon">
@@ -118,6 +198,7 @@
                 <div class="timeline-content">
                     <div class="timeline-date">August 2025</div>
                     <h3>VibeScape</h3>
+                    <div class="project-tagline">Interactive song map to compare playlists with friends, explore clusters, and generate AI-curated blends and top picks.</div>
                     <div class="project-links">
                         <a href="https://github.com/jonahr4/VibeScape" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
                         <a href="#" target="_blank"><i class="fa-solid fa-video"></i> Demo Video</a>
@@ -131,13 +212,18 @@
             </div>
 
             <!-- Java Terminal Game Engine -->
-            <div class="timeline-item">
+            <div class="timeline-item" id="project-java-terminal">
                 <div class="timeline-icon">
                     <i class="fa-solid fa-gamepad"></i>
                 </div>
                 <div class="timeline-content">
+                    <div class="top-badge" aria-label="Top project">
+                        <i class="fa-solid fa-star"></i>
+                        <span class="top-tooltip">Top project</span>
+                    </div>
                     <div class="timeline-date">Sep 2024 – Dec 2024</div>
                     <h3>Java Terminal Game Engine</h3>
+                    <div class="project-tagline">Play everything from Tic-Tac-Toe to turn-based RPGs in a scalable, pattern-driven terminal engine.</div>
                     <div class="project-links">
                         <a href="https://github.com/jonahr4/CS611-Terminal-Based-Games" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
                     </div>
@@ -146,6 +232,7 @@
                         <li>Implemented 50+ Java classes to build a scalable, object-oriented architecture</li>
                         <li>Utilized Strategy, Factory, and Singleton design patterns to enhance flexibility and reduce code duplication</li>
                     </ul>
+                    <div class="collaborator">Class: CS411 Software Principles (Fall 2024)</div>
                 </div>
             </div>
 
@@ -157,6 +244,7 @@
                 <div class="timeline-content">
                     <div class="timeline-date">August 2024</div>
                     <h3>StockBot</h3>
+                    <div class="project-tagline">Chat with an AI bot trained on top stocks to get quick investing tips (POC).</div>
                     <div class="project-links">
                         <a href="https://github.com/jonahr4/StockBot" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
                         <a href="StockBot/" target="_blank"><i class="fa-solid fa-globe"></i> Visit Site</a>
@@ -178,6 +266,7 @@
                 <div class="timeline-content">
                     <div class="timeline-date">August 2024</div>
                     <h3>Poker Payout Calculator</h3>
+                    <div class="project-tagline">Calculate poker payouts and net results for your table in seconds.</div>
                     <div class="project-links">
                         <a href="https://github.com/jonahr4/PokerPayoutCalculator" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
                         <a href="poker-payout-calculator/" target="_blank"><i class="fa-solid fa-globe"></i> Visit Site</a>
@@ -197,6 +286,7 @@
                 <div class="timeline-content">
                     <div class="timeline-date">July 2024</div>
                     <h3>Music Guesser Game</h3>
+                    <div class="project-tagline">Guess the song from short audio clips—my first personal project.</div>
                     <div class="project-links">
                         <a href="https://github.com/jonahr4/music-guesser" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
                         <a href="music-guesser/" target="_blank"><i class="fa-solid fa-globe"></i> Visit Site</a>
@@ -217,6 +307,7 @@
                 <div class="timeline-content">
                     <div class="timeline-date">Sep 2023 – Dec 2023</div>
                     <h3>Rain or Shine</h3>
+                    <div class="project-tagline">Find nearby events tailored to your date and local weather.</div>
                     <ul class="project-bullets">
                         <li>Developed a full-stack web application giving users local event recommendations based on location and date</li>
                         <li>Pulled data from RapidAPI and Tomorrow.io API to read local events and weather data</li>
@@ -227,6 +318,25 @@
             </div>
         </div>
         <a onclick="window.open('https://github.com/jonahr4','_blank')" class="btn">View All on GitHub</a>
+    </div>
+</div>
+
+<!-- Gallery Modal -->
+<div id="gallery-modal" class="gallery-modal" aria-hidden="true" onclick="if(event.target === this) closeGallery()">
+    <div class="gallery-container" role="dialog" aria-modal="true">
+        <button class="gallery-close" type="button" aria-label="Close gallery" onclick="closeGallery()"><i class="fa-solid fa-xmark"></i></button>
+        <div class="gallery-image-wrapper">
+            <img id="gallery-image" src="" alt="Gallery image">
+        </div>
+        <div class="gallery-caption">
+            <span id="gallery-label"></span>
+            <span id="gallery-counter" class="gallery-counter"></span>
+        </div>
+        <div class="gallery-description" id="gallery-description"></div>
+        <div class="gallery-controls">
+            <button class="gallery-nav" type="button" aria-label="Previous image" onclick="prevImage()"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="gallery-nav" type="button" aria-label="Next image" onclick="nextImage()"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
     </div>
 </div>
 
@@ -242,7 +352,7 @@
                     <a href="https://www.linkedin.com/in/jonah-rothman/"><i class="fa-brands fa-linkedin"></i></a>
                     <a href="https://www.instagram.com/jonah_rothman/"><i class="fa-brands fa-square-instagram"></i></a>
                 </div>
-                <a href="Jonah Rothman Resume.pdf" download class="btn btn2">Download Resume</a>
+                <a href="Jonah_Rothman_Resume_Spring_2026 (3).pdf" download class="btn btn2">Download Resume</a>
             </div>
             <div class="content-right">
                 <form name="submit-to-google-sheet">
@@ -255,12 +365,89 @@
             </div>
         </div>
     </div>
-    <div class="copyright">
-        <p>This page was written in HTML and CSS by Jonah Rothman</p>
-    </div>
 </div>
 
 
+
+<script>
+    const galleries = {
+        mealMap: [
+            { src: 'assets/MealMap/DashboardScreen.png', label: 'Dashboard', description: 'Dashboard summarizing daily macros, targets, and quick actions' },
+            { src: 'assets/MealMap/RecipeDiscoveryScreen.png', label: 'RecipeDiscovery', description: 'Recipe discovery results powered by TheMealDB with filters' },
+            { src: 'assets/MealMap/MealPlannerScreen.png', label: 'MealPlanner', description: 'Weekly meal planner assigning recipes to specific days and meals' },
+            { src: 'assets/MealMap/ShoppingListScreen.png', label: 'ShoppingList', description: 'Auto-generated shopping list grouped by ingredient with duplicate handling' },
+            { src: 'assets/MealMap/LogMealsScreen.png', label: 'LogMeals', description: 'Food logging and nutrition breakdown for recent meals and snacks' },
+            { src: 'assets/MealMap/SetGoalsPage.png', label: 'SetGoals', description: 'Onboarding goal setup for calories, macros, and activity level' }
+        ],
+        studyBuddy: [
+            { src: 'assets/TheStudyBuddy/LandingPage.png', label: 'LandingPage', description: 'Marketing hero for The Study Buddy with signup CTA' },
+            { src: 'assets/TheStudyBuddy/Dashboard.png', label: 'Dashboard', description: 'User dashboard summarizing tasks, progress, and quick actions' },
+            { src: 'assets/TheStudyBuddy/FlashcardSets.png', label: 'FlashcardSets', description: 'Library of flashcard sets with counts and management controls' },
+            { src: 'assets/TheStudyBuddy/FlashcardStudy.png', label: 'FlashcardStudy', description: 'Flashcard study mode with flipping cards and navigation' },
+            { src: 'assets/TheStudyBuddy/MatchingGame.png', label: 'MatchingGame', description: 'Memory matching game view for studying key concepts' },
+            { src: 'assets/TheStudyBuddy/Gamespage.png', label: 'Gamespage', description: 'Games hub listing interactive study games and entry points' },
+            { src: 'assets/TheStudyBuddy/Chat.png', label: 'Chat', description: 'AI chat assistant for subject-specific questions and guidance' }
+        ]
+    };
+
+    let currentGalleryKey = null;
+    let currentImageIndex = 0;
+
+    const galleryModal = document.getElementById('gallery-modal');
+    const galleryImage = document.getElementById('gallery-image');
+    const galleryLabel = document.getElementById('gallery-label');
+    const galleryCounter = document.getElementById('gallery-counter');
+    const galleryDescription = document.getElementById('gallery-description');
+
+    function openGallery(key) {
+        if (!galleries[key] || !galleries[key].length) return;
+        currentGalleryKey = key;
+        currentImageIndex = 0;
+        updateGalleryView();
+        galleryModal.classList.add('open');
+        galleryModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('no-scroll');
+    }
+
+    function closeGallery() {
+        galleryModal.classList.remove('open');
+        galleryModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('no-scroll');
+        currentGalleryKey = null;
+    }
+
+    function updateGalleryView() {
+        const items = galleries[currentGalleryKey];
+        if (!items || !items.length) return;
+        const item = items[currentImageIndex];
+        galleryImage.src = item.src;
+        galleryImage.alt = item.label;
+        galleryLabel.textContent = item.label;
+        galleryCounter.textContent = `${currentImageIndex + 1} / ${items.length}`;
+        galleryDescription.textContent = item.description || '';
+    }
+
+    function nextImage() {
+        const items = galleries[currentGalleryKey];
+        if (!items || !items.length) return;
+        currentImageIndex = (currentImageIndex + 1) % items.length;
+        updateGalleryView();
+    }
+
+    function prevImage() {
+        const items = galleries[currentGalleryKey];
+        if (!items || !items.length) return;
+        currentImageIndex = (currentImageIndex - 1 + items.length) % items.length;
+        updateGalleryView();
+    }
+
+    document.addEventListener('keydown', (event) => {
+        if (!galleryModal.classList.contains('open')) return;
+        if (event.key === 'Escape') closeGallery();
+        if (event.key === 'ArrowRight') nextImage();
+        if (event.key === 'ArrowLeft') prevImage();
+    });
+</script>
 
 <script>
 
