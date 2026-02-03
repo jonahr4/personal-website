@@ -766,17 +766,23 @@ nav ul li a:hover::after {
     left: 50%;
     transform: translateX(-50%);
     width: 4px;
-    height: 100%;
+    top: 300px;
+    bottom: 0;
     background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
     border-radius: 2px;
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 60px;
+    margin-bottom: -80px;
     width: 100%;
     display: flex;
     justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
 }
 
 .timeline-item:nth-child(even) {
@@ -786,7 +792,8 @@ nav ul li a:hover::after {
 .timeline-icon {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 60px;
     height: 60px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -809,6 +816,7 @@ nav ul li a:hover::after {
     border: 1px solid #e9ecef;
     transition: all 0.3s ease;
     position: relative;
+    z-index: 1;
 }
 
 .timeline-content:hover {
@@ -1411,15 +1419,23 @@ nav .fa-solid {
 
     .timeline::before {
         left: 30px;
+        top: 100px;
     }
 
     .timeline-item {
         justify-content: flex-end !important;
         padding-left: 80px;
+        margin-bottom: 40px;
+    }
+
+    .timeline-item:last-child {
+        margin-bottom: 0;
     }
 
     .timeline-icon {
         left: 30px;
+        top: 30px;
+        transform: translateX(-50%);
         width: 50px;
         height: 50px;
         font-size: 20px;
@@ -1446,6 +1462,11 @@ nav .fa-solid {
 
     .project-bullets li {
         font-size: 14px;
+    }
+
+    .older-projects .timeline-item,
+    .older-projects .timeline-item:nth-child(even) {
+        justify-content: flex-end !important;
     }
 
     .row {
