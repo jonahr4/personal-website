@@ -485,100 +485,124 @@
                     </div>
                 </div>
 
-                <!-- StockBot -->
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fa-solid fa-chart-line"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">August 2024</div>
-                        <h3>StockBot</h3>
-                        <div class="project-tagline">Chat with an AI bot trained on top stocks to get quick investing
-                            tips (POC).</div>
-                        <div class="project-links">
-                            <a href="https://github.com/jonahr4/StockBot" target="_blank"><i
-                                    class="fa-brands fa-github"></i> Repository</a>
-                            <a href="StockBot/" target="_blank"><i class="fa-solid fa-globe"></i> Visit Site</a>
-                        </div>
-                        <ul class="project-bullets">
-                            <li>Constructed a chatbot utilizing the OpenAI API to provide users with stock advice and
-                                financial information</li>
-                            <li>Integrated economic principles to create stock advice trained on data from 100,000+
-                                stock and price combinations</li>
-                            <li>Configured Node.js and Render.com to create a secure local server and backend, ensuring
-                                data privacy between client and server</li>
-                            <li>Designed an intuitive user interface using HTML and CSS, enhancing user experience and
-                                engagement</li>
-                        </ul>
-                    </div>
+                <!-- Show More Toggle -->
+                <div class="timeline-toggle" id="timeline-toggle">
+                    <div class="timeline-toggle-line"></div>
+                    <button class="timeline-toggle-btn" onclick="toggleOlderProjects()">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <span class="timeline-toggle-text">Show More Projects</span>
                 </div>
 
-                <!-- Poker Payout Calculator -->
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fa-solid fa-coins"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">August 2024</div>
-                        <h3>Poker Payout Calculator</h3>
-                        <div class="project-tagline">Calculate poker payouts and net results for your table in seconds.
+                <!-- Older Projects (collapsed by default) -->
+                <div class="older-projects collapsed" id="older-projects">
+                    <!-- StockBot -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fa-solid fa-chart-line"></i>
                         </div>
-                        <div class="project-links">
-                            <a href="https://github.com/jonahr4/PokerPayoutCalculator" target="_blank"><i
-                                    class="fa-brands fa-github"></i> Repository</a>
-                            <a href="poker-payout-calculator/" target="_blank"><i class="fa-solid fa-globe"></i> Visit
-                                Site</a>
+                        <div class="timeline-content">
+                            <div class="timeline-date">August 2024</div>
+                            <h3>StockBot</h3>
+                            <div class="project-tagline">Chat with an AI bot trained on top stocks to get quick
+                                investing tips (POC).</div>
+                            <div class="project-links">
+                                <a href="https://github.com/jonahr4/StockBot" target="_blank"><i
+                                        class="fa-brands fa-github"></i> Repository</a>
+                                <a href="StockBot/" target="_blank"><i class="fa-solid fa-globe"></i> Visit Site</a>
+                            </div>
+                            <ul class="project-bullets">
+                                <li>Constructed a chatbot utilizing the OpenAI API to provide users with stock advice
+                                    and financial information</li>
+                                <li>Integrated economic principles to create stock advice trained on data from 100,000+
+                                    stock and price combinations</li>
+                                <li>Configured Node.js and Render.com to create a secure local server and backend,
+                                    ensuring data privacy between client and server</li>
+                                <li>Designed an intuitive user interface using HTML and CSS, enhancing user experience
+                                    and engagement</li>
+                            </ul>
                         </div>
-                        <ul class="project-bullets">
-                            <li>Created a calculator to find poker payouts and track player net results</li>
-                            <li>Streamlined payout calculations, saving users time and reducing errors in real-world
-                                poker games</li>
-                        </ul>
                     </div>
-                </div>
 
-                <!-- Music Guesser Game -->
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fa-solid fa-headphones"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">July 2024</div>
-                        <h3>Music Guesser Game</h3>
-                        <div class="project-tagline">Guess the song from short audio clips—my first personal project.
+                    <!-- Poker Payout Calculator -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fa-solid fa-coins"></i>
                         </div>
-                        <div class="project-links">
-                            <a href="https://github.com/jonahr4/music-guesser" target="_blank"><i
-                                    class="fa-brands fa-github"></i> Repository</a>
-                            <a href="music-guesser/" target="_blank"><i class="fa-solid fa-globe"></i> Visit Site</a>
+                        <div class="timeline-content">
+                            <div class="timeline-date">August 2024</div>
+                            <h3>Poker Payout Calculator</h3>
+                            <div class="project-tagline">Calculate poker payouts and net results for your table in
+                                seconds.</div>
+                            <div class="project-links">
+                                <a href="https://github.com/jonahr4/PokerPayoutCalculator" target="_blank"><i
+                                        class="fa-brands fa-github"></i> Repository</a>
+                                <a href="poker-payout-calculator/" target="_blank"><i class="fa-solid fa-globe"></i>
+                                    Visit Site</a>
+                            </div>
+                            <ul class="project-bullets">
+                                <li>Created a calculator to find poker payouts and track player net results</li>
+                                <li>Streamlined payout calculations, saving users time and reducing errors in real-world
+                                    poker games</li>
+                            </ul>
                         </div>
-                        <ul class="project-bullets">
-                            <li>Built an interactive music guessing game challenging users to identify tracks based on
-                                short audio clips</li>
-                            <li>Implemented the Spotify API to fetch Billboard Top 100 songs and dynamically load song
-                                data, increasing user engagement</li>
-                            <li>Programmed a scoring system in JavaScript to track high scores and give feedback</li>
-                        </ul>
                     </div>
-                </div>
 
-                <!-- Rain or Shine -->
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fa-solid fa-cloud-sun-rain"></i>
+                    <!-- Music Guesser Game -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fa-solid fa-headphones"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">July 2024</div>
+                            <h3>Music Guesser Game</h3>
+                            <div class="project-tagline">Guess the song from short audio clips—my first personal
+                                project.</div>
+                            <div class="project-links">
+                                <a href="https://github.com/jonahr4/music-guesser" target="_blank"><i
+                                        class="fa-brands fa-github"></i> Repository</a>
+                                <a href="music-guesser/" target="_blank"><i class="fa-solid fa-globe"></i> Visit
+                                    Site</a>
+                            </div>
+                            <ul class="project-bullets">
+                                <li>Built an interactive music guessing game challenging users to identify tracks based
+                                    on short audio clips</li>
+                                <li>Implemented the Spotify API to fetch Billboard Top 100 songs and dynamically load
+                                    song data, increasing user engagement</li>
+                                <li>Programmed a scoring system in JavaScript to track high scores and give feedback
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Sep 2023 – Dec 2023</div>
-                        <h3>Rain or Shine</h3>
-                        <div class="project-tagline">Find nearby events tailored to your date and local weather.</div>
-                        <ul class="project-bullets">
-                            <li>Developed a full-stack web application giving users local event recommendations based on
-                                location and date</li>
-                            <li>Pulled data from RapidAPI and Tomorrow.io API to read local events and weather data</li>
-                            <li>Implemented Google OAuth to gather data from user and configured MongoDB connection to
-                                store user data</li>
-                            <li>Gained valuable collaboration skills by working with a team of four</li>
-                        </ul>
+
+                    <!-- Rain or Shine -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fa-solid fa-cloud-sun-rain"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Sep 2023 – Dec 2023</div>
+                            <h3>Rain or Shine</h3>
+                            <div class="project-tagline">Find nearby events tailored to your date and local weather.
+                            </div>
+                            <ul class="project-bullets">
+                                <li>Developed a full-stack web application giving users local event recommendations
+                                    based on location and date</li>
+                                <li>Pulled data from RapidAPI and Tomorrow.io API to read local events and weather data
+                                </li>
+                                <li>Implemented Google OAuth to gather data from user and configured MongoDB connection
+                                    to store user data</li>
+                                <li>Gained valuable collaboration skills by working with a team of four</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Show Less Toggle (at bottom) -->
+                    <div class="timeline-toggle-bottom" id="timeline-toggle-bottom">
+                        <button class="timeline-toggle-btn" onclick="toggleOlderProjects()">
+                            <i class="fa-solid fa-chevron-up"></i>
+                        </button>
+                        <span class="timeline-toggle-text">Show Less</span>
                     </div>
                 </div>
             </div>
@@ -737,6 +761,22 @@
             }
             event.currentTarget.classList.add("active-link");
             document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        function toggleOlderProjects() {
+            var olderProjects = document.getElementById("older-projects");
+            var toggle = document.getElementById("timeline-toggle");
+            var toggleText = toggle.querySelector(".timeline-toggle-text");
+
+            if (olderProjects.classList.contains("collapsed")) {
+                olderProjects.classList.remove("collapsed");
+                toggle.classList.add("expanded");
+                toggleText.textContent = "Show Less";
+            } else {
+                olderProjects.classList.add("collapsed");
+                toggle.classList.remove("expanded");
+                toggleText.textContent = "Show More Projects";
+            }
         }
 
     </script>

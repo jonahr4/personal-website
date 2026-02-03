@@ -820,6 +820,111 @@ nav ul li a:hover::after {
     text-align: left;
 }
 
+/* Timeline Show More Toggle */
+.timeline-toggle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
+    margin: 20px 0 40px 0;
+    z-index: 3;
+}
+
+.timeline-toggle-line {
+    display: none;
+}
+
+.timeline-toggle-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    box-shadow: 0 0 0 6px #ffffff, 0 8px 20px rgba(102, 126, 234, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 2;
+}
+
+.timeline-toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 6px #ffffff, 0 12px 30px rgba(102, 126, 234, 0.4);
+}
+
+.timeline-toggle-btn i {
+    transition: transform 0.3s ease;
+}
+
+.timeline-toggle.expanded .timeline-toggle-btn i {
+    transform: rotate(180deg);
+}
+
+.timeline-toggle.expanded .timeline-toggle-btn,
+.timeline-toggle.expanded .timeline-toggle-text {
+    display: none;
+}
+
+.timeline-toggle-text {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #667eea;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    z-index: 2;
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+}
+
+/* Older Projects Collapsible */
+.older-projects {
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+    max-height: 3000px;
+    opacity: 1;
+}
+
+.older-projects.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+/* Reverse alternation for older projects to continue the pattern */
+.older-projects .timeline-item {
+    justify-content: flex-end;
+}
+
+.older-projects .timeline-item:nth-child(even) {
+    justify-content: flex-start;
+}
+
+/* Bottom Show Less Toggle */
+.timeline-toggle-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
+
+.timeline-toggle-bottom .timeline-toggle-text {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #667eea;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
 .timeline-date {
     color: #667eea;
     font-weight: 600;
