@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,615 +10,719 @@
 
     <script src="https://kit.fontawesome.com/aa828e5de8.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-<div id="header">
-    <div class="container">
-        <nav>
-            <img src="photos/Long Logo-01.png" class="logo">
-            <ul id="sidemenu">
-                <li><a href="#header">HOME</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#portfolio">PORTFOLIO</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
-            </ul>
-            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-        </nav>
-        <div class="header-content">
-            <div class="header-image">
-                <img src="photos/Rothman_Jonah_434-_023-Retouched.jpg" alt="Jonah Rothman">
-            </div>
-            <div class="header-text">
-                <p>MS/BA Computer Science Student at Boston University</p>
-                <h1>Hi, I'm <span>Jonah</span><br> Rothman from Boston</h1>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="photos/Long Logo-01.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#portfolio">PORTFOLIO</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-content">
+                <div class="header-image">
+                    <img src="photos/Rothman_Jonah_434-_023-Retouched.jpg" alt="Jonah Rothman">
+                </div>
+                <div class="header-text">
+                    <p>MS/BA Computer Science Student at Boston University</p>
+                    <h1>Hi, I'm <span>Jonah</span><br> Rothman from Boston</h1>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!--------ABOUT--------->
+    <!--------ABOUT--------->
 
-<div id="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <img src="photos/about.jpg" class="about-photo">  
-            </div>          
-            <div class="about-col-2">
-                <h1 class="subtitle">About Me</h1>
-                <p>Hi, I'm Jonah Rothman, a student at Boston University pursuing a BA/MS in Computer Science with a minor in Economics.
-                    I specialize in web development and AI, with experience in QA automation, full-stack development, and CI/CD pipelines. I've built production applications like The Study Buddy
-                    and VibeScape, and completed internships at PanelClaw and ClearWatt. I'm passionate about creating scalable software solutions and exploring new technologies.</p>
-
-                <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                    <p class="tab-links"onclick="opentab('education')">Education</p>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="photos/about.jpg" class="about-photo">
                 </div>
-                <!----Skills--->
-                <div class="tab-contents active-tab" id="skills">
-                    <div class="skill-grid">
-                        <div class="skill-card">
-                            <div class="skill-heading"><i class="fa-solid fa-code"></i> Programming</div>
-                            <div class="chip-row">
-                                <span class="chip">Java</span>
-                                <span class="chip">Python</span>
-                                <span class="chip">C/C++</span>
-                                <span class="chip">JavaScript</span>
-                                <span class="chip">TypeScript</span>
-                                <span class="chip">Kotlin</span>
-                                <span class="chip">OCaml</span>
+                <div class="about-col-2">
+                    <h1 class="subtitle">About Me</h1>
+                    <p>Hi, I'm Jonah Rothman, a student at Boston University pursuing a BA/MS in Computer Science with a
+                        minor in Economics.
+                        I specialize in web development and AI, with experience in QA automation, full-stack
+                        development, and CI/CD pipelines. I've built production applications like The Study Buddy
+                        and VibeScape, and completed internships at PanelClaw and ClearWatt. I'm passionate about
+                        creating scalable software solutions and exploring new technologies.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <!----Skills--->
+                    <div class="tab-contents active-tab" id="skills">
+                        <div class="skill-grid">
+                            <div class="skill-card">
+                                <div class="skill-heading"><i class="fa-solid fa-code"></i> Programming</div>
+                                <div class="chip-row">
+                                    <span class="chip">Java</span>
+                                    <span class="chip">Python</span>
+                                    <span class="chip">C/C++</span>
+                                    <span class="chip">JavaScript</span>
+                                    <span class="chip">TypeScript</span>
+                                    <span class="chip">Kotlin</span>
+                                    <span class="chip">OCaml</span>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-heading"><i class="fa-solid fa-laptop-code"></i> Web & App</div>
+                                <div class="chip-row">
+                                    <span class="chip">React</span>
+                                    <span class="chip">Next.js</span>
+                                    <span class="chip">Express.js</span>
+                                    <span class="chip">Node.js</span>
+                                    <span class="chip">HTML/CSS</span>
+                                    <span class="chip">TailwindCSS</span>
+                                    <span class="chip">Jetpack Compose</span>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-heading"><i class="fa-solid fa-sitemap"></i> Tools</div>
+                                <div class="chip-row">
+                                    <span class="chip">GitHub Actions</span>
+                                    <span class="chip">MongoDB Atlas</span>
+                                    <span class="chip">Azure</span>
+                                    <span class="chip">Firebase</span>
+                                    <span class="chip">Cypress</span>
+                                    <span class="chip">Jest</span>
+                                    <span class="chip">Maestro</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="skill-card">
-                            <div class="skill-heading"><i class="fa-solid fa-laptop-code"></i> Web & App</div>
-                            <div class="chip-row">
-                                <span class="chip">React</span>
-                                <span class="chip">Next.js</span>
-                                <span class="chip">Express.js</span>
-                                <span class="chip">Node.js</span>
-                                <span class="chip">HTML/CSS</span>
-                                <span class="chip">TailwindCSS</span>
-                                <span class="chip">Jetpack Compose</span>
-                            </div>
+                    </div>
+                    <!----Experience--->
+                    <div class="tab-contents" id="experience">
+                        <div class="resume-grid">
+                            <article class="resume-card">
+                                <div class="resume-top">
+                                    <div class="resume-company">PanelClaw</div>
+                                    <div class="resume-date">May 2025 – Aug 2025</div>
+                                </div>
+                                <div class="resume-role">Junior Front-End Developer Intern</div>
+                                <div class="resume-meta">
+                                    <span class="resume-location"><i class="fa-solid fa-location-dot"></i> North
+                                        Andover, MA</span>
+                                </div>
+                                <p class="resume-desc">Led Cypress QA automation, cutting regression test time from a
+                                    full day to about an hour.</p>
+                            </article>
+                            <article class="resume-card">
+                                <div class="resume-top">
+                                    <div class="resume-company">ClearWatt</div>
+                                    <div class="resume-date">Feb 2025 – Apr 2025</div>
+                                </div>
+                                <div class="resume-role">Software Development Intern</div>
+                                <div class="resume-meta">
+                                    <span class="resume-location"><i class="fa-solid fa-location-dot"></i> London,
+                                        UK</span>
+                                </div>
+                                <p class="resume-desc">Built the first automated testing suite with Maestro and wired it
+                                    into Azure DevOps pipelines.</p>
+                            </article>
+                            <article class="resume-card">
+                                <div class="resume-top">
+                                    <div class="resume-company">First Cambridge Realty Corporation</div>
+                                    <div class="resume-date">May 2022 – Aug 2022</div>
+                                </div>
+                                <div class="resume-role">Information Technology Intern</div>
+                                <div class="resume-meta">
+                                    <span class="resume-location"><i class="fa-solid fa-location-dot"></i> Cambridge,
+                                        MA</span>
+                                </div>
+                                <p class="resume-desc">Installed a new office network, refreshed hardware, and lifted
+                                    throughput ~50% with optimized fiber configurations.</p>
+                            </article>s
+                            <article class="resume-card">
+                                <div class="resume-top">
+                                    <div class="resume-company">Massachusetts Housing Coalition</div>
+                                    <div class="resume-date">Summer 2021</div>
+                                </div>
+                                <div class="resume-role">Assistant to the Director</div>
+                                <div class="resume-meta">
+                                    <span class="resume-location"><i class="fa-solid fa-location-dot"></i> Remote</span>
+                                </div>
+                                <p class="resume-desc">Researched local officials and structured the contact database
+                                    for outreach.</p>
+                            </article>
                         </div>
-                        <div class="skill-card">
-                            <div class="skill-heading"><i class="fa-solid fa-sitemap"></i> Tools</div>
-                            <div class="chip-row">
-                                <span class="chip">GitHub Actions</span>
-                                <span class="chip">MongoDB Atlas</span>
-                                <span class="chip">Azure</span>
-                                <span class="chip">Firebase</span>
-                                <span class="chip">Cypress</span>
-                                <span class="chip">Jest</span>
-                                <span class="chip">Maestro</span>
-                            </div>
+                    </div>
+                    <!----Education--->
+                    <div class="tab-contents" id="education">
+                        <div class="resume-grid education-grid">
+                            <article class="resume-card edu-card">
+                                <div class="resume-top">
+                                    <div class="resume-company">Boston University</div>
+                                    <div class="resume-date">2022 – Dec 2026</div>
+                                </div>
+                                <div class="resume-role">MS & BA Computer Science · Minor in Economics</div>
+                                <div class="resume-meta">
+                                    <span class="resume-tag">GPA 3.75</span>
+                                    <span class="resume-tag">Dean's List every term</span>
+                                </div>
+                            </article>
+                            <article class="resume-card edu-card">
+                                <div class="resume-top">
+                                    <div class="resume-company">Thayer Academy</div>
+                                    <div class="resume-date">2018 – 2022</div>
+                                </div>
+                                <div class="resume-role">High School Diploma</div>
+                                <div class="resume-meta">
+                                    <span class="resume-location"><i class="fa-solid fa-location-dot"></i> Braintree,
+                                        MA</span>
+                                </div>
+                            </article>
                         </div>
                     </div>
                 </div>
-                <!----Experience--->
-                <div class="tab-contents" id="experience">
-                    <div class="resume-grid">
-                        <article class="resume-card">
-                            <div class="resume-top">
-                                <div class="resume-company">PanelClaw</div>
-                                <div class="resume-date">May 2025 – Aug 2025</div>
-                            </div>
-                            <div class="resume-role">Junior Front-End Developer Intern</div>
-                            <div class="resume-meta">
-                                <span class="resume-location"><i class="fa-solid fa-location-dot"></i> North Andover, MA</span>
-                            </div>
-                            <p class="resume-desc">Led Cypress QA automation, cutting regression test time from a full day to about an hour.</p>
-                        </article>
-                        <article class="resume-card">
-                            <div class="resume-top">
-                                <div class="resume-company">ClearWatt</div>
-                                <div class="resume-date">Feb 2025 – Apr 2025</div>
-                            </div>
-                            <div class="resume-role">Software Development Intern</div>
-                            <div class="resume-meta">
-                                <span class="resume-location"><i class="fa-solid fa-location-dot"></i> London, UK</span>
-                            </div>
-                            <p class="resume-desc">Built the first automated testing suite with Maestro and wired it into Azure DevOps pipelines.</p>
-                        </article>
-                        <article class="resume-card">
-                            <div class="resume-top">
-                                <div class="resume-company">First Cambridge Realty Corporation</div>
-                                <div class="resume-date">May 2022 – Aug 2022</div>
-                            </div>
-                            <div class="resume-role">Information Technology Intern</div>
-                            <div class="resume-meta">
-                                <span class="resume-location"><i class="fa-solid fa-location-dot"></i> Cambridge, MA</span>
-                            </div>
-                            <p class="resume-desc">Installed a new office network, refreshed hardware, and lifted throughput ~50% with optimized fiber configurations.</p>
-                        </article>
-                        <article class="resume-card">
-                            <div class="resume-top">
-                                <div class="resume-company">Massachusetts Housing Coalition</div>
-                                <div class="resume-date">Summer 2021</div>
-                            </div>
-                            <div class="resume-role">Assistant to the Director</div>
-                            <div class="resume-meta">
-                                <span class="resume-location"><i class="fa-solid fa-location-dot"></i> Remote</span>
-                            </div>
-                            <p class="resume-desc">Researched local officials and structured the contact database for outreach.</p>
-                        </article>
+            </div>
+        </div>
+    </div>
+
+    <!--------Portfolio--------->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="subtitle">Projects</h1>
+            <div class="top-projects">
+                <h3>Top Projects</h3>
+                <div class="top-projects-row">
+                    <a class="top-project-card" href="#project-internatlas">
+                        <div class="top-rank">01</div>
+                        <div class="top-info">
+                            <div class="top-title">InternAtlas</div>
+                            <div class="top-desc">Search tech internships across 2,500+ boards with live filters.</div>
+                        </div>
+                    </a>
+                    <a class="top-project-card" href="#project-studybuddy">
+                        <div class="top-rank">02</div>
+                        <div class="top-info">
+                            <div class="top-title">Study Buddy</div>
+                            <div class="top-desc">Idea to deployment of web app. Project manager and developer.</div>
+                        </div>
+                    </a>
+                    <a class="top-project-card" href="#project-mealmap">
+                        <div class="top-rank">03</div>
+                        <div class="top-info">
+                            <div class="top-title">MealMap</div>
+                            <div class="top-desc">Android development focus on nutrition and planning.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="timeline">
+                <!-- The Task App -->
+                <div class="timeline-item" id="project-taskapp">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">January 2026</div>
+                        <h3>The Task App</h3>
+                        <div class="project-tagline">AI-powered task manager combining natural language reminders,
+                            Eisenhower Matrix prioritization, and calendar/iCal integration.</div>
+                        <div class="project-links">
+                            <a href="https://github.com/jonahr4/TheTaskApp" target="_blank"><i
+                                    class="fa-brands fa-github"></i> Repository</a>
+                            <a href="https://the-task-app.vercel.app" target="_blank"><i class="fa-solid fa-globe"></i>
+                                Visit Site</a>
+                            <a class="gallery-btn" type="button" onclick="openGallery('taskApp')"><i
+                                    class="fa-solid fa-images"></i> View Pictures</a>
+                        </div>
+                        <ul class="project-bullets">
+                            <li>Built a Next.js task management app with Firebase Authentication and Firestore for
+                                real-time task storage and sync across devices</li>
+                            <li>Integrated Azure Foundry GPT-5 for AI-powered natural language parsing—type "remind me
+                                Friday" and the app schedules with priority and group</li>
+                            <li>Implemented drag-and-drop Eisenhower Matrix for instant task prioritization across Do
+                                First, Schedule, Delegate, and Eliminate quadrants</li>
+                            <li>Built calendar view with iCal feed subscription for seamless integration with external
+                                calendar apps</li>
+                        </ul>
                     </div>
                 </div>
-                <!----Education--->
-                <div class="tab-contents" id="education">
-                    <div class="resume-grid education-grid">
-                        <article class="resume-card edu-card">
-                            <div class="resume-top">
-                                <div class="resume-company">Boston University</div>
-                                <div class="resume-date">2022 – Dec 2026</div>
-                            </div>
-                            <div class="resume-role">MS & BA Computer Science · Minor in Economics</div>
-                            <div class="resume-meta">
-                                <span class="resume-tag">GPA 3.75</span>
-                                <span class="resume-tag">Dean's List every term</span>
-                            </div>
-                        </article>
-                        <article class="resume-card edu-card">
-                            <div class="resume-top">
-                                <div class="resume-company">Thayer Academy</div>
-                                <div class="resume-date">2018 – 2022</div>
-                            </div>
-                            <div class="resume-role">High School Diploma</div>
-                            <div class="resume-meta">
-                                <span class="resume-location"><i class="fa-solid fa-location-dot"></i> Braintree, MA</span>
-                            </div>
-                        </article>
+
+                <!-- InternAtlas -->
+                <div class="timeline-item" id="project-internatlas">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-briefcase"></i>
                     </div>
+                    <div class="timeline-content">
+                        <div class="top-badge" aria-label="Top project">
+                            <i class="fa-solid fa-star"></i>
+                            <span class="top-tooltip">Top project</span>
+                        </div>
+                        <div class="timeline-date">Dec 2025 – Jan 2026</div>
+                        <h3>InternAtlas</h3>
+                        <div class="project-tagline">Search thousands of tech company job boards in one place with live
+                            filters and real-time stats.</div>
+                        <div class="project-links">
+                            <a href="https://github.com/jonahr4/InternAtlas" target="_blank"><i
+                                    class="fa-brands fa-github"></i> Repository</a>
+                            <a href="https://internatlas.tech/" target="_blank"><i class="fa-solid fa-globe"></i> Visit
+                                Site</a>
+                            <a class="gallery-btn" type="button" onclick="openGallery('internAtlas')"><i
+                                    class="fa-solid fa-images"></i> View Pictures</a>
+                        </div>
+                        <ul class="project-bullets">
+                            <li>Built a production job board that crawls 2,500+ company ATS boards and normalizes
+                                600,000+ listings into PostgreSQL with full-text search and filters</li>
+                            <li>Automated large-scale crawling via GitHub Actions on a 12-hour cadence, feeding
+                                Vercel-hosted UI backed by DigitalOcean PostgreSQL</li>
+                            <li>Shipped live experience with split-pane UI, advanced filtering, application tracking,
+                                and Google OAuth/Firebase sync</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- MealMap -->
+                <div class="timeline-item" id="project-mealmap">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="top-badge" aria-label="Top project">
+                            <i class="fa-solid fa-star"></i>
+                            <span class="top-tooltip">Top project</span>
+                        </div>
+                        <div class="timeline-date">December 2025</div>
+                        <h3>MealMap</h3>
+                        <div class="project-tagline">Plan meals, discover recipes, auto-generate shopping lists, log via
+                            barcode/planner/custom, and track calories on a dashboard.</div>
+                        <div class="project-links">
+                            <a href="https://github.com/jonahr4/CS501-FinalProject" target="_blank"><i
+                                    class="fa-brands fa-github"></i> Repository</a>
+                            <a class="gallery-btn" type="button" onclick="openGallery('mealMap')"><i
+                                    class="fa-solid fa-images"></i> View Pictures</a>
+                        </div>
+                        <ul class="project-bullets">
+                            <li>Built a Jetpack Compose Android app for smart meal planning, nutrition tracking, and
+                                shopping list generation using Material 3 design</li>
+                            <li>Integrated TheMealDB and OpenFoodFacts APIs with Retrofit, Room, and StateFlow to power
+                                recipe discovery, barcode scanning, and persistent weekly meal plans</li>
+                            <li>Delivered a real-time nutrition dashboard, onboarding flow, and robust error handling
+                                across camera permissions, offline states, and data entry</li>
+                        </ul>
+                        <div class="collaborator">Collaborator: Abidul Islam<br>Class: CS501 Mobile Application
+                            Development (Fall 2024)</div>
+                    </div>
+                </div>
+
+                <!-- The Study Buddy -->
+                <div class="timeline-item" id="project-studybuddy">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="top-badge" aria-label="Top project">
+                            <i class="fa-solid fa-star"></i>
+                            <span class="top-tooltip">Top project</span>
+                        </div>
+                        <div class="timeline-date">November 2025</div>
+                        <h3>The Study Buddy</h3>
+                        <div class="project-tagline">Upload notes, generate AI flashcards, play study games, and chat
+                            with a course-aware assistant.</div>
+                        <div class="project-links">
+                            <a href="https://github.com/jonahr4/TheStudyBuddy" target="_blank"><i
+                                    class="fa-brands fa-github"></i> Repository</a>
+                            <a href="https://thestudybuddy.app" target="_blank"><i class="fa-solid fa-globe"></i> Visit
+                                Site</a>
+                            <a class="gallery-btn" type="button" onclick="openGallery('studyBuddy')"><i
+                                    class="fa-solid fa-images"></i> View Pictures</a>
+                        </div>
+                        <ul class="project-bullets">
+                            <li>Deployed an AI study platform using React, Vite, TypeScript, and Express backend,
+                                running across Azure app services, DigitalOcean, and Google Firebase supporting 50+
+                                users</li>
+                            <li>Developed a scalable Express.js backend using Azure Blob Storage for PDF handling and
+                                Azure OpenAI to generate flashcards and context-aware subject-specific chat responses
+                            </li>
+                            <li>Designed a MongoDB Atlas schema with 7 collections, compound indexes, and repository
+                                pattern architecture supporting 100+ notes, 50+ flashcard sets, and 200+ chat messages
+                            </li>
+                            <li>Implemented CI/CD with GitHub Actions for automated builds and deployments</li>
+                        </ul>
+                        <div class="collaborator">Collaborator: Sean Tomany</div>
+                    </div>
+                </div>
+
+                <!-- NBA Team Outcome Prediction -->
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-basketball-ball"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">November 2025</div>
+                        <h3>NBA Team Outcome Prediction</h3>
+                        <div class="project-tagline">Predicts team scores and winners with a linear regression pipeline
+                            on nba_api data, halving error and reaching 0.818 accuracy.</div>
+                        <div class="project-links">
+                            <a href="https://github.com/justin9668/cs506-final-project" target="_blank"><i
+                                    class="fa-brands fa-github"></i> Repository</a>
+                            <a href="https://github.com/justin9668/nba-team-outcome-prediction/blob/main/final_report.md"
+                                target="_blank"><i class="fa-solid fa-file-lines"></i> Final Report</a>
+                        </div>
+                        <ul class="project-bullets">
+                            <li>Modeled NBA team scores and winners using nba_api game logs with a reproducible
+                                Makefile-driven pipeline</li>
+                            <li>Engineered features for rest days, home/away context, and opponent stats to train and
+                                benchmark regression and classification models</li>
+                            <li>Achieved strong accuracy and visualized trends with notebooks that output cleaned
+                                datasets, predictions, and validation plots</li>
+                        </ul>
+                        <div class="collaborator">Collaborators: Alim Ackura, Ash Payal, Justin Liu, Shawn Xiang, Jonah
+                            Rothman<br>Class: CS506 Data Science and Applications (Fall 2025)</div>
+                    </div>
+                </div>
+
+                <!-- VibeScape -->
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-music"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">August 2025</div>
+                        <h3>VibeScape</h3>
+                        <div class="project-tagline">Interactive song map to compare playlists with friends, explore
+                            clusters, and generate AI-curated blends and top picks.</div>
+                        <div class="project-links">
+                            <a href="https://github.com/jonahr4/VibeScape" target="_blank"><i
+                                    class="fa-brands fa-github"></i> Repository</a>
+                            <a href="#" target="_blank"><i class="fa-solid fa-video"></i> Demo Video</a>
+                        </div>
+                        <ul class="project-bullets">
+                            <li>Built a Next.js and React powered interactive Spotify song map that visualizes a user's
+                                library as clusters of songs and playlists with the ability to compare music with
+                                friends and create custom blended playlists</li>
+                            <li>Created an AI-powered playlist chooser via prompt and designed a unique ranking model
+                                for Top Songs</li>
+                            <li>Harnessed SOTA AI tools like OpenAI Codex CLI to accelerate development time and enhance
+                                the UI/UX</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Java Terminal Game Engine -->
+                <div class="timeline-item" id="project-java-terminal">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Sep 2024 – Dec 2024</div>
+                        <h3>Java Terminal Game Engine</h3>
+                        <div class="project-tagline">Play everything from Tic-Tac-Toe to turn-based RPGs in a scalable,
+                            pattern-driven terminal engine.</div>
+                        <div class="project-links">
+                            <a href="https://github.com/jonahr4/CS611-Terminal-Based-Games" target="_blank"><i
+                                    class="fa-brands fa-github"></i> Repository</a>
+                        </div>
+                        <ul class="project-bullets">
+                            <li>Developed a terminal-based game engine ranging from simple games to complex turn-based
+                                gameplay, including DnD-style mechanics</li>
+                            <li>Implemented 50+ Java classes to build a scalable, object-oriented architecture</li>
+                            <li>Utilized Strategy, Factory, and Singleton design patterns to enhance flexibility and
+                                reduce code duplication</li>
+                        </ul>
+                        <div class="collaborator">Class: CS411 Software Principles (Fall 2024)</div>
+                    </div>
+                </div>
+
+                <!-- StockBot -->
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">August 2024</div>
+                        <h3>StockBot</h3>
+                        <div class="project-tagline">Chat with an AI bot trained on top stocks to get quick investing
+                            tips (POC).</div>
+                        <div class="project-links">
+                            <a href="https://github.com/jonahr4/StockBot" target="_blank"><i
+                                    class="fa-brands fa-github"></i> Repository</a>
+                            <a href="StockBot/" target="_blank"><i class="fa-solid fa-globe"></i> Visit Site</a>
+                        </div>
+                        <ul class="project-bullets">
+                            <li>Constructed a chatbot utilizing the OpenAI API to provide users with stock advice and
+                                financial information</li>
+                            <li>Integrated economic principles to create stock advice trained on data from 100,000+
+                                stock and price combinations</li>
+                            <li>Configured Node.js and Render.com to create a secure local server and backend, ensuring
+                                data privacy between client and server</li>
+                            <li>Designed an intuitive user interface using HTML and CSS, enhancing user experience and
+                                engagement</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Poker Payout Calculator -->
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-coins"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">August 2024</div>
+                        <h3>Poker Payout Calculator</h3>
+                        <div class="project-tagline">Calculate poker payouts and net results for your table in seconds.
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/jonahr4/PokerPayoutCalculator" target="_blank"><i
+                                    class="fa-brands fa-github"></i> Repository</a>
+                            <a href="poker-payout-calculator/" target="_blank"><i class="fa-solid fa-globe"></i> Visit
+                                Site</a>
+                        </div>
+                        <ul class="project-bullets">
+                            <li>Created a calculator to find poker payouts and track player net results</li>
+                            <li>Streamlined payout calculations, saving users time and reducing errors in real-world
+                                poker games</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Music Guesser Game -->
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-headphones"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">July 2024</div>
+                        <h3>Music Guesser Game</h3>
+                        <div class="project-tagline">Guess the song from short audio clips—my first personal project.
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/jonahr4/music-guesser" target="_blank"><i
+                                    class="fa-brands fa-github"></i> Repository</a>
+                            <a href="music-guesser/" target="_blank"><i class="fa-solid fa-globe"></i> Visit Site</a>
+                        </div>
+                        <ul class="project-bullets">
+                            <li>Built an interactive music guessing game challenging users to identify tracks based on
+                                short audio clips</li>
+                            <li>Implemented the Spotify API to fetch Billboard Top 100 songs and dynamically load song
+                                data, increasing user engagement</li>
+                            <li>Programmed a scoring system in JavaScript to track high scores and give feedback</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Rain or Shine -->
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-cloud-sun-rain"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Sep 2023 – Dec 2023</div>
+                        <h3>Rain or Shine</h3>
+                        <div class="project-tagline">Find nearby events tailored to your date and local weather.</div>
+                        <ul class="project-bullets">
+                            <li>Developed a full-stack web application giving users local event recommendations based on
+                                location and date</li>
+                            <li>Pulled data from RapidAPI and Tomorrow.io API to read local events and weather data</li>
+                            <li>Implemented Google OAuth to gather data from user and configured MongoDB connection to
+                                store user data</li>
+                            <li>Gained valuable collaboration skills by working with a team of four</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <a onclick="window.open('https://github.com/jonahr4','_blank')" class="btn">View All on GitHub</a>
+        </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" class="gallery-modal" aria-hidden="true" onclick="if(event.target === this) closeGallery()">
+        <div class="gallery-container" role="dialog" aria-modal="true">
+            <button class="gallery-close" type="button" aria-label="Close gallery" onclick="closeGallery()"><i
+                    class="fa-solid fa-xmark"></i></button>
+            <div class="gallery-image-wrapper">
+                <img id="gallery-image" src="" alt="Gallery image">
+            </div>
+            <div class="gallery-caption">
+                <span id="gallery-label"></span>
+                <span id="gallery-counter" class="gallery-counter"></span>
+            </div>
+            <div class="gallery-description" id="gallery-description"></div>
+            <div class="gallery-controls">
+                <button class="gallery-nav" type="button" aria-label="Previous image" onclick="prevImage()"><i
+                        class="fa-solid fa-chevron-left"></i></button>
+                <button class="gallery-nav" type="button" aria-label="Next image" onclick="nextImage()"><i
+                        class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!---------contact------>
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="subtitle">Contact Me</h1>
+                    <p><i class="fa-regular fa-paper-plane"></i> jonahrothman@me.com</p>
+                    <p><i class="fa-solid fa-phone"></i> (781) 366 5290</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/jonah-rothman/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/jonah_rothman/"><i
+                                class="fa-brands fa-square-instagram"></i></a>
+                    </div>
+                    <a href="Jonah_Rothman_Resume_Spring_2026.pdf" download class="btn btn2">Download Resume</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-<!--------Portfolio--------->
-<div id="portfolio">
-    <div class="container">
-        <h1 class="subtitle">Projects</h1>
-        <div class="top-projects">
-            <h3>Top Projects</h3>
-            <div class="top-projects-row">
-                <a class="top-project-card" href="#project-internatlas">
-                    <div class="top-rank">01</div>
-                    <div class="top-info">
-                        <div class="top-title">InternAtlas</div>
-                        <div class="top-desc">Search tech internships across 2,500+ boards with live filters.</div>
-                    </div>
-                </a>
-                <a class="top-project-card" href="#project-studybuddy">
-                    <div class="top-rank">02</div>
-                    <div class="top-info">
-                        <div class="top-title">Study Buddy</div>
-                        <div class="top-desc">Idea to deployment of web app. Project manager and developer.</div>
-                    </div>
-                </a>
-                <a class="top-project-card" href="#project-mealmap">
-                    <div class="top-rank">03</div>
-                    <div class="top-info">
-                        <div class="top-title">MealMap</div>
-                        <div class="top-desc">Android development focus on nutrition and planning.</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="timeline">
-            <!-- InternAtlas -->
-            <div class="timeline-item" id="project-internatlas">
-                <div class="timeline-icon">
-                    <i class="fa-solid fa-briefcase"></i>
-                </div>
-                <div class="timeline-content">
-                    <div class="top-badge" aria-label="Top project">
-                        <i class="fa-solid fa-star"></i>
-                        <span class="top-tooltip">Top project</span>
-                    </div>
-                    <div class="timeline-date">Dec 2025 – Jan 2026</div>
-                    <h3>InternAtlas</h3>
-                    <div class="project-tagline">Search thousands of tech company job boards in one place with live filters and real-time stats.</div>
-                    <div class="project-links">
-                        <a href="https://github.com/jonahr4/InternAtlas" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
-                        <a href="https://internatlas.tech/" target="_blank"><i class="fa-solid fa-globe"></i> Visit Site</a>
-                        <a class="gallery-btn" type="button" onclick="openGallery('internAtlas')"><i class="fa-solid fa-images"></i> View Pictures</a>
-                    </div>
-                    <ul class="project-bullets">
-                        <li>Built a production job board that crawls 2,500+ company ATS boards and normalizes 600,000+ listings into PostgreSQL with full-text search and filters</li>
-                        <li>Automated large-scale crawling via GitHub Actions on a 12-hour cadence, feeding Vercel-hosted UI backed by DigitalOcean PostgreSQL</li>
-                        <li>Shipped live experience with split-pane UI, advanced filtering, application tracking, and Google OAuth/Firebase sync</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- MealMap -->
-            <div class="timeline-item" id="project-mealmap">
-                <div class="timeline-icon">
-                    <i class="fa-solid fa-utensils"></i>
-                </div>
-                <div class="timeline-content">
-                    <div class="top-badge" aria-label="Top project">
-                        <i class="fa-solid fa-star"></i>
-                        <span class="top-tooltip">Top project</span>
-                    </div>
-                    <div class="timeline-date">December 2025</div>
-                    <h3>MealMap</h3>
-                    <div class="project-tagline">Plan meals, discover recipes, auto-generate shopping lists, log via barcode/planner/custom, and track calories on a dashboard.</div>
-                    <div class="project-links">
-                        <a href="https://github.com/jonahr4/CS501-FinalProject" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
-                        <a class="gallery-btn" type="button" onclick="openGallery('mealMap')"><i class="fa-solid fa-images"></i> View Pictures</a>
-                    </div>
-                    <ul class="project-bullets">
-                        <li>Built a Jetpack Compose Android app for smart meal planning, nutrition tracking, and shopping list generation using Material 3 design</li>
-                        <li>Integrated TheMealDB and OpenFoodFacts APIs with Retrofit, Room, and StateFlow to power recipe discovery, barcode scanning, and persistent weekly meal plans</li>
-                        <li>Delivered a real-time nutrition dashboard, onboarding flow, and robust error handling across camera permissions, offline states, and data entry</li>
-                    </ul>
-                    <div class="collaborator">Collaborator: Abidul Islam<br>Class: CS501 Mobile Application Development (Fall 2024)</div>
-                </div>
-            </div>
-
-            <!-- The Study Buddy -->
-            <div class="timeline-item" id="project-studybuddy">
-                <div class="timeline-icon">
-                    <i class="fa-solid fa-brain"></i>
-                </div>
-                <div class="timeline-content">
-                    <div class="top-badge" aria-label="Top project">
-                        <i class="fa-solid fa-star"></i>
-                        <span class="top-tooltip">Top project</span>
-                    </div>
-                    <div class="timeline-date">November 2025</div>
-                    <h3>The Study Buddy</h3>
-                    <div class="project-tagline">Upload notes, generate AI flashcards, play study games, and chat with a course-aware assistant.</div>
-                    <div class="project-links">
-                        <a href="https://github.com/jonahr4/TheStudyBuddy" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
-                        <a href="https://thestudybuddy.app" target="_blank"><i class="fa-solid fa-globe"></i> Visit Site</a>
-                        <a class="gallery-btn" type="button" onclick="openGallery('studyBuddy')"><i class="fa-solid fa-images"></i> View Pictures</a>
-                    </div>
-                    <ul class="project-bullets">
-                        <li>Deployed an AI study platform using React, Vite, TypeScript, and Express backend, running across Azure app services, DigitalOcean, and Google Firebase supporting 50+ users</li>
-                        <li>Developed a scalable Express.js backend using Azure Blob Storage for PDF handling and Azure OpenAI to generate flashcards and context-aware subject-specific chat responses</li>
-                        <li>Designed a MongoDB Atlas schema with 7 collections, compound indexes, and repository pattern architecture supporting 100+ notes, 50+ flashcard sets, and 200+ chat messages</li>
-                        <li>Implemented CI/CD with GitHub Actions for automated builds and deployments</li>
-                    </ul>
-                    <div class="collaborator">Collaborator: Sean Tomany</div>
-                </div>
-            </div>
-
-            <!-- NBA Team Outcome Prediction -->
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fa-solid fa-basketball-ball"></i>
-                </div>
-                <div class="timeline-content">
-                    <div class="timeline-date">November 2025</div>
-                    <h3>NBA Team Outcome Prediction</h3>
-                    <div class="project-tagline">Predicts team scores and winners with a linear regression pipeline on nba_api data, halving error and reaching 0.818 accuracy.</div>
-                    <div class="project-links">
-                        <a href="https://github.com/justin9668/cs506-final-project" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
-                        <a href="https://github.com/justin9668/nba-team-outcome-prediction/blob/main/final_report.md" target="_blank"><i class="fa-solid fa-file-lines"></i> Final Report</a>
-                    </div>
-                    <ul class="project-bullets">
-                        <li>Modeled NBA team scores and winners using nba_api game logs with a reproducible Makefile-driven pipeline</li>
-                        <li>Engineered features for rest days, home/away context, and opponent stats to train and benchmark regression and classification models</li>
-                        <li>Achieved strong accuracy and visualized trends with notebooks that output cleaned datasets, predictions, and validation plots</li>
-                    </ul>
-                    <div class="collaborator">Collaborators: Alim Ackura, Ash Payal, Justin Liu, Shawn Xiang, Jonah Rothman<br>Class: CS506 Data Science and Applications (Fall 2025)</div>
-                </div>
-            </div>
-
-            <!-- VibeScape -->
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fa-solid fa-music"></i>
-                </div>
-                <div class="timeline-content">
-                    <div class="timeline-date">August 2025</div>
-                    <h3>VibeScape</h3>
-                    <div class="project-tagline">Interactive song map to compare playlists with friends, explore clusters, and generate AI-curated blends and top picks.</div>
-                    <div class="project-links">
-                        <a href="https://github.com/jonahr4/VibeScape" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
-                        <a href="#" target="_blank"><i class="fa-solid fa-video"></i> Demo Video</a>
-                    </div>
-                    <ul class="project-bullets">
-                        <li>Built a Next.js and React powered interactive Spotify song map that visualizes a user's library as clusters of songs and playlists with the ability to compare music with friends and create custom blended playlists</li>
-                        <li>Created an AI-powered playlist chooser via prompt and designed a unique ranking model for Top Songs</li>
-                        <li>Harnessed SOTA AI tools like OpenAI Codex CLI to accelerate development time and enhance the UI/UX</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Java Terminal Game Engine -->
-            <div class="timeline-item" id="project-java-terminal">
-                <div class="timeline-icon">
-                    <i class="fa-solid fa-gamepad"></i>
-                </div>
-                <div class="timeline-content">
-                    <div class="timeline-date">Sep 2024 – Dec 2024</div>
-                    <h3>Java Terminal Game Engine</h3>
-                    <div class="project-tagline">Play everything from Tic-Tac-Toe to turn-based RPGs in a scalable, pattern-driven terminal engine.</div>
-                    <div class="project-links">
-                        <a href="https://github.com/jonahr4/CS611-Terminal-Based-Games" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
-                    </div>
-                    <ul class="project-bullets">
-                        <li>Developed a terminal-based game engine ranging from simple games to complex turn-based gameplay, including DnD-style mechanics</li>
-                        <li>Implemented 50+ Java classes to build a scalable, object-oriented architecture</li>
-                        <li>Utilized Strategy, Factory, and Singleton design patterns to enhance flexibility and reduce code duplication</li>
-                    </ul>
-                    <div class="collaborator">Class: CS411 Software Principles (Fall 2024)</div>
-                </div>
-            </div>
-
-            <!-- StockBot -->
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fa-solid fa-chart-line"></i>
-                </div>
-                <div class="timeline-content">
-                    <div class="timeline-date">August 2024</div>
-                    <h3>StockBot</h3>
-                    <div class="project-tagline">Chat with an AI bot trained on top stocks to get quick investing tips (POC).</div>
-                    <div class="project-links">
-                        <a href="https://github.com/jonahr4/StockBot" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
-                        <a href="StockBot/" target="_blank"><i class="fa-solid fa-globe"></i> Visit Site</a>
-                    </div>
-                    <ul class="project-bullets">
-                        <li>Constructed a chatbot utilizing the OpenAI API to provide users with stock advice and financial information</li>
-                        <li>Integrated economic principles to create stock advice trained on data from 100,000+ stock and price combinations</li>
-                        <li>Configured Node.js and Render.com to create a secure local server and backend, ensuring data privacy between client and server</li>
-                        <li>Designed an intuitive user interface using HTML and CSS, enhancing user experience and engagement</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Poker Payout Calculator -->
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fa-solid fa-coins"></i>
-                </div>
-                <div class="timeline-content">
-                    <div class="timeline-date">August 2024</div>
-                    <h3>Poker Payout Calculator</h3>
-                    <div class="project-tagline">Calculate poker payouts and net results for your table in seconds.</div>
-                    <div class="project-links">
-                        <a href="https://github.com/jonahr4/PokerPayoutCalculator" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
-                        <a href="poker-payout-calculator/" target="_blank"><i class="fa-solid fa-globe"></i> Visit Site</a>
-                    </div>
-                    <ul class="project-bullets">
-                        <li>Created a calculator to find poker payouts and track player net results</li>
-                        <li>Streamlined payout calculations, saving users time and reducing errors in real-world poker games</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Music Guesser Game -->
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fa-solid fa-headphones"></i>
-                </div>
-                <div class="timeline-content">
-                    <div class="timeline-date">July 2024</div>
-                    <h3>Music Guesser Game</h3>
-                    <div class="project-tagline">Guess the song from short audio clips—my first personal project.</div>
-                    <div class="project-links">
-                        <a href="https://github.com/jonahr4/music-guesser" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
-                        <a href="music-guesser/" target="_blank"><i class="fa-solid fa-globe"></i> Visit Site</a>
-                    </div>
-                    <ul class="project-bullets">
-                        <li>Built an interactive music guessing game challenging users to identify tracks based on short audio clips</li>
-                        <li>Implemented the Spotify API to fetch Billboard Top 100 songs and dynamically load song data, increasing user engagement</li>
-                        <li>Programmed a scoring system in JavaScript to track high scores and give feedback</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Rain or Shine -->
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fa-solid fa-cloud-sun-rain"></i>
-                </div>
-                <div class="timeline-content">
-                    <div class="timeline-date">Sep 2023 – Dec 2023</div>
-                    <h3>Rain or Shine</h3>
-                    <div class="project-tagline">Find nearby events tailored to your date and local weather.</div>
-                    <ul class="project-bullets">
-                        <li>Developed a full-stack web application giving users local event recommendations based on location and date</li>
-                        <li>Pulled data from RapidAPI and Tomorrow.io API to read local events and weather data</li>
-                        <li>Implemented Google OAuth to gather data from user and configured MongoDB connection to store user data</li>
-                        <li>Gained valuable collaboration skills by working with a team of four</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <a onclick="window.open('https://github.com/jonahr4','_blank')" class="btn">View All on GitHub</a>
-    </div>
-</div>
-
-<!-- Gallery Modal -->
-<div id="gallery-modal" class="gallery-modal" aria-hidden="true" onclick="if(event.target === this) closeGallery()">
-    <div class="gallery-container" role="dialog" aria-modal="true">
-        <button class="gallery-close" type="button" aria-label="Close gallery" onclick="closeGallery()"><i class="fa-solid fa-xmark"></i></button>
-        <div class="gallery-image-wrapper">
-            <img id="gallery-image" src="" alt="Gallery image">
-        </div>
-        <div class="gallery-caption">
-            <span id="gallery-label"></span>
-            <span id="gallery-counter" class="gallery-counter"></span>
-        </div>
-        <div class="gallery-description" id="gallery-description"></div>
-        <div class="gallery-controls">
-            <button class="gallery-nav" type="button" aria-label="Previous image" onclick="prevImage()"><i class="fa-solid fa-chevron-left"></i></button>
-            <button class="gallery-nav" type="button" aria-label="Next image" onclick="nextImage()"><i class="fa-solid fa-chevron-right"></i></button>
-        </div>
-    </div>
-</div>
-
-<!---------contact------>
-<div id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="subtitle">Contact Me</h1>
-                <p><i class="fa-regular fa-paper-plane"></i> jonahrothman@me.com</p>
-                <p><i class="fa-solid fa-phone"></i> (781) 366 5290</p>
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/jonah-rothman/"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/jonah_rothman/"><i class="fa-brands fa-square-instagram"></i></a>
-                </div>
-                <a href="Jonah_Rothman_Resume_Spring_2026.pdf" download class="btn btn2">Download Resume</a>
-            </div>
-            <div class="contact-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
-                </form>
-                <span id="msg"></span>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 
-<script>
-    const galleries = {
-        mealMap: [
-            { src: 'Assets/MealMap/DashboardScreen.png', label: 'Dashboard', description: 'Dashboard summarizing daily macros, targets, and quick actions' },
-            { src: 'Assets/MealMap/RecipeDiscoveryScreen.png', label: 'RecipeDiscovery', description: 'Recipe discovery results powered by TheMealDB with filters' },
-            { src: 'Assets/MealMap/MealPlannerScreen.png', label: 'MealPlanner', description: 'Weekly meal planner assigning recipes to specific days and meals' },
-            { src: 'Assets/MealMap/ShoppingListScreen.png', label: 'ShoppingList', description: 'Auto-generated shopping list grouped by ingredient with duplicate handling' },
-            { src: 'Assets/MealMap/LogMealsScreen.png', label: 'LogMeals', description: 'Food logging and nutrition breakdown for recent meals and snacks' },
-            { src: 'Assets/MealMap/SetGoalsPage.png', label: 'SetGoals', description: 'Onboarding goal setup for calories, macros, and activity level' }
-        ],
-        internAtlas: [
-            { src: 'Assets/InternAtlas/main-page.png', label: 'Main Board', description: 'InternAtlas job board with split-pane layout, search, filters, and status badges' },
-            { src: 'Assets/InternAtlas/custom-tables.png', label: 'Custom Tables', description: 'Saved searches with multi-tag filters and new job tracking' },
-            { src: 'Assets/InternAtlas/application-tracking.png', label: 'Application Tracking', description: 'Two-stage tracking for to-apply and applied lists with quick actions' },
-            { src: 'Assets/InternAtlas/about-page.png', label: 'Live Stats', description: 'Real-time database insights and platform coverage metrics' }
-        ],
-        studyBuddy: [
-            { src: 'Assets/TheStudyBuddy/LandingPage.png', label: 'LandingPage', description: 'Marketing hero for The Study Buddy with signup CTA' },
-            { src: 'Assets/TheStudyBuddy/Dashboard.png', label: 'Dashboard', description: 'User dashboard summarizing tasks, progress, and quick actions' },
-            { src: 'Assets/TheStudyBuddy/FlashcardSets.png', label: 'FlashcardSets', description: 'Library of flashcard sets with counts and management controls' },
-            { src: 'Assets/TheStudyBuddy/FlashcardStudy.png', label: 'FlashcardStudy', description: 'Flashcard study mode with flipping cards and navigation' },
-            { src: 'Assets/TheStudyBuddy/MatchingGame.png', label: 'MatchingGame', description: 'Memory matching game view for studying key concepts' },
-            { src: 'Assets/TheStudyBuddy/Gamespage.png', label: 'Gamespage', description: 'Games hub listing interactive study games and entry points' },
-            { src: 'Assets/TheStudyBuddy/Chat.png', label: 'Chat', description: 'AI chat assistant for subject-specific questions and guidance' }
-        ]
-    };
+    <script>
+        const galleries = {
+            mealMap: [
+                { src: 'Assets/MealMap/DashboardScreen.png', label: 'Dashboard', description: 'Dashboard summarizing daily macros, targets, and quick actions' },
+                { src: 'Assets/MealMap/RecipeDiscoveryScreen.png', label: 'RecipeDiscovery', description: 'Recipe discovery results powered by TheMealDB with filters' },
+                { src: 'Assets/MealMap/MealPlannerScreen.png', label: 'MealPlanner', description: 'Weekly meal planner assigning recipes to specific days and meals' },
+                { src: 'Assets/MealMap/ShoppingListScreen.png', label: 'ShoppingList', description: 'Auto-generated shopping list grouped by ingredient with duplicate handling' },
+                { src: 'Assets/MealMap/LogMealsScreen.png', label: 'LogMeals', description: 'Food logging and nutrition breakdown for recent meals and snacks' },
+                { src: 'Assets/MealMap/SetGoalsPage.png', label: 'SetGoals', description: 'Onboarding goal setup for calories, macros, and activity level' }
+            ],
+            internAtlas: [
+                { src: 'Assets/InternAtlas/main-page.png', label: 'Main Board', description: 'InternAtlas job board with split-pane layout, search, filters, and status badges' },
+                { src: 'Assets/InternAtlas/custom-tables.png', label: 'Custom Tables', description: 'Saved searches with multi-tag filters and new job tracking' },
+                { src: 'Assets/InternAtlas/application-tracking.png', label: 'Application Tracking', description: 'Two-stage tracking for to-apply and applied lists with quick actions' },
+                { src: 'Assets/InternAtlas/about-page.png', label: 'Live Stats', description: 'Real-time database insights and platform coverage metrics' }
+            ],
+            studyBuddy: [
+                { src: 'Assets/TheStudyBuddy/LandingPage.png', label: 'LandingPage', description: 'Marketing hero for The Study Buddy with signup CTA' },
+                { src: 'Assets/TheStudyBuddy/Dashboard.png', label: 'Dashboard', description: 'User dashboard summarizing tasks, progress, and quick actions' },
+                { src: 'Assets/TheStudyBuddy/FlashcardSets.png', label: 'FlashcardSets', description: 'Library of flashcard sets with counts and management controls' },
+                { src: 'Assets/TheStudyBuddy/FlashcardStudy.png', label: 'FlashcardStudy', description: 'Flashcard study mode with flipping cards and navigation' },
+                { src: 'Assets/TheStudyBuddy/MatchingGame.png', label: 'MatchingGame', description: 'Memory matching game view for studying key concepts' },
+                { src: 'Assets/TheStudyBuddy/Gamespage.png', label: 'Gamespage', description: 'Games hub listing interactive study games and entry points' },
+                { src: 'Assets/TheStudyBuddy/Chat.png', label: 'Chat', description: 'AI chat assistant for subject-specific questions and guidance' }
+            ]
+        };
 
-    let currentGalleryKey = null;
-    let currentImageIndex = 0;
+        let currentGalleryKey = null;
+        let currentImageIndex = 0;
 
-    const galleryModal = document.getElementById('gallery-modal');
-    const galleryImage = document.getElementById('gallery-image');
-    const galleryLabel = document.getElementById('gallery-label');
-    const galleryCounter = document.getElementById('gallery-counter');
-    const galleryDescription = document.getElementById('gallery-description');
+        const galleryModal = document.getElementById('gallery-modal');
+        const galleryImage = document.getElementById('gallery-image');
+        const galleryLabel = document.getElementById('gallery-label');
+        const galleryCounter = document.getElementById('gallery-counter');
+        const galleryDescription = document.getElementById('gallery-description');
 
-    function openGallery(key) {
-        if (!galleries[key] || !galleries[key].length) return;
-        currentGalleryKey = key;
-        currentImageIndex = 0;
-        updateGalleryView();
-        galleryModal.classList.add('open');
-        galleryModal.setAttribute('aria-hidden', 'false');
-        document.body.classList.add('no-scroll');
-    }
-
-    function closeGallery() {
-        galleryModal.classList.remove('open');
-        galleryModal.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('no-scroll');
-        currentGalleryKey = null;
-    }
-
-    function updateGalleryView() {
-        const items = galleries[currentGalleryKey];
-        if (!items || !items.length) return;
-        const item = items[currentImageIndex];
-        galleryImage.src = item.src;
-        galleryImage.alt = item.label;
-        galleryLabel.textContent = item.label;
-        galleryCounter.textContent = `${currentImageIndex + 1} / ${items.length}`;
-        galleryDescription.textContent = item.description || '';
-    }
-
-    function nextImage() {
-        const items = galleries[currentGalleryKey];
-        if (!items || !items.length) return;
-        currentImageIndex = (currentImageIndex + 1) % items.length;
-        updateGalleryView();
-    }
-
-    function prevImage() {
-        const items = galleries[currentGalleryKey];
-        if (!items || !items.length) return;
-        currentImageIndex = (currentImageIndex - 1 + items.length) % items.length;
-        updateGalleryView();
-    }
-
-    document.addEventListener('keydown', (event) => {
-        if (!galleryModal.classList.contains('open')) return;
-        if (event.key === 'Escape') closeGallery();
-        if (event.key === 'ArrowRight') nextImage();
-        if (event.key === 'ArrowLeft') prevImage();
-    });
-</script>
-
-<script>
-
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link");
+        function openGallery(key) {
+            if (!galleries[key] || !galleries[key].length) return;
+            currentGalleryKey = key;
+            currentImageIndex = 0;
+            updateGalleryView();
+            galleryModal.classList.add('open');
+            galleryModal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('no-scroll');
         }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
+
+        function closeGallery() {
+            galleryModal.classList.remove('open');
+            galleryModal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('no-scroll');
+            currentGalleryKey = null;
         }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-    }
 
-</script>
+        function updateGalleryView() {
+            const items = galleries[currentGalleryKey];
+            if (!items || !items.length) return;
+            const item = items[currentImageIndex];
+            galleryImage.src = item.src;
+            galleryImage.alt = item.label;
+            galleryLabel.textContent = item.label;
+            galleryCounter.textContent = `${currentImageIndex + 1} / ${items.length}`;
+            galleryDescription.textContent = item.description || '';
+        }
 
-<script>
-    var sidemenu = document.getElementById("sidemenu");
+        function nextImage() {
+            const items = galleries[currentGalleryKey];
+            if (!items || !items.length) return;
+            currentImageIndex = (currentImageIndex + 1) % items.length;
+            updateGalleryView();
+        }
 
-    function openmenu(){
-        sidemenu.style.right = "0";
-    }
+        function prevImage() {
+            const items = galleries[currentGalleryKey];
+            if (!items || !items.length) return;
+            currentImageIndex = (currentImageIndex - 1 + items.length) % items.length;
+            updateGalleryView();
+        }
 
-    function closemenu(){
-        sidemenu.style.right = "-200px";
-    }
-</script>
+        document.addEventListener('keydown', (event) => {
+            if (!galleryModal.classList.contains('open')) return;
+            if (event.key === 'Escape') closeGallery();
+            if (event.key === 'ArrowRight') nextImage();
+            if (event.key === 'ArrowLeft') prevImage();
+        });
+    </script>
 
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyf6Knp_uB5ZnFFzzxbCb5lcsZCBlhFH37ORRJl1219saBETsf7Wa4dhMM_5yTTVoOw/exec'
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Sent Successfully"
-            setTimeout(function(){
-                msg.innerHTML = ""
-            }, 5000)
-            form.reset();
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+    </script>
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyf6Knp_uB5ZnFFzzxbCb5lcsZCBlhFH37ORRJl1219saBETsf7Wa4dhMM_5yTTVoOw/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Sent Successfully"
+                    setTimeout(function () {
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset();
+                })
+                .catch(error => console.error('Error!', error.message))
         })
-        .catch(error => console.error('Error!', error.message))
-    })
-</script>
+    </script>
 
 </body>
-</html>
 
+</html>
