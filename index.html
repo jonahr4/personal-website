@@ -20,6 +20,7 @@
                     <li><a href="#header">HOME</a></li>
                     <li><a href="#about">ABOUT</a></li>
                     <li><a href="#internships">INTERNSHIPS</a></li>
+                    <li class="nav-deployed-apps"><a href="#deployed-apps">DEPLOYED APPS</a></li>
                     <li><a href="#portfolio">PORTFOLIO</a></li>
                     <li><a href="#contact">CONTACT</a></li>
                     <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
@@ -51,8 +52,9 @@
                     <p>Hi, I'm Jonah Rothman. Studying Computer Science (BA/MS) with a minor in Economics at Boston
                         University. I specialize in web development and AI, with hands-on experience in QA automation,
                         full-stack development, and CI/CD pipelines. I've completed two paid technical internships at
-                        PanelClaw and ClearWatt, and built production applications like The Study Buddy and InternAtlas.
-                        Passionate about creating scalable software solutions and exploring new technologies.</p>
+                        PanelClaw and ClearWatt, and built production applications like The Task App, The Study Buddy,
+                        and InternAtlas. Passionate about creating scalable software solutions and exploring new
+                        technologies.</p>
 
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
@@ -238,10 +240,200 @@
         </div>
     </div>
 
+    <!----------Deployed Apps--------->
+    <div id="deployed-apps">
+        <div class="container">
+            <h1 class="subtitle" style="text-align:center;">Deployed Apps</h1>
+            <div class="deployed-layout">
+                <!-- Left Tabs -->
+                <div class="deployed-tabs">
+                    <button class="deployed-tab active-deployed-tab" onclick="switchDeployedTab('studyBuddy')">
+                        <span class="deployed-tab-name">The Study Buddy</span>
+                        <span class="deployed-tab-sub">AI Study Platform</span>
+                    </button>
+                    <button class="deployed-tab" onclick="switchDeployedTab('internAtlas')">
+                        <span class="deployed-tab-name">InternAtlas</span>
+                        <span class="deployed-tab-sub">Job Board Aggregator</span>
+                    </button>
+                    <button class="deployed-tab" onclick="switchDeployedTab('taskApp')">
+                        <span class="deployed-tab-name">The Task App</span>
+                        <span class="deployed-tab-sub">AI Task Manager</span>
+                    </button>
+                </div>
+
+                <!-- Right Content -->
+                <div class="deployed-content">
+                    <!-- Study Buddy Panel -->
+                    <div class="deployed-panel active-deployed-panel" id="panel-studyBuddy">
+                        <div class="deployed-panel-row">
+                            <div class="deployed-section-info">
+                                <h3 class="deployed-title">The Study Buddy</h3>
+                                <p class="deployed-tagline">An AI-powered study assistant that turns your notes into
+                                    flashcards and lets you chat with an AI that actually understands your material.</p>
+                                <p>Upload homework notes by subject, and the platform generates tailored flashcard decks
+                                    using Azure OpenAI. A subject-aware chat assistant answers questions using RAG
+                                    retrieval from your uploaded PDFs, so every response is grounded in your actual
+                                    course content. Includes study games like matching, persistent chat history, and a
+                                    dashboard tracking flashcard sets and conversations across subjects.</p>
+                                <p>Built with a React + Vite frontend on DigitalOcean and an Express.js TypeScript
+                                    backend on Azure App Service. Uses MongoDB Atlas (7 collections) for data, Azure
+                                    Blob Storage for PDF files, and Firebase Auth with Google sign-in. Deployed via
+                                    GitHub Actions CI/CD, supporting 50+ active users.</p>
+                                <div class="deployed-links">
+                                    <a href="https://github.com/jonahr4/TheStudyBuddy" target="_blank"><i
+                                            class="fa-brands fa-github"></i> Repository</a>
+                                    <a href="https://thestudybuddy.app" target="_blank"><i
+                                            class="fa-solid fa-globe"></i> Visit Site</a>
+                                </div>
+                            </div>
+                            <div class="deployed-section-gallery" data-gallery-key="studyBuddy">
+                                <div class="deployed-gallery">
+                                    <div class="deployed-img-wrap">
+                                        <img id="deployed-img-studyBuddy" src="Assets/TheStudyBuddy/LandingPage.png"
+                                            alt="The Study Buddy">
+                                    </div>
+                                </div>
+                                <div class="deployed-caption" id="deployed-caption-studyBuddy">Landing Page</div>
+                                <div class="deployed-caption-desc" id="deployed-desc-studyBuddy"></div>
+                                <div class="deployed-indicators" id="deployed-indicators-studyBuddy"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- InternAtlas Panel -->
+                    <div class="deployed-panel" id="panel-internAtlas">
+                        <div class="deployed-panel-row">
+                            <div class="deployed-section-info">
+                                <h3 class="deployed-title">InternAtlas</h3>
+                                <p class="deployed-tagline">A production job aggregation platform that crawls 2,000+
+                                    companies across 4 ATS providers, serving 300,000+ internship and new-grad listings
+                                    through an intelligent, searchable job board.</p>
+                                <p>Automatically ingests job listings from company career sites across Greenhouse,
+                                    Lever, Workday, and iCIMS, normalizing them into a PostgreSQL database. Features a
+                                    split-pane UI with real-time keyword search, multi-dimensional filters (company,
+                                    location, employment type, ATS platform), bulk selection, and keyboard navigation.
+                                    Users can create unlimited custom tables with saved filter combinations that track
+                                    NEW jobs since their last visit.</p>
+                                <p>Includes a two-stage application tracker (To Apply → Applied) synced via Firestore, a
+                                    live About page with real-time database statistics, and an admin tool for curating
+                                    companies. Crawlers run automatically twice daily via GitHub Actions. Built with
+                                    Next.js 16, Prisma ORM, Digital Ocean PostgreSQL, and Firebase Auth with Google
+                                    OAuth.</p>
+                                <div class="deployed-links">
+                                    <a href="https://github.com/jonahr4/InternAtlas" target="_blank"><i
+                                            class="fa-brands fa-github"></i> Repository</a>
+                                    <a href="https://internatlas.tech/" target="_blank"><i
+                                            class="fa-solid fa-globe"></i> Visit Site</a>
+                                </div>
+                            </div>
+                            <div class="deployed-section-gallery" data-gallery-key="internAtlas">
+                                <div class="deployed-gallery">
+                                    <div class="deployed-img-wrap">
+                                        <img id="deployed-img-internAtlas" src="Assets/InternAtlas/main-page.png"
+                                            alt="InternAtlas">
+                                    </div>
+                                </div>
+                                <div class="deployed-caption" id="deployed-caption-internAtlas">Main Board</div>
+                                <div class="deployed-caption-desc" id="deployed-desc-internAtlas"></div>
+                                <div class="deployed-indicators" id="deployed-indicators-internAtlas"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Task App Panel -->
+                    <div class="deployed-panel" id="panel-taskApp">
+                        <div class="platform-toggle">
+                            <button class="platform-btn active-platform" onclick="switchPlatform('web')">Web</button>
+                            <button class="platform-btn" onclick="switchPlatform('ios')">iOS</button>
+                        </div>
+
+                        <!-- Web sub-panel -->
+                        <div class="platform-panel active-platform-panel" id="platform-web">
+                            <div class="deployed-panel-row">
+                                <div class="deployed-section-info">
+                                    <h3 class="deployed-title">TaskApp — Web</h3>
+                                    <p class="deployed-tagline">A personal productivity app combining task lists, an
+                                        Eisenhower Matrix, a calendar view, and an AI reminder parser that turns natural
+                                        language into structured tasks.</p>
+                                    <p>Type something like "remind me Friday to email Tony" and the AI parses it into a
+                                        task with the correct date, priority, and group. The Eisenhower Matrix view
+                                        supports drag-and-drop prioritization into Do First, Schedule, Delegate, and
+                                        Eliminate quadrants. A calendar view shows all tasks with color-coded priority
+                                        dots, and an iCal feed lets you subscribe from any external calendar app.</p>
+                                    <p>Built with Next.js App Router and Firebase (Auth + Firestore) for real-time sync
+                                        across devices. AI parsing powered by Azure OpenAI (GPT-5). Includes task
+                                        groups, smart search, interactive stats with Recharts visualizations, and an
+                                        archives system. Deployed on Vercel.</p>
+                                    <div class="deployed-links">
+                                        <a href="https://github.com/jonahr4/TheTaskApp" target="_blank"><i
+                                                class="fa-brands fa-github"></i> Repository</a>
+                                        <a href="https://the-task-app.vercel.app" target="_blank"><i
+                                                class="fa-solid fa-globe"></i> Visit Site</a>
+                                    </div>
+                                </div>
+                                <div class="deployed-section-gallery" data-gallery-key="taskAppWeb">
+                                    <div class="deployed-gallery">
+                                        <div class="deployed-img-wrap">
+                                            <img id="deployed-img-taskAppWeb"
+                                                src="Assets/TheTaskApp/main-tasks-page.png" alt="The Task App Web">
+                                        </div>
+                                    </div>
+                                    <div class="deployed-caption" id="deployed-caption-taskAppWeb">Main Tasks</div>
+                                    <div class="deployed-caption-desc" id="deployed-desc-taskAppWeb"></div>
+                                    <div class="deployed-indicators" id="deployed-indicators-taskAppWeb"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- iOS sub-panel -->
+                        <div class="platform-panel" id="platform-ios">
+                            <div class="deployed-panel-row deployed-panel-row-mobile">
+                                <div class="deployed-section-info">
+                                    <h3 class="deployed-title">TaskApp — iOS</h3>
+                                    <p class="deployed-tagline">The companion iOS app built with React Native &amp;
+                                        Expo, available on the App Store. 100% free — no ads, no subscriptions, no
+                                        in-app purchases.</p>
+                                    <p>All core features from the web, plus native iOS capabilities: speak tasks via
+                                        voice input and AI transcribes and creates them, home screen widgets (Today
+                                        Dashboard, Next Task, and AI Quick Action), configurable smart notifications,
+                                        and full dark mode with automatic system detection. Tasks sync in real-time to
+                                        Firebase and are accessible from any device via the web app.</p>
+                                    <p>Built with React Native and Expo SDK 52, using file-based routing via Expo
+                                        Router. Native iOS WidgetKit extension written in Swift. Authentication via
+                                        Google Sign-In, AI powered by Azure OpenAI (GPT-4o), and production builds via
+                                        EAS Build.</p>
+                                    <div class="deployed-links">
+                                        <a href="https://github.com/jonahr4/TaskApp-Mobile" target="_blank"><i
+                                                class="fa-brands fa-github"></i> Repository</a>
+                                        <a href="https://apps.apple.com/app/the-task-app/id6759473470"
+                                            target="_blank"><i class="fa-brands fa-apple"></i> App Store</a>
+                                    </div>
+                                </div>
+                                <div class="deployed-section-gallery deployed-section-gallery-mobile"
+                                    data-gallery-key="taskAppIos">
+                                    <div class="deployed-gallery deployed-gallery-mobile">
+                                        <div class="deployed-img-wrap">
+                                            <img id="deployed-img-taskAppIos"
+                                                src="Assets/TheTaskApp/Screenshots/iphone/ios_1.png"
+                                                alt="The Task App iOS">
+                                        </div>
+                                    </div>
+                                    <div class="deployed-caption" id="deployed-caption-taskAppIos">Tasks</div>
+                                    <div class="deployed-caption-desc" id="deployed-desc-taskAppIos"></div>
+                                    <div class="deployed-indicators" id="deployed-indicators-taskAppIos"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--------Portfolio--------->
     <div id="portfolio">
         <div class="container">
-            <h1 class="subtitle">Projects</h1>
+            <h1 class="subtitle">All Projects</h1>
             <div class="top-projects">
                 <h3>Top Projects</h3>
                 <div class="top-projects-row">
@@ -259,11 +451,12 @@
                             <div class="top-desc">Idea to deployment of web app. Project manager and developer.</div>
                         </div>
                     </a>
-                    <a class="top-project-card" href="#project-mealmap">
+                    <a class="top-project-card" href="#project-taskapp">
                         <div class="top-rank">03</div>
                         <div class="top-info">
-                            <div class="top-title">MealMap</div>
-                            <div class="top-desc">Android development focus on nutrition and planning.</div>
+                            <div class="top-title">The Task App</div>
+                            <div class="top-desc">Full-stack productivity app with AI parsing and cross-platform sync.
+                            </div>
                         </div>
                     </a>
                 </div>
@@ -817,6 +1010,151 @@
                 })
                 .catch(error => console.error('Error!', error.message))
         })
+    </script>
+
+    <!-- Deployed Apps Script -->
+    <script>
+        const deployedData = {
+            studyBuddy: [
+                { src: 'Assets/TheStudyBuddy/LandingPage.png', label: 'Landing Page', desc: 'Marketing page with feature overview, testimonials, and quick-start buttons for new users.' },
+                { src: 'Assets/TheStudyBuddy/Dashboard.png', label: 'Dashboard', desc: 'Central hub showing all subjects, flashcard sets, and recent AI chat conversations at a glance.' },
+                { src: 'Assets/TheStudyBuddy/FlashcardSets.png', label: 'Flashcard Sets', desc: 'Browse and manage AI-generated flashcard decks organized by subject and upload date.' },
+                { src: 'Assets/TheStudyBuddy/FlashcardStudy.png', label: 'Flashcard Study', desc: 'Interactive study mode with flip-to-reveal cards, progress tracking, and mark-as-studied flow.' },
+                { src: 'Assets/TheStudyBuddy/MatchingGame.png', label: 'Matching Game', desc: 'Timed matching game that pairs terms with definitions to reinforce learning through active recall.' },
+                { src: 'Assets/TheStudyBuddy/Chat.png', label: 'AI Chat', desc: 'Subject-aware AI tutor using RAG retrieval from your uploaded PDFs for grounded answers.' }
+            ],
+            internAtlas: [
+                { src: 'Assets/InternAtlas/main-page.png', label: 'Main Board', desc: 'Split-pane job board with real-time search, filters by company/location/ATS, and bulk selection.' },
+                { src: 'Assets/InternAtlas/custom-tables.png', label: 'Custom Tables', desc: 'User-created saved views with custom filter combinations that highlight NEW listings since last visit.' },
+                { src: 'Assets/InternAtlas/application-tracking.png', label: 'Application Tracker', desc: 'Two-stage tracker (To Apply → Applied) synced via Firestore for managing your job search pipeline.' },
+                { src: 'Assets/InternAtlas/about-page.png', label: 'Live Stats', desc: 'Real-time database statistics showing total companies, jobs crawled, and platform health metrics.' }
+            ],
+            taskAppWeb: [
+                { src: 'Assets/TheTaskApp/main-tasks-page.png', label: 'Main Tasks', desc: 'Primary task list with groups, priority colors, due dates, and drag-to-reorder functionality.' },
+                { src: 'Assets/TheTaskApp/Ai-screen.png', label: 'AI Assistant', desc: 'Natural language input — type "remind me Friday to email Tony" and AI creates a structured task.' },
+                { src: 'Assets/TheTaskApp/focus-matrix.png', label: 'Focus Matrix', desc: 'Eisenhower Matrix with drag-and-drop into Do First, Schedule, Delegate, and Eliminate quadrants.' },
+                { src: 'Assets/TheTaskApp/calendar-view.png', label: 'Calendar View', desc: 'Monthly calendar with color-coded priority dots per day and iCal feed subscription support.' },
+                { src: 'Assets/TheTaskApp/edit-tasks.png', label: 'Edit Tasks', desc: 'Detailed task editor with priority, due date, group assignment, and notes fields.' }
+            ],
+            taskAppIos: [
+                { src: 'Assets/TheTaskApp/Screenshots/iphone/ios_1.png', label: 'Tasks', desc: 'Native iOS task list with swipe actions, group headers, and real-time Firebase sync.' },
+                { src: 'Assets/TheTaskApp/Screenshots/iphone/ios_4.png', label: 'AI Assistant', desc: 'Voice input mode — speak a task and AI transcribes and creates it with smart defaults.' },
+                { src: 'Assets/TheTaskApp/Screenshots/iphone/ios_3.png', label: 'Matrix', desc: 'Mobile Eisenhower Matrix with tap-to-assign quadrants and color-coded priority indicators.' },
+                { src: 'Assets/TheTaskApp/Screenshots/iphone/ios_2.png', label: 'Calendar', desc: 'Calendar view with task dots, day detail panel, and automatic dark mode support.' }
+            ]
+        };
+
+        const deployedIndex = { studyBuddy: 0, internAtlas: 0, taskAppWeb: 0, taskAppIos: 0 };
+        const deployedTimers = {};
+        const deployedPlaying = { studyBuddy: true, internAtlas: true, taskAppWeb: true, taskAppIos: true };
+        const CAROUSEL_INTERVAL = 4000;
+
+        // Build indicator bars and play/pause for each gallery
+        function initGalleries() {
+            Object.keys(deployedData).forEach(key => {
+                const items = deployedData[key];
+                const container = document.getElementById('deployed-indicators-' + key);
+                if (!container) return;
+
+                // Create indicator wrapper with bars and play/pause
+                let html = '<div class="deployed-bars">';
+                items.forEach((_, i) => {
+                    html += `<div class="deployed-bar ${i === 0 ? 'active' : ''}" data-index="${i}" onclick="goToSlide('${key}', ${i})"></div>`;
+                });
+                html += '</div>';
+                html += `<button class="deployed-play-pause" onclick="togglePlay('${key}')" title="Pause slideshow"><i class="fa-solid fa-pause"></i></button>`;
+                container.innerHTML = html;
+
+                // Set initial description
+                const descEl = document.getElementById('deployed-desc-' + key);
+                if (descEl && items[0].desc) descEl.textContent = items[0].desc;
+
+                // Start auto-cycling
+                startTimer(key);
+            });
+        }
+
+        function updateDeployed(key) {
+            const items = deployedData[key];
+            const idx = deployedIndex[key];
+            const img = document.getElementById('deployed-img-' + key);
+            img.style.opacity = '0';
+            setTimeout(() => {
+                img.src = items[idx].src;
+                img.style.opacity = '1';
+            }, 150);
+            document.getElementById('deployed-caption-' + key).textContent = items[idx].label;
+            const descEl = document.getElementById('deployed-desc-' + key);
+            if (descEl) descEl.textContent = items[idx].desc || '';
+
+            // Update active bar
+            const bars = document.querySelectorAll('#deployed-indicators-' + key + ' .deployed-bar');
+            bars.forEach((bar, i) => bar.classList.toggle('active', i === idx));
+        }
+
+        function goToSlide(key, index) {
+            deployedIndex[key] = index;
+            updateDeployed(key);
+            if (deployedPlaying[key]) restartTimer(key);
+        }
+
+        function deployedNext(key) {
+            const items = deployedData[key];
+            deployedIndex[key] = (deployedIndex[key] + 1) % items.length;
+            updateDeployed(key);
+        }
+
+        function deployedPrev(key) {
+            const items = deployedData[key];
+            deployedIndex[key] = (deployedIndex[key] - 1 + items.length) % items.length;
+            updateDeployed(key);
+        }
+
+        function startTimer(key) {
+            deployedTimers[key] = setInterval(() => deployedNext(key), CAROUSEL_INTERVAL);
+        }
+
+        function stopTimer(key) {
+            clearInterval(deployedTimers[key]);
+        }
+
+        function restartTimer(key) {
+            stopTimer(key);
+            startTimer(key);
+        }
+
+        function togglePlay(key) {
+            deployedPlaying[key] = !deployedPlaying[key];
+            const btn = document.querySelector('#deployed-indicators-' + key + ' .deployed-play-pause i');
+            if (deployedPlaying[key]) {
+                startTimer(key);
+                btn.className = 'fa-solid fa-pause';
+                btn.parentElement.title = 'Pause slideshow';
+            } else {
+                stopTimer(key);
+                btn.className = 'fa-solid fa-play';
+                btn.parentElement.title = 'Play slideshow';
+            }
+        }
+
+        function switchDeployedTab(tabKey) {
+            // Update tab buttons
+            document.querySelectorAll('.deployed-tab').forEach(t => t.classList.remove('active-deployed-tab'));
+            event.currentTarget.classList.add('active-deployed-tab');
+            // Update panels
+            document.querySelectorAll('.deployed-panel').forEach(p => p.classList.remove('active-deployed-panel'));
+            document.getElementById('panel-' + tabKey).classList.add('active-deployed-panel');
+        }
+
+        function switchPlatform(platform) {
+            document.querySelectorAll('.platform-btn').forEach(b => b.classList.remove('active-platform'));
+            event.currentTarget.classList.add('active-platform');
+            document.querySelectorAll('.platform-panel').forEach(p => p.classList.remove('active-platform-panel'));
+            document.getElementById('platform-' + platform).classList.add('active-platform-panel');
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', initGalleries);
     </script>
 
 </body>
