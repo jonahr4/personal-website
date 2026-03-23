@@ -1,0 +1,43 @@
+date,season,opponent,companion,celtics_score,opponent_score,result,overtime,tags,notes
+10/2/22,2022-2023,Hornets,Sean,134,93,W,false,preseason,
+10/28/22,2022-2023,Cavs,Omar,123,132,L,true,,
+12/2/22,2022-2023,Heat,Omar,116,120,L,true,,
+12/21/22,2022-2023,Pacers,Jeremy,112,117,L,false,,
+1/19/23,2022-2023,Golden State,Sean,121,118,W,false,,
+2/12/23,2022-2023,Grizzlies,Magda,119,109,W,false,,
+3/1/23,2022-2023,Cavs,Omar,117,113,W,false,,
+4/7/23,2022-2023,Raptors,Ayoub,121,102,W,false,,
+5/1/23,2022-2023,76ers,Jackson,115,119,L,false,playoffs-r2,"Round 2 Game 1"
+5/3/23,2022-2023,76ers,Magda,121,87,W,false,playoffs-r2,"Round 2 Game 2"
+5/9/23,2022-2023,76ers,Magda,103,115,L,false,playoffs-r2,"Round 2 Game 5"
+5/14/23,2022-2023,76ers,Josh,112,88,W,false,playoffs-r2,"Round 2 Game 7"
+10/8/23,2023-2024,76ers,Omar,114,106,W,false,preseason,
+10/27/23,2023-2024,Heat,Rafa,119,111,W,false,,
+12/12/23,2023-2024,Cavs,Magda,120,113,W,false,,
+12/28/23,2023-2024,Pistons,Ross,128,122,W,true,,"Pistons 28 straight loss (tying record); Down 66-47 at half"
+1/17/24,2023-2024,Spurs,Ayoub,117,98,W,false,,"Victor WEMBANYAMA rookie"
+2/1/24,2023-2024,Lakers,Sean,114,105,L,false,,"No LeBron or AD. Whyyyyy"
+2/4/24,2023-2024,Grizzlies,Omar,131,91,W,false,,"Video went viral; Jordan Walsh minutes and dunk; Marcus Smart return but injury"
+3/20/24,2023-2024,Bucks,Ayoub,122,119,W,false,,"We had like a 20 point lead and sold in 4th; No Giannis :("
+4/3/24,2023-2024,OKC,Sean,135,100,W,false,,"No Shai; Last min went cuz Sean Hope never claimed seats"
+4/14/24,2023-2024,Wizards,Evan,132,122,W,false,,"Pritchard career high; Last game of season; No Poole"
+5/15/24,2023-2024,Cavs,Dad,113,98,W,false,playoffs-r2,"Series clinching game 4-1; No Donovan Mitchell (bad starless streak)"
+5/21/24,2023-2024,Pacers,Josh,128,133,W,true,playoffs-r3,"Started game 12-0 run; McLovin and Drake Maye there; Jaylen Brown buzzer 3 to go to OT"
+6/17/24,2023-2024,Mavericks,Andrew,106,88,W,false,playoffs-r4,"Celtics win championship!!; Jaylen Brown surprise FMVP; Finals ceremony; Derek White chipped tooth"
+10/12/24,2024-2025,76ers,,139,89,W,false,preseason,"Jared McCain; 50 point win"
+10/13/24,2024-2025,Raptors,Nav,115,111,W,false,preseason,"Scottie Barnes; Nav's first game; We were winning by a lot and then sold"
+10/22/24,2024-2025,Knicks,Ayoub,132,109,W,false,season-opener,"Home opener and banner ceremony; KAT's first game with Knicks"
+11/6/24,2024-2025,Warriors,Sean,118,112,L,false,,"Curry; No Porzingis or Brown"
+11/12/24,2024-2025,Cavs,Ali,120,117,W,false,,"Ended Cavs 15-0 start"
+11/24/24,2024-2025,Timberwolves,Omar,107,105,W,false,,"ANT MAN; Had big lead but got cut down"
+12/2/24,2024-2025,Heat,Rafa,108,89,W,false,,
+12/6/24,2024-2025,Bucks,Jackson,111,105,W,false,,
+5/5/25,2024-2025,Knicks,Ayoub,105,108,L,false,playoffs-r2,
+10/12/25,2025-2026,Cavs,Ali,138,107,W,false,preseason,"Mark Wahlberg filmed movie"
+10/22/25,2025-2026,76ers,Olivia,116,117,L,false,season-opener,
+10/29/25,2025-2026,Cavs,Ali,125,105,W,false,,
+11/16/25,2025-2026,Clippers,James,121,118,W,false,,
+12/5/25,2025-2026,Lakers,Omar,105,126,W,false,,"No LeBron, Luka, or Marcus Smart"
+1/28/26,2025-2026,Hawks,James,106,117,L,false,,
+2/8/26,2025-2026,Knicks,Ayoub,89,111,L,false,,
+3/22/26,2025-2026,Timberwolves,Ali,92,102,L,false,,"No Anthony Edwards (🥲)"

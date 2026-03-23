@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celtics Games Tracker</title>
+    <meta name="description" content="Personal Celtics game attendance tracker with stats and game log.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="x-icon" href="../photos/Square Logo-01.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/aa828e5de8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Hero -->
+    <header id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">☘️</div>
+            <h1>Celtics Games</h1>
+            <p class="hero-subtitle">Every game I've been to, tracked.</p>
+            <div class="hero-stats" id="hero-stats"></div>
+        </div>
+    </header>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar" id="filter-bar">
+        <div class="filter-bar-inner">
+            <button class="filter-btn active" data-filter="all">All Games</button>
+            <button class="filter-btn" data-filter="regular">Regular Season</button>
+            <button class="filter-btn" data-filter="playoffs">Playoffs</button>
+            <button class="filter-btn" data-filter="preseason">Preseason</button>
+        </div>
+    </div>
+
+    <!-- Stats Dashboard -->
+    <section id="stats-dashboard">
+        <div class="container">
+            <h2 class="section-title"><i class="fa-solid fa-chart-simple"></i> Stats Dashboard</h2>
+            <div class="stats-grid" id="stats-grid"></div>
+        </div>
+    </section>
+
+    <!-- Season Records -->
+    <section id="season-records">
+        <div class="container">
+            <h2 class="section-title"><i class="fa-solid fa-trophy"></i> Season Records</h2>
+            <div class="season-cards" id="season-cards"></div>
+        </div>
+    </section>
+
+    <!-- Companion Leaderboard -->
+    <section id="companion-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fa-solid fa-users"></i> Companion Leaderboard</h2>
+            <div class="companion-table-wrap" id="companion-table-wrap"></div>
+        </div>
+    </section>
+
+    <!-- Opponent Records -->
+    <section id="opponent-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fa-solid fa-basketball"></i> Opponent Records</h2>
+            <div class="opponent-grid" id="opponent-grid"></div>
+        </div>
+    </section>
+
+    <!-- Game Log -->
+    <section id="game-log">
+        <div class="container">
+            <h2 class="section-title"><i class="fa-solid fa-list"></i> Game Log</h2>
+            <div id="game-log-content"></div>
+        </div>
+    </section>
+
+    <!-- Add Game -->
+    <section id="add-game">
+        <div class="container">
+            <h2 class="section-title"><i class="fa-solid fa-plus-circle"></i> Add New Game</h2>
+            <p class="add-game-desc">Add a new game directly. It will appear in the game log and update all stats. Use <strong>Export Data</strong> below to save your changes back to the source file.</p>
+            <form id="add-game-form" autocomplete="off">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="fg-date">Date</label>
+                        <input type="date" id="fg-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fg-season">Season</label>
+                        <select id="fg-season" required>
+                            <option value="2022-2023">2022-2023</option>
+                            <option value="2023-2024">2023-2024</option>
+                            <option value="2024-2025">2024-2025</option>
+                            <option value="2025-2026" selected>2025-2026</option>
+                            <option value="2026-2027">2026-2027</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fg-opponent">Opponent</label>
+                        <input type="text" id="fg-opponent" placeholder="e.g. Lakers" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fg-companion">Companion</label>
+                        <input type="text" id="fg-companion" placeholder="e.g. Sean">
+                    </div>
+                    <div class="form-group">
+                        <label for="fg-celtics-score">Celtics Score</label>
+                        <input type="number" id="fg-celtics-score" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fg-opp-score">Opponent Score</label>
+                        <input type="number" id="fg-opp-score" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fg-overtime">Overtime?</label>
+                        <select id="fg-overtime">
+                            <option value="false">No</option>
+                            <option value="true">Yes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fg-tags">Tags</label>
+                        <select id="fg-tags">
+                            <option value="">Regular Season</option>
+                            <option value="preseason">Preseason</option>
+                            <option value="season-opener">Season Opener</option>
+                            <option value="playoffs-r1">Playoffs Round 1</option>
+                            <option value="playoffs-r2">Playoffs Round 2</option>
+                            <option value="playoffs-r3">Playoffs Round 3</option>
+                            <option value="playoffs-r4">Finals</option>
+                        </select>
+                    </div>
+                    <div class="form-group form-group-wide">
+                        <label for="fg-notes">Notes</label>
+                        <textarea id="fg-notes" rows="2" placeholder="Separate multiple notes with semicolons"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn"><i class="fa-solid fa-plus"></i> Add Game</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Export Data -->
+    <section id="export-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fa-solid fa-download"></i> Export Data</h2>
+            <p class="add-game-desc">After adding, editing, or deleting games, copy the updated data below and replace the <code>CSV_DATA</code> string in <code>script.js</code> to save your changes permanently.</p>
+            <button class="submit-btn export-btn" id="export-btn"><i class="fa-solid fa-code"></i> Show Updated CSV Data</button>
+            <div class="csv-output-wrap hidden" id="csv-output-wrap">
+                <label>Replace the <code>CSV_DATA</code> value in <code>script.js</code> with this:</label>
+                <div class="csv-output" id="csv-output"></div>
+                <button class="copy-btn" id="copy-btn"><i class="fa-solid fa-copy"></i> Copy to Clipboard</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Edit Modal -->
+    <div class="modal-overlay" id="edit-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal-title">Edit Game</h3>
+                <button class="modal-close" id="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form id="edit-game-form" autocomplete="off">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="ed-date">Date</label>
+                        <input type="date" id="ed-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ed-season">Season</label>
+                        <select id="ed-season" required>
+                            <option value="2022-2023">2022-2023</option>
+                            <option value="2023-2024">2023-2024</option>
+                            <option value="2024-2025">2024-2025</option>
+                            <option value="2025-2026">2025-2026</option>
+                            <option value="2026-2027">2026-2027</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="ed-opponent">Opponent</label>
+                        <input type="text" id="ed-opponent" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ed-companion">Companion</label>
+                        <input type="text" id="ed-companion">
+                    </div>
+                    <div class="form-group">
+                        <label for="ed-celtics-score">Celtics Score</label>
+                        <input type="number" id="ed-celtics-score" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ed-opp-score">Opponent Score</label>
+                        <input type="number" id="ed-opp-score" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ed-overtime">Overtime?</label>
+                        <select id="ed-overtime">
+                            <option value="false">No</option>
+                            <option value="true">Yes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="ed-tags">Tags</label>
+                        <select id="ed-tags">
+                            <option value="">Regular Season</option>
+                            <option value="preseason">Preseason</option>
+                            <option value="season-opener">Season Opener</option>
+                            <option value="playoffs-r1">Playoffs Round 1</option>
+                            <option value="playoffs-r2">Playoffs Round 2</option>
+                            <option value="playoffs-r3">Playoffs Round 3</option>
+                            <option value="playoffs-r4">Finals</option>
+                        </select>
+                    </div>
+                    <div class="form-group form-group-wide">
+                        <label for="ed-notes">Notes</label>
+                        <textarea id="ed-notes" rows="2"></textarea>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="submit-btn"><i class="fa-solid fa-check"></i> Save Changes</button>
+                    <button type="button" class="cancel-btn" id="modal-cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation -->
+    <div class="modal-overlay" id="delete-modal">
+        <div class="modal modal-sm">
+            <div class="modal-header">
+                <h3>Delete Game</h3>
+                <button class="modal-close" id="delete-modal-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <p class="delete-msg" id="delete-msg">Are you sure you want to delete this game?</p>
+            <div class="modal-actions">
+                <button class="submit-btn delete-confirm-btn" id="delete-confirm"><i class="fa-solid fa-trash"></i> Delete</button>
+                <button class="cancel-btn" id="delete-cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <footer>
+        <p>☘️ Go Celtics ☘️</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

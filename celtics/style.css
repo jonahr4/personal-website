@@ -1,0 +1,1001 @@
+/* ====== RESET & BASE ====== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --bg-primary: #f5f7f5;
+    --bg-secondary: #eaf0ea;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f0f6f0;
+    --celtics-green: #007A33;
+    --celtics-green-light: #00a844;
+    --celtics-green-dark: #005a25;
+    --celtics-gold: #c8a200;
+    --celtics-gold-bright: #FFD700;
+    --text-primary: #1a1a1a;
+    --text-secondary: #555;
+    --text-muted: #888;
+    --border-subtle: rgba(0, 122, 51, 0.12);
+    --border-glow: rgba(0, 122, 51, 0.25);
+    --win-color: #007A33;
+    --loss-color: #d32f2f;
+    --radius: 14px;
+    --radius-sm: 10px;
+    --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 8px 28px rgba(0, 122, 51, 0.1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* ====== HERO ====== */
+#hero {
+    position: relative;
+    padding: 80px 24px 50px;
+    text-align: center;
+    overflow: hidden;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #007A33 0%, #00a844 40%, #00c853 100%);
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 255, 255, 0.15) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 80% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 60%);
+    z-index: 0;
+}
+
+.hero-content { position: relative; z-index: 1; }
+
+.hero-badge {
+    font-size: 52px;
+    margin-bottom: 10px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+#hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.hero-subtitle {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
+    margin-bottom: 24px;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-stat {
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: var(--radius);
+    padding: 14px 24px;
+    backdrop-filter: blur(12px);
+    text-align: center;
+    min-width: 110px;
+}
+
+.hero-stat-value {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: #fff;
+}
+
+.hero-stat-value.gold { color: var(--celtics-gold-bright); }
+
+.hero-stat-label {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+/* ====== FILTER BAR ====== */
+.filter-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(245, 247, 245, 0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 12px 0;
+}
+
+.filter-bar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.filter-bar-inner::-webkit-scrollbar { display: none; }
+
+.filter-btn {
+    padding: 8px 20px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 100px;
+    background: #fff;
+    color: var(--text-secondary);
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.filter-btn:hover { border-color: var(--celtics-green); color: var(--celtics-green); }
+
+.filter-btn.active {
+    background: var(--celtics-green);
+    border-color: var(--celtics-green);
+    color: #fff;
+}
+
+/* ====== SECTIONS ====== */
+section {
+    padding: 50px 0;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-primary);
+}
+
+.section-title i { color: var(--celtics-green); font-size: 1.1rem; }
+
+/* ====== STATS GRID ====== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+}
+
+.stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 18px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--celtics-green), var(--celtics-green-light));
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.stat-card:hover::before { opacity: 1; }
+
+.stat-card-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.stat-card-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.stat-card-value.green { color: var(--celtics-green); }
+.stat-card-value.gold { color: var(--celtics-gold); }
+.stat-card-value.win { color: var(--win-color); }
+.stat-card-value.loss { color: var(--loss-color); }
+
+.stat-card-sub {
+    font-size: 0.76rem;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+/* ====== SEASON CARDS ====== */
+.season-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+}
+
+.season-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 22px;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.season-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.season-card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--celtics-green);
+    margin-bottom: 10px;
+}
+
+.season-card-record {
+    font-size: 1.9rem;
+    font-weight: 900;
+    margin-bottom: 2px;
+}
+
+.season-card-pct {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.season-card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.season-bar {
+    height: 6px;
+    border-radius: 3px;
+    background: #f0d0d0;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.season-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--celtics-green), var(--celtics-green-light));
+    transition: width 1s ease;
+}
+
+/* ====== COMPANION TABLE ====== */
+.companion-table-wrap { overflow-x: auto; }
+
+.companion-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.88rem;
+}
+
+.companion-table thead th {
+    background: #eef5ee;
+    color: var(--celtics-green);
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.73rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--border-subtle);
+    position: sticky;
+    top: 0;
+    white-space: nowrap;
+}
+
+.companion-table thead th:first-child { border-radius: var(--radius-sm) 0 0 0; }
+.companion-table thead th:last-child { border-radius: 0 var(--radius-sm) 0 0; }
+
+.companion-table tbody tr {
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.companion-table tbody tr:hover { background: var(--bg-card-hover); }
+.companion-table tbody tr.expanded { background: #eef5ee; }
+
+.companion-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-subtle);
+    white-space: nowrap;
+}
+
+.companion-table .companion-name {
+    font-weight: 600;
+    color: var(--celtics-green-dark);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.companion-name .expand-icon {
+    font-size: 0.65rem;
+    transition: transform 0.2s;
+    color: var(--text-muted);
+}
+
+.companion-table tbody tr.expanded .expand-icon {
+    transform: rotate(90deg);
+    color: var(--celtics-green);
+}
+
+.companion-table .companion-rank {
+    color: var(--text-muted);
+    font-weight: 700;
+    width: 30px;
+}
+
+.win-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.win-badge.high { background: #e0f5e0; color: var(--win-color); }
+.win-badge.mid { background: #fff8e0; color: var(--celtics-gold); }
+.win-badge.low { background: #fde8e8; color: var(--loss-color); }
+
+/* Companion detail row */
+.companion-detail-row td {
+    padding: 0 !important;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.companion-games-detail {
+    padding: 12px 16px 16px 48px;
+    background: #f8fbf8;
+}
+
+.companion-games-detail .detail-game {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 4px;
+    font-size: 0.82rem;
+    transition: var(--transition);
+}
+
+.companion-games-detail .detail-game:hover {
+    background: #eef5ee;
+}
+
+.detail-game-date {
+    color: var(--text-muted);
+    min-width: 90px;
+    font-weight: 500;
+}
+
+.detail-game-matchup {
+    font-weight: 600;
+    flex: 1;
+}
+
+.detail-game-score {
+    font-weight: 800;
+    font-size: 0.9rem;
+}
+
+.detail-game-score.W { color: var(--win-color); }
+.detail-game-score.L { color: var(--loss-color); }
+
+.detail-game-tag {
+    font-size: 0.65rem;
+    padding: 1px 7px;
+    border-radius: 100px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.detail-game-tag.playoffs { background: #fff3d0; color: #a88800; }
+.detail-game-tag.preseason { background: #e0ecff; color: #4a6ea8; }
+
+/* ====== OPPONENT GRID ====== */
+.opponent-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 12px;
+}
+
+.opponent-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 16px;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.opponent-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.opponent-name {
+    font-weight: 600;
+    font-size: 0.92rem;
+    margin-bottom: 4px;
+}
+
+.opponent-record {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 2px;
+}
+
+.opponent-pct {
+    font-size: 0.76rem;
+    color: var(--text-muted);
+}
+
+/* ====== GAME LOG ====== */
+.season-group { margin-bottom: 40px; }
+
+.season-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-subtle);
+}
+
+.season-header h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--celtics-green);
+}
+
+.season-header .season-badge {
+    background: #e0f5e0;
+    color: var(--celtics-green);
+    font-size: 0.73rem;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-weight: 600;
+}
+
+.games-list { display: flex; flex-direction: column; gap: 8px; }
+
+.game-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    gap: 14px;
+    align-items: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.game-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+}
+
+.game-card.win::before { background: var(--win-color); }
+.game-card.loss::before { background: var(--loss-color); }
+
+.game-card:hover {
+    transform: translateX(3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.game-date {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.game-info { min-width: 0; }
+
+.game-matchup {
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--text-primary);
+    margin-bottom: 3px;
+}
+
+.game-companion {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.game-companion i { margin-right: 4px; color: var(--celtics-green); }
+
+.game-tags {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+.game-tag {
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 100px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.game-tag.playoffs { background: #fff3d0; color: #a88800; }
+.game-tag.preseason { background: #e0ecff; color: #4a6ea8; }
+.game-tag.opener { background: #e0f5e0; color: var(--win-color); }
+
+.game-notes {
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    margin-top: 5px;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.game-score-wrap {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.game-score {
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.game-score.W { color: var(--win-color); }
+.game-score.L { color: var(--loss-color); }
+
+.game-result-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+.game-result-label.W { color: var(--win-color); }
+.game-result-label.L { color: var(--loss-color); }
+
+/* ====== ADD GAME FORM ====== */
+.add-game-desc {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    font-size: 0.88rem;
+}
+
+.add-game-desc code {
+    background: #e0f5e0;
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: var(--celtics-green);
+    font-size: 0.83rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.form-group-wide { grid-column: 1 / -1; }
+
+.form-group label {
+    display: block;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.88rem;
+    transition: var(--transition);
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--celtics-green);
+    box-shadow: 0 0 0 3px rgba(0, 122, 51, 0.1);
+}
+
+.form-group textarea { resize: vertical; }
+
+.submit-btn {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, var(--celtics-green), var(--celtics-green-light));
+    border: none;
+    border-radius: var(--radius-sm);
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 122, 51, 0.25);
+}
+
+.csv-output-wrap {
+    margin-top: 20px;
+    background: #f0faf0;
+    border: 1px solid var(--celtics-green);
+    border-radius: var(--radius);
+    padding: 18px;
+}
+
+.csv-output-wrap.hidden { display: none; }
+
+.csv-output-wrap label {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.csv-output {
+    background: #fff;
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-subtle);
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.8rem;
+    color: var(--celtics-green-dark);
+    word-break: break-all;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.copy-btn {
+    padding: 8px 18px;
+    background: var(--celtics-green);
+    border: none;
+    border-radius: var(--radius-sm);
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.83rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.copy-btn:hover {
+    background: var(--celtics-green-dark);
+}
+
+/* ====== FOOTER ====== */
+footer {
+    text-align: center;
+    padding: 36px 24px;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+    #hero { padding: 60px 16px 36px; min-height: 240px; }
+    #hero h1 { font-size: 1.8rem; }
+    .hero-stats { gap: 8px; }
+    .hero-stat { padding: 10px 14px; min-width: 80px; }
+    .hero-stat-value { font-size: 1.3rem; }
+    .hero-stat-label { font-size: 0.65rem; }
+    section { padding: 32px 0; }
+    .container { padding: 0 14px; }
+    .section-title { font-size: 1.2rem; margin-bottom: 20px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .stat-card { padding: 12px; }
+    .stat-card-value { font-size: 1.2rem; }
+    .stat-card-label { font-size: 0.65rem; }
+    .stat-card-sub { font-size: 0.7rem; }
+    .season-cards { grid-template-columns: 1fr; }
+    .season-card { padding: 16px; }
+
+    .game-card {
+        grid-template-columns: 1fr auto;
+        gap: 8px;
+        padding: 12px 14px;
+    }
+    .game-date {
+        grid-column: 1 / -1;
+        font-size: 0.72rem;
+    }
+    .game-score { font-size: 1rem; }
+    .game-matchup { font-size: 0.85rem; }
+
+    .form-grid { grid-template-columns: 1fr; }
+    .opponent-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .opponent-card { padding: 12px; }
+    .opponent-name { font-size: 0.82rem; }
+    .opponent-record { font-size: 1.1rem; }
+
+    /* Companion table mobile */
+    .companion-table { font-size: 0.8rem; }
+    .companion-table thead th { padding: 10px 10px; font-size: 0.65rem; }
+    .companion-table td { padding: 10px 10px; }
+    .companion-games-detail { padding: 8px 10px 12px 20px; }
+    .companion-games-detail .detail-game { gap: 8px; padding: 6px 8px; font-size: 0.75rem; }
+    .detail-game-date { min-width: 70px; font-size: 0.72rem; }
+}
+
+@media (max-width: 480px) {
+    .hero-stat { padding: 8px 12px; min-width: 70px; }
+    .hero-stat-value { font-size: 1.1rem; }
+    .stats-grid { gap: 6px; }
+    .filter-bar-inner { gap: 5px; }
+    .filter-btn { padding: 6px 12px; font-size: 0.78rem; }
+    .opponent-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+
+    /* Hide less important columns on very small screens */
+    .companion-table .hide-mobile { display: none; }
+}
+
+/* Animations on scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ====== GAME CARD ACTIONS ====== */
+.game-actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.game-action-btn {
+    padding: 3px 10px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--text-muted);
+    font-family: inherit;
+    font-size: 0.68rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.game-action-btn:hover {
+    color: var(--celtics-green);
+    border-color: var(--celtics-green);
+}
+
+.game-action-btn.delete-btn:hover {
+    color: var(--loss-color);
+    border-color: var(--loss-color);
+}
+
+/* ====== MODAL ====== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-overlay.open {
+    display: flex;
+}
+
+.modal {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 28px;
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    animation: modalIn 0.25s ease;
+}
+
+.modal-sm {
+    max-width: 420px;
+    text-align: center;
+}
+
+@keyframes modalIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.modal-header h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px;
+    transition: var(--transition);
+}
+
+.modal-close:hover { color: var(--text-primary); }
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cancel-btn {
+    padding: 12px 24px;
+    background: #f5f5f5;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-family: inherit;
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.cancel-btn:hover { background: #eee; }
+
+.delete-confirm-btn {
+    background: linear-gradient(135deg, #d32f2f, #e53935) !important;
+}
+
+.delete-confirm-btn:hover {
+    box-shadow: 0 6px 20px rgba(211, 47, 47, 0.25) !important;
+}
+
+.delete-msg {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    padding: 0 8px;
+}
+
+/* ====== EXPORT ====== */
+.export-btn {
+    margin-bottom: 16px;
+}
+
+.csv-output {
+    white-space: pre-wrap;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* ====== TOAST ====== */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--celtics-green);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 100px;
+    font-family: inherit;
+    font-size: 0.88rem;
+    font-weight: 500;
+    box-shadow: 0 6px 24px rgba(0, 122, 51, 0.3);
+    z-index: 2000;
+    opacity: 0;
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.toast.error {
+    background: var(--loss-color);
+    box-shadow: 0 6px 24px rgba(211, 47, 47, 0.3);
+}
+
+/* ====== RESPONSIVE MODAL ====== */
+@media (max-width: 768px) {
+    .modal { padding: 20px; max-height: 85vh; }
+    .modal .form-grid { grid-template-columns: 1fr; }
+    .modal-actions { flex-direction: column; }
+    .game-actions { gap: 4px; }
+    .game-action-btn { font-size: 0.62rem; padding: 2px 8px; }
+}
