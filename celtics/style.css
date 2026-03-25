@@ -999,3 +999,42 @@ footer {
     .game-actions { gap: 4px; }
     .game-action-btn { font-size: 0.62rem; padding: 2px 8px; }
 }
+
+/* ====== LOADING INDICATOR ====== */
+.loading-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 40px 20px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.loading-spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--border-subtle);
+    border-top-color: var(--celtics-green);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ====== OFFLINE BANNER ====== */
+.offline-banner {
+    background: #fff3cd;
+    color: #856404;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-bottom: 1px solid #ffc107;
+}
+
+.offline-banner i {
+    margin-right: 6px;
+}

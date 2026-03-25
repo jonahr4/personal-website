@@ -1,5 +1,7 @@
-/* ====== INLINE CSV DATA ====== */
-// Data is embedded directly — no server needed. Edit this string to update games.
+/* ====== GOOGLE SHEETS BACKEND ====== */
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwgbtcG3rgNl46qFHXN1IFP8MpdyYESdPeZz5f-OTf2iKtYFpnO2AA1cj4YUL8EklnD0Q/exec';
+
+/* ====== FALLBACK INLINE DATA (used if Google Sheets is unreachable) ====== */
 const CSV_DATA = `date,season,opponent,companion,celtics_score,opponent_score,result,overtime,tags,notes
 10/2/22,2022-2023,Hornets,Sean,134,93,W,false,preseason,
 10/28/22,2022-2023,Cavs,Omar,123,132,L,true,,
@@ -49,11 +51,44 @@ let allGames = [];
 let currentFilter = 'all';
 let editingIndex = -1;
 let deletingIndex = -1;
-let hasChanges = false;
+let isOnline = false; // whether we loaded from Google Sheets
 
-/* ====== CSV PARSING ====== */
+/* ====== DATA LOADING ====== */
 
-function loadGames() {
+async function loadFromSheets() {
+    try {
+        showLoading(true);
+        const resp = await fetch(SHEET_URL);
+        const json = await resp.json();
+        if (json.status === 'ok' && json.data) {
+            allGames = json.data.map(row => {
+                const dateStr = normalizeDate(row.date);
+                return {
+                    date: dateStr,
+                    season: String(row.season || ''),
+                    opponent: String(row.opponent || ''),
+                    companion: String(row.companion || ''),
+                    celtics_score: parseInt(row.celtics_score) || 0,
+                    opponent_score: parseInt(row.opponent_score) || 0,
+                    result: String(row.result || ''),
+                    overtime: row.overtime === true || row.overtime === 'true' || row.overtime === 'TRUE',
+                    tags: String(row.tags || ''),
+                    notes: String(row.notes || ''),
+                    dateObj: parseDate(dateStr),
+                    _row: row._row, // sheet row number for edit/delete
+                };
+            });
+            isOnline = true;
+            console.log(`Loaded ${allGames.length} games from Google Sheets`);
+            return true;
+        }
+    } catch (err) {
+        console.warn('Google Sheets unavailable, using fallback data:', err);
+    }
+    return false;
+}
+
+function loadFromCSV() {
     const lines = CSV_DATA.trim().split('\n');
     const headers = parseCSVLine(lines[0]);
     const games = [];
@@ -66,10 +101,35 @@ function loadGames() {
         obj.opponent_score = parseInt(obj.opponent_score) || 0;
         obj.overtime = obj.overtime === 'true';
         obj.dateObj = parseDate(obj.date);
+        obj._row = null;
         games.push(obj);
     }
     return games;
 }
+
+function normalizeDate(val) {
+    if (!val) return '';
+    // Handle Google Sheets date objects (ISO strings)
+    if (typeof val === 'string' && val.includes('T')) {
+        const d = new Date(val);
+        return `${d.getMonth() + 1}/${d.getDate()}/${String(d.getFullYear()).slice(-2)}`;
+    }
+    return String(val);
+}
+
+/* ====== LOADING UI ====== */
+
+function showLoading(show) {
+    const el = document.getElementById('loading-indicator');
+    if (el) el.style.display = show ? 'flex' : 'none';
+}
+
+function showOfflineBanner() {
+    const el = document.getElementById('offline-banner');
+    if (el) el.style.display = 'flex';
+}
+
+/* ====== CSV PARSING ====== */
 
 function parseCSVLine(line) {
     const result = [];
@@ -86,7 +146,8 @@ function parseCSVLine(line) {
 }
 
 function parseDate(str) {
-    const parts = str.split('/');
+    if (!str) return new Date();
+    const parts = String(str).split('/');
     if (parts.length !== 3) return new Date();
     let [m, d, y] = parts.map(Number);
     if (y < 100) y += 2000;
@@ -106,24 +167,36 @@ function gameToCSVDate(d) {
     return `${d.getMonth() + 1}/${d.getDate()}/${String(d.getFullYear()).slice(-2)}`;
 }
 
-function gameToCSVLine(g) {
-    const notes = g.notes ? `"${g.notes}"` : '';
-    return `${g.date},${g.season},${g.opponent},${g.companion || ''},${g.celtics_score},${g.opponent_score},${g.result},${g.overtime},${g.tags || ''},${notes}`;
-}
-
-function gamesToCSV() {
-    const header = 'date,season,opponent,companion,celtics_score,opponent_score,result,overtime,tags,notes';
-    const sorted = [...allGames].sort((a, b) => a.dateObj - b.dateObj);
-    const lines = sorted.map(g => gameToCSVLine(g));
-    return header + '\n' + lines.join('\n');
-}
-
 /* ====== TOAST ====== */
 function showToast(msg, isError = false) {
     const toast = document.getElementById('toast');
     toast.textContent = msg;
     toast.className = 'toast show' + (isError ? ' error' : '');
     setTimeout(() => { toast.className = 'toast'; }, 2500);
+}
+
+/* ====== SHEETS API CALLS ====== */
+
+async function sheetsPost(payload) {
+    try {
+        const resp = await fetch(SHEET_URL, {
+            method: 'POST',
+            body: JSON.stringify(payload),
+        });
+        const json = await resp.json();
+        return json;
+    } catch (err) {
+        console.error('Sheets POST failed:', err);
+        return { status: 'error', message: err.toString() };
+    }
+}
+
+async function reloadFromSheets() {
+    const ok = await loadFromSheets();
+    if (ok) {
+        refreshAll();
+    }
+    showLoading(false);
 }
 
 /* ====== STATS COMPUTATION ====== */
@@ -521,7 +594,6 @@ function openEditModal(idx) {
     const g = allGames[idx];
     const modal = document.getElementById('edit-modal');
 
-    // Convert date to input format YYYY-MM-DD
     const yr = g.dateObj.getFullYear();
     const mo = String(g.dateObj.getMonth() + 1).padStart(2, '0');
     const da = String(g.dateObj.getDate()).padStart(2, '0');
@@ -545,7 +617,7 @@ function closeEditModal() {
     editingIndex = -1;
 }
 
-function saveEdit(e) {
+async function saveEdit(e) {
     e.preventDefault();
     if (editingIndex < 0) return;
 
@@ -555,22 +627,38 @@ function saveEdit(e) {
     const cScore = parseInt(document.getElementById('ed-celtics-score').value);
     const oScore = parseInt(document.getElementById('ed-opp-score').value);
 
-    g.date = gameToCSVDate(d);
-    g.dateObj = d;
-    g.season = document.getElementById('ed-season').value;
-    g.opponent = document.getElementById('ed-opponent').value;
-    g.companion = document.getElementById('ed-companion').value;
-    g.celtics_score = cScore;
-    g.opponent_score = oScore;
-    g.result = cScore > oScore ? 'W' : 'L';
-    g.overtime = document.getElementById('ed-overtime').value === 'true';
-    g.tags = document.getElementById('ed-tags').value;
-    g.notes = document.getElementById('ed-notes').value;
+    const updated = {
+        date: gameToCSVDate(d),
+        season: document.getElementById('ed-season').value,
+        opponent: document.getElementById('ed-opponent').value,
+        companion: document.getElementById('ed-companion').value,
+        celtics_score: cScore,
+        opponent_score: oScore,
+        result: cScore > oScore ? 'W' : 'L',
+        overtime: document.getElementById('ed-overtime').value,
+        tags: document.getElementById('ed-tags').value,
+        notes: document.getElementById('ed-notes').value,
+    };
 
     closeEditModal();
-    hasChanges = true;
-    refreshAll();
-    showToast('Game updated ✓');
+
+    if (isOnline && g._row) {
+        showToast('Saving...');
+        const res = await sheetsPost({ action: 'edit', _row: g._row, ...updated });
+        if (res.status === 'ok') {
+            showToast('Game updated ✓');
+            await reloadFromSheets();
+        } else {
+            showToast('Error saving: ' + (res.message || 'Unknown'), true);
+        }
+    } else {
+        // Offline fallback
+        Object.assign(g, updated);
+        g.dateObj = d;
+        g.overtime = updated.overtime === 'true';
+        refreshAll();
+        showToast('Game updated (offline) ✓');
+    }
 }
 
 /* ====== DELETE ====== */
@@ -587,20 +675,32 @@ function closeDeleteModal() {
     deletingIndex = -1;
 }
 
-function confirmDelete() {
+async function confirmDelete() {
     if (deletingIndex < 0) return;
     const g = allGames[deletingIndex];
     const label = `Celtics vs ${g.opponent}`;
-    allGames.splice(deletingIndex, 1);
+
     closeDeleteModal();
-    hasChanges = true;
-    refreshAll();
-    showToast(`${label} deleted`);
+
+    if (isOnline && g._row) {
+        showToast('Deleting...');
+        const res = await sheetsPost({ action: 'delete', _row: g._row });
+        if (res.status === 'ok') {
+            showToast(`${label} deleted ✓`);
+            await reloadFromSheets();
+        } else {
+            showToast('Error deleting: ' + (res.message || 'Unknown'), true);
+        }
+    } else {
+        allGames.splice(deletingIndex, 1);
+        refreshAll();
+        showToast(`${label} deleted (offline)`);
+    }
 }
 
-/* ====== ADD GAME (INLINE) ====== */
+/* ====== ADD GAME ====== */
 
-function addGame(e) {
+async function addGame(e) {
     e.preventDefault();
 
     const dateVal = document.getElementById('fg-date').value;
@@ -610,50 +710,36 @@ function addGame(e) {
 
     const game = {
         date: gameToCSVDate(d),
-        dateObj: d,
         season: document.getElementById('fg-season').value,
         opponent: document.getElementById('fg-opponent').value,
         companion: document.getElementById('fg-companion').value,
         celtics_score: cScore,
         opponent_score: oScore,
         result: cScore > oScore ? 'W' : 'L',
-        overtime: document.getElementById('fg-overtime').value === 'true',
+        overtime: document.getElementById('fg-overtime').value,
         tags: document.getElementById('fg-tags').value,
         notes: document.getElementById('fg-notes').value,
     };
 
-    allGames.push(game);
-    hasChanges = true;
-    refreshAll();
-    showToast(`Game added: Celtics vs ${game.opponent} ✓`);
-    document.getElementById('add-game-form').reset();
-}
-
-/* ====== EXPORT ====== */
-
-function initExport() {
-    document.getElementById('export-btn').addEventListener('click', () => {
-        const outputWrap = document.getElementById('csv-output-wrap');
-        const output = document.getElementById('csv-output');
-        output.textContent = gamesToCSV();
-        outputWrap.classList.remove('hidden');
-    });
-
-    document.getElementById('copy-btn').addEventListener('click', () => {
-        const output = document.getElementById('csv-output');
-        navigator.clipboard.writeText(output.textContent).then(() => {
-            showToast('Copied to clipboard ✓');
-        }).catch(() => {
-            // Fallback for file:// protocol
-            const textarea = document.createElement('textarea');
-            textarea.value = output.textContent;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-            showToast('Copied to clipboard ✓');
-        });
-    });
+    if (isOnline) {
+        showToast('Saving to Google Sheets...');
+        const res = await sheetsPost({ action: 'add', ...game });
+        if (res.status === 'ok') {
+            showToast(`Game added: Celtics vs ${game.opponent} ✓`);
+            document.getElementById('add-game-form').reset();
+            await reloadFromSheets();
+        } else {
+            showToast('Error adding: ' + (res.message || 'Unknown'), true);
+        }
+    } else {
+        game.dateObj = d;
+        game.overtime = game.overtime === 'true';
+        game._row = null;
+        allGames.push(game);
+        refreshAll();
+        showToast(`Game added (offline): Celtics vs ${game.opponent}`);
+        document.getElementById('add-game-form').reset();
+    }
 }
 
 /* ====== FILTER BUTTONS ====== */
@@ -685,11 +771,20 @@ function initScrollAnimations() {
 
 /* ====== INIT ====== */
 
-function init() {
-    allGames = loadGames();
+async function init() {
+    // Try loading from Google Sheets first
+    const sheetsLoaded = await loadFromSheets();
+    
+    if (!sheetsLoaded) {
+        // Fallback to inline CSV data
+        allGames = loadFromCSV();
+        showOfflineBanner();
+        console.log(`Loaded ${allGames.length} games from fallback CSV`);
+    }
+
+    showLoading(false);
     refreshAll();
     initFilters();
-    initExport();
 
     // Add game form
     document.getElementById('add-game-form').addEventListener('submit', addGame);

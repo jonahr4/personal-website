@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Celtics Games Tracker</title>
     <meta name="description" content="Personal Celtics game attendance tracker with stats and game log.">
-    <link rel="stylesheet" href="/celtics/style.css">
-    <link rel="shortcut icon" type="x-icon" href="/photos/Square Logo-01.png">
+    <script>
+        // Fix trailing slash issue: ensure relative URLs resolve against /celtics/
+        if (location.protocol !== 'file:' && !location.pathname.endsWith('/')) {
+            var base = document.createElement('base');
+            base.href = location.pathname + '/';
+            document.head.appendChild(base);
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="x-icon" href="../photos/Square Logo-01.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -23,6 +31,17 @@
             <div class="hero-stats" id="hero-stats"></div>
         </div>
     </header>
+
+    <!-- Loading Indicator -->
+    <div id="loading-indicator" class="loading-indicator">
+        <div class="loading-spinner"></div>
+        <span>Loading games from Google Sheets...</span>
+    </div>
+
+    <!-- Offline Banner -->
+    <div id="offline-banner" class="offline-banner" style="display:none;">
+        <i class="fa-solid fa-wifi"></i> Offline mode — showing cached data. Changes won't be saved.
+    </div>
 
     <!-- Filter Bar -->
     <div class="filter-bar" id="filter-bar">
@@ -78,7 +97,7 @@
     <section id="add-game">
         <div class="container">
             <h2 class="section-title"><i class="fa-solid fa-plus-circle"></i> Add New Game</h2>
-            <p class="add-game-desc">Add a new game directly. It will appear in the game log and update all stats. Use <strong>Export Data</strong> below to save your changes back to the source file.</p>
+            <p class="add-game-desc">Add a new game directly. It will save to Google Sheets and update all stats in real-time.</p>
             <form id="add-game-form" autocomplete="off">
                 <div class="form-grid">
                     <div class="form-group">
@@ -140,19 +159,7 @@
         </div>
     </section>
 
-    <!-- Export Data -->
-    <section id="export-section">
-        <div class="container">
-            <h2 class="section-title"><i class="fa-solid fa-download"></i> Export Data</h2>
-            <p class="add-game-desc">After adding, editing, or deleting games, copy the updated data below and replace the <code>CSV_DATA</code> string in <code>script.js</code> to save your changes permanently.</p>
-            <button class="submit-btn export-btn" id="export-btn"><i class="fa-solid fa-code"></i> Show Updated CSV Data</button>
-            <div class="csv-output-wrap hidden" id="csv-output-wrap">
-                <label>Replace the <code>CSV_DATA</code> value in <code>script.js</code> with this:</label>
-                <div class="csv-output" id="csv-output"></div>
-                <button class="copy-btn" id="copy-btn"><i class="fa-solid fa-copy"></i> Copy to Clipboard</button>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Edit Modal -->
     <div class="modal-overlay" id="edit-modal">
@@ -247,6 +254,6 @@
         <p>☘️ Go Celtics ☘️</p>
     </footer>
 
-    <script src="/celtics/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
