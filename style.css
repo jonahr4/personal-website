@@ -1,5 +1,10 @@
 /* Compact About tab cards */
-.skill-grid,
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
 .resume-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -748,32 +753,40 @@ nav ul li a:hover::after {
     box-shadow: 0 14px 32px rgba(102, 126, 234, 0.18);
 }
 
-.top-badge {
+/* Project type badges — small pill labels in top-right of timeline cards */
+.project-badge {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #d4af37;
-    font-size: 16px;
-}
-
-.top-badge .top-tooltip {
-    position: absolute;
-    top: -30px;
-    right: -6px;
-    background: #1f2937;
-    color: #fff;
-    padding: 6px 10px;
-    border-radius: 8px;
+    top: 12px;
+    right: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-family: 'Outfit', sans-serif;
     font-size: 11px;
-    opacity: 0;
-    transform: translateY(6px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    z-index: 3;
     white-space: nowrap;
 }
 
-.top-badge:hover .top-tooltip {
-    opacity: 1;
-    transform: translateY(0);
+.badge-top {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    color: #92400e;
+    border: 1px solid #fcd34d;
+}
+
+.badge-personal {
+    background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+    color: #5b21b6;
+    border: 1px solid #c4b5fd;
+}
+
+.badge-class {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    color: #065f46;
+    border: 1px solid #6ee7b7;
 }
 
 .top-rank {
@@ -807,21 +820,24 @@ nav ul li a:hover::after {
     padding: 40px 0;
 }
 
-.timeline::before {
-    content: '';
+/* Timeline vertical line — positioned dynamically by JS based on first/last icon centers.
+   Do NOT use ::before with hardcoded top/bottom, that breaks on resize. */
+#timeline-line {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     width: 4px;
-    top: 300px;
-    bottom: 0;
     background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
     border-radius: 2px;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: -80px;
+    /* Negative margin creates card overlap for a dense timeline layout.
+       Currently ~25-30% vertical overlap between adjacent cards. */
+    margin-bottom: -100px;
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -832,7 +848,10 @@ nav ul li a:hover::after {
     margin-bottom: 0;
 }
 
-.timeline-item:nth-child(even) {
+/* Alternation is driven by JS — .side-left/.side-right classes are assigned
+   globally across ALL timeline items (including older-projects) so the
+   zig-zag never breaks across container boundaries. */
+.timeline-item.side-right {
     justify-content: flex-end;
 }
 
@@ -871,7 +890,7 @@ nav ul li a:hover::after {
     box-shadow: 0 15px 50px rgba(102, 126, 234, 0.15);
 }
 
-.timeline-item:nth-child(even) .timeline-content {
+.timeline-item.side-right .timeline-content {
     text-align: left;
 }
 
@@ -953,14 +972,8 @@ nav ul li a:hover::after {
     opacity: 0;
 }
 
-/* Reverse alternation for older projects to continue the pattern */
-.older-projects .timeline-item {
-    justify-content: flex-end;
-}
-
-.older-projects .timeline-item:nth-child(even) {
-    justify-content: flex-start;
-}
+/* Older-projects alternation is now handled by the global JS
+   updateTimelineAlternation() function — no manual CSS reverse needed. */
 
 /* Bottom Show Less Toggle */
 .timeline-toggle-bottom {
@@ -1252,6 +1265,73 @@ nav ul li a:hover::after {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     border: 1px solid #e9ecef;
     overflow: hidden;
+    /* Consistent height across tabs regardless of content/image size */
+    min-height: 420px;
+}
+
+/* Responsive YouTube iframe embed for internship panels */
+.intern-video-wrap {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.intern-video-wrap iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* YouTube video thumbnail with play button overlay */
+.intern-video-thumb {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.intern-video-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.intern-video-thumb:hover img {
+    transform: scale(1.03);
+}
+
+.intern-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 22px;
+    backdrop-filter: blur(4px);
+    transition: background 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+}
+
+.intern-video-thumb:hover .intern-play-btn {
+    background: rgba(102, 126, 234, 0.85);
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 .deployed-tabs {
@@ -1835,14 +1915,17 @@ nav .fa-solid {
         gap: 5px;
     }
 
+    .skill-grid {
+        grid-template-columns: 1fr;
+    }
+
     .tab-links {
         padding: 12px 20px;
         font-size: 14px;
     }
 
-    .timeline::before {
+    #timeline-line {
         left: 30px;
-        top: 100px;
     }
 
     .timeline-item {
@@ -1887,8 +1970,8 @@ nav .fa-solid {
         font-size: 14px;
     }
 
-    .older-projects .timeline-item,
-    .older-projects .timeline-item:nth-child(even) {
+    .timeline-item.side-left,
+    .timeline-item.side-right {
         justify-content: flex-end !important;
     }
 
@@ -1974,6 +2057,96 @@ nav .fa-solid {
     .contact-left,
     .contact-right {
         flex-basis: 100%;
+    }
+
+    /* ---- Technical Internships mobile layout ---- */
+    #internships .deployed-layout {
+        flex-direction: column;
+        min-height: auto;
+        border-radius: 14px;
+    }
+
+    #internships .deployed-tabs {
+        flex-direction: row;
+        min-width: 0;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 0;
+        border-right: none;
+        border-bottom: 1px solid #e9ecef;
+        background: linear-gradient(90deg, #f8f9ff 0%, #f0f2ff 100%);
+        padding: 8px 8px 0;
+    }
+
+    #internships .deployed-tab {
+        flex: 0 0 auto;
+        padding: 10px 18px;
+        border-left: none !important;
+        border-bottom: 3px solid transparent;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    #internships .deployed-tab.active-deployed-tab {
+        border-left: none !important;
+        border-bottom: 3px solid #667eea;
+    }
+
+    #internships .deployed-tab.active-deployed-tab::after {
+        display: none;
+    }
+
+    #internships .deployed-content {
+        padding: 16px;
+    }
+
+    #internships .deployed-panel-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #internships .deployed-section-info {
+        flex: 0 0 auto;
+        max-width: 100%;
+    }
+
+    #internships .deployed-section-gallery {
+        flex: 0 0 auto;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    #internships .deployed-gallery {
+        max-height: 280px;
+    }
+
+    #internships .deployed-img-wrap img {
+        max-height: 260px;
+    }
+
+    #internships .deployed-title {
+        font-size: 20px;
+    }
+
+    #internships .deployed-tagline {
+        font-size: 13px;
+    }
+
+    #internships .internship-details li {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+
+    #internships .deployed-links {
+        flex-wrap: wrap;
+    }
+
+    /* Video thumbnail play button on mobile */
+    .intern-video-thumb .intern-play-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
     }
 
 }

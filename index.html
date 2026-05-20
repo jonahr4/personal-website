@@ -29,7 +29,7 @@
             </nav>
             <div class="header-content">
                 <div class="header-image">
-                    <img src="photos/Rothman_Jonah_434-_023-Retouched.jpg" alt="Jonah Rothman">
+                    <img src="photos/headshot-compressed.jpg" alt="Jonah Rothman">
                 </div>
                 <div class="header-text">
                     <p>MS/BA Computer Science Student at Boston University</p>
@@ -96,9 +96,21 @@
                                     <span class="chip">MongoDB Atlas</span>
                                     <span class="chip">Azure</span>
                                     <span class="chip">Firebase</span>
+                                    <span class="chip">Supabase</span>
+                                    <span class="chip">PostgreSQL</span>
+                                    <span class="chip">Vercel</span>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-heading"><i class="fa-solid fa-flask-vial"></i> Testing & QA</div>
+                                <div class="chip-row">
+                                    <span class="chip">Playwright</span>
                                     <span class="chip">Cypress</span>
+                                    <span class="chip">Selenium</span>
                                     <span class="chip">Jest</span>
                                     <span class="chip">Maestro</span>
+                                    <span class="chip">Azure DevOps</span>
+                                    <span class="chip">CI/CD</span>
                                 </div>
                             </div>
                         </div>
@@ -106,6 +118,19 @@
                     <!----Experience--->
                     <div class="tab-contents" id="experience">
                         <div class="resume-grid">
+                            <article class="resume-card">
+                                <div class="resume-top">
+                                    <div class="resume-company">Major League Baseball (MLB)</div>
+                                    <div class="resume-date">Jun 2026 – Aug 2026</div>
+                                </div>
+                                <div class="resume-role">Software Engineer Intern, Test Engineering</div>
+                                <div class="resume-meta">
+                                    <span class="resume-location"><i class="fa-solid fa-location-dot"></i> New
+                                        York, NY</span>
+                                </div>
+                                <p class="resume-desc">Building Playwright test automation for MLB's ticketing
+                                    platform serving 70M+ annual fans across all 30 ballparks.</p>
+                            </article>
                             <article class="resume-card">
                                 <div class="resume-top">
                                     <div class="resume-company">PanelClaw</div>
@@ -145,17 +170,6 @@
                                 <p class="resume-desc">Installed a new office network, refreshed hardware, and lifted
                                     throughput ~50% with optimized fiber configurations.</p>
                             </article>
-                            <article class="resume-card">
-                                <div class="resume-top">
-                                    <div class="resume-company">Massachusetts Housing Coalition</div>
-                                    <div class="resume-date">Summer 2021</div>
-                                </div>
-                                <div class="resume-role">Assistant to the Director</div>
-                                <div class="resume-meta">
-                                    <span class="resume-location"><i class="fa-solid fa-location-dot"></i> Remote</span>
-                                </div>
-                                <p class="resume-desc">Researched local officials and structured the contact database
-                                    for outreach.</p>
                             </article>
                         </div>
                     </div>
@@ -194,48 +208,123 @@
     <!--Technical Internships Section-->
     <div id="internships">
         <div class="container">
-            <h1 class="subtitle">Technical Internships</h1>
-            <div class="internship-boxes">
-                <a href="https://www.panelclaw.com/panelclaw-us/" target="_blank" class="internship-box">
-                    <div class="internship-header">
-                        <div class="internship-company">PanelClaw</div>
-                        <div class="internship-date">May – Aug 2025</div>
+            <h1 class="subtitle" style="text-align:center;">Technical Internships</h1>
+            <div class="deployed-layout">
+                <!-- Left Tabs -->
+                <div class="deployed-tabs">
+                    <button class="deployed-tab active-deployed-tab" onclick="switchInternshipTab('mlb')">
+                        <span class="deployed-tab-name">MLB</span>
+                        <span class="deployed-tab-sub">Test Engineering</span>
+                    </button>
+                    <button class="deployed-tab" onclick="switchInternshipTab('panelclaw')">
+                        <span class="deployed-tab-name">PanelClaw</span>
+                        <span class="deployed-tab-sub">Front-End Development</span>
+                    </button>
+                    <button class="deployed-tab" onclick="switchInternshipTab('clearwatt')">
+                        <span class="deployed-tab-name">ClearWatt</span>
+                        <span class="deployed-tab-sub">Software Development</span>
+                    </button>
+                </div>
+
+                <!-- Right Content -->
+                <div class="deployed-content">
+                    <!-- MLB Panel -->
+                    <div class="deployed-panel active-deployed-panel" id="intern-panel-mlb">
+                        <div class="deployed-panel-row">
+                            <div class="deployed-section-info">
+                                <h3 class="deployed-title">Major League Baseball (MLB)</h3>
+                                <p class="deployed-tagline">Software Engineer Intern, Test Engineering — New York, NY · Jun – Aug 2026</p>
+                                <ul class="internship-details">
+                                    <li>Engineered automated test coverage for MLB's ticketing and venue web platform serving <strong>70M+ annual fans</strong> across all 30 MLB ballparks</li>
+                                    <li>Built <strong>100+ end-to-end test cases in Playwright with TypeScript</strong>, integrated with GitHub Actions CI/CD to gate every production deploy</li>
+                                    <li>Architected <strong>AI-assisted test generation workflows</strong> using Claude and GPT-based agents to auto-draft Playwright specs from product requirement docs</li>
+                                    <li>Migrated legacy Selenium suites to Playwright, leveraging native auto-waiting and parallel execution to <strong>reduce full regression runtime by over 60%</strong></li>
+                                </ul>
+                                <div class="deployed-links">
+                                    <a href="https://www.mlb.com" target="_blank"><i class="fa-solid fa-globe"></i> MLB.com</a>
+                                </div>
+                            </div>
+                            <div class="deployed-section-gallery" data-gallery-key="internMlb">
+                                <div class="deployed-gallery">
+                                    <div class="deployed-img-wrap">
+                                        <img id="deployed-img-internMlb" src="https://img.mlbstatic.com/mlb-images/image/upload/t_w2208/mlb/gqesokcrwgvbbqiu1eet.png" alt="MLB Ballpark">
+                                    </div>
+                                </div>
+                                <div class="deployed-caption" id="deployed-caption-internMlb">MLB Ballpark App</div>
+                                <div class="deployed-caption-desc" id="deployed-desc-internMlb"></div>
+                                <div class="deployed-indicators" id="deployed-indicators-internMlb"></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="internship-role">Junior Front-End Developer Intern</div>
-                    <div class="internship-location"><i class="fa-solid fa-location-dot"></i> North Andover, MA</div>
-                    <ul class="internship-details">
-                        <li>Led the adoption of Cypress as a new QA automation framework, independently researching,
-                            implementing, and demonstrating the platform to the software team</li>
-                        <li>Transformed the existing manual QA smoke test suite with Cypress parallel automation,
-                            reducing test time from <strong>a full day to ~1 hour</strong> (<strong>5x faster</strong>)
-                        </li>
-                        <li>Wrote and maintained <strong>hundreds of Jest unit tests</strong>, improving test coverage
-                            and catching critical bugs while leveraging GitHub Copilot to accelerate development</li>
-                        <li>Tracked tasks in Jira and documented wiki pages in Confluence to support team collaboration
-                        </li>
-                    </ul>
-                    <span class="internship-link-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-                </a>
-                <a href="https://clearwatt.co.uk/" target="_blank" class="internship-box">
-                    <div class="internship-header">
-                        <div class="internship-company">ClearWatt</div>
-                        <div class="internship-date">Feb – Apr 2025</div>
+
+                    <!-- PanelClaw Panel -->
+                    <div class="deployed-panel" id="intern-panel-panelclaw">
+                        <div class="deployed-panel-row">
+                            <div class="deployed-section-info">
+                                <h3 class="deployed-title">PanelClaw</h3>
+                                <p class="deployed-tagline">Junior Front-End Developer Intern — North Andover, MA · May – Aug 2025</p>
+                                <ul class="internship-details">
+                                    <li>Led the adoption of Cypress as a new QA automation framework, independently researching,
+                                        implementing, and demonstrating the platform to the software team</li>
+                                    <li>Transformed the existing manual QA smoke test suite with Cypress parallel automation,
+                                        reducing test time from <strong>a full day to ~1 hour</strong> (<strong>5x faster</strong>)</li>
+                                    <li>Wrote and maintained <strong>hundreds of Jest unit tests</strong>, improving test coverage
+                                        and catching critical bugs while leveraging GitHub Copilot to accelerate development</li>
+                                    <li>Tracked tasks in Jira and documented wiki pages in Confluence to support team collaboration</li>
+                                </ul>
+                                <div class="deployed-links">
+                                    <a href="https://www.panelclaw.com/panelclaw-us/" target="_blank"><i class="fa-solid fa-globe"></i> Company Site</a>
+                                </div>
+                            </div>
+                            <div class="deployed-section-gallery" data-gallery-key="internPanelclaw">
+                                <div class="deployed-gallery">
+                                    <div class="deployed-img-wrap">
+                                        <a href="https://www.youtube.com/watch?v=u_JyqXVPg8E" target="_blank" class="intern-video-thumb">
+                                            <img id="deployed-img-internPanelclaw" src="https://img.youtube.com/vi/u_JyqXVPg8E/maxresdefault.jpg" alt="PanelClaw – Introducing clawOS">
+                                            <div class="intern-play-btn"><i class="fa-solid fa-play"></i></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="deployed-caption" id="deployed-caption-internPanelclaw">Introducing clawOS</div>
+                                <div class="deployed-caption-desc" id="deployed-desc-internPanelclaw"></div>
+                                <div class="deployed-indicators" id="deployed-indicators-internPanelclaw"></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="internship-role">Software Development Intern</div>
-                    <div class="internship-location"><i class="fa-solid fa-location-dot"></i> London, UK</div>
-                    <ul class="internship-details">
-                        <li>Spearheaded ClearWatt's <strong>first implementation of automated testing</strong> by
-                            independently building a full UI testing suite using Maestro and <strong>60+ YAML test
-                                flows</strong></li>
-                        <li>Tagged UI elements and debugged issues within the React Native codebase to support and
-                            improve test coverage</li>
-                        <li>Integrated the test suite into the <strong>CI/CD pipeline</strong> via Azure DevOps,
-                            establishing app testing during deployment</li>
-                        <li>Worked in an agile development environment, using Git and pull requests to deploy features
-                            across staging, UAT, and production</li>
-                    </ul>
-                    <span class="internship-link-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-                </a>
+
+                    <!-- ClearWatt Panel -->
+                    <div class="deployed-panel" id="intern-panel-clearwatt">
+                        <div class="deployed-panel-row">
+                            <div class="deployed-section-info">
+                                <h3 class="deployed-title">ClearWatt</h3>
+                                <p class="deployed-tagline">Software Development Intern — London, UK · Feb – Apr 2025</p>
+                                <ul class="internship-details">
+                                    <li>Spearheaded ClearWatt's <strong>first implementation of automated testing</strong> by
+                                        independently building a full UI testing suite using Maestro and <strong>60+ YAML test flows</strong></li>
+                                    <li>Tagged UI elements and debugged issues within the React Native codebase to support and
+                                        improve test coverage</li>
+                                    <li>Integrated the test suite into the <strong>CI/CD pipeline</strong> via Azure DevOps,
+                                        establishing app testing during deployment</li>
+                                    <li>Worked in an agile development environment, using Git and pull requests to deploy features
+                                        across staging, UAT, and production</li>
+                                </ul>
+                                <div class="deployed-links">
+                                    <a href="https://clearwatt.co.uk/" target="_blank"><i class="fa-solid fa-globe"></i> Company Site</a>
+                                </div>
+                            </div>
+                            <div class="deployed-section-gallery" data-gallery-key="internClearwatt">
+                                <div class="deployed-gallery">
+                                    <div class="deployed-img-wrap">
+                                        <img id="deployed-img-internClearwatt" src="Assets/ClearWatts/ClearWatt1.png" alt="ClearWatt App">
+                                    </div>
+                                </div>
+                                <div class="deployed-caption" id="deployed-caption-internClearwatt">ClearWatt App</div>
+                                <div class="deployed-caption-desc" id="deployed-desc-internClearwatt"></div>
+                                <div class="deployed-indicators" id="deployed-indicators-internClearwatt"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -391,8 +480,7 @@
                                 <div class="deployed-section-info">
                                     <h3 class="deployed-title">TaskApp — iOS</h3>
                                     <p class="deployed-tagline">The companion iOS app built with React Native &amp;
-                                        Expo, available on the App Store. 100% free — no ads, no subscriptions, no
-                                        in-app purchases.</p>
+                                        Expo, available on the App Store. 300+ downloads from 20+ countries — 100% free, no ads, no subscriptions.</p>
                                     <p>All core features from the web, plus native iOS capabilities: speak tasks via
                                         voice input and AI transcribes and creates them, home screen widgets (Today
                                         Dashboard, Next Task, and AI Quick Action), configurable smart notifications,
@@ -462,16 +550,84 @@
                 </div>
             </div>
             <div class="timeline">
+                <div id="timeline-line"></div>
+                <!-- Iroko Connector — BU Spark! (CS 519) -->
+                <div class="timeline-item" id="project-iroko">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-plug"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="project-badge badge-class"><i class="fa-solid fa-graduation-cap"></i> Class</span>
+                        <div class="timeline-date">Jan – May 2026</div>
+                        <h3>Iroko Connector — BU Spark!</h3>
+                        <div class="project-tagline">AI-powered schema matching engine that maps third-party SaaS data into a unified enterprise risk platform — no training data or labeled mappings required.</div>
+                        <div class="project-links">
+                            <a href="https://github.com/BU-Spark/se-iroko-connector" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
+                            <a href="Assets/projects/CS519/DS519_-_Class_Final_Presentation.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> Presentation</a>
+                        </div>
+                        <ul class="project-bullets">
+                            <li>Built <strong>ReMatch</strong>, a 3-stage LLM pipeline using <strong>text-embedding-3-large</strong> and <strong>gpt-4o-mini</strong> to auto-map third-party schemas to a unified ontology with confidence-scored rankings</li>
+                            <li>Developed a <strong>Next.js + TypeScript</strong> frontend with React Flow for interactive schema visualization and live SSE-streamed mapping results</li>
+                            <li>Partnered with <strong>Iroko Technologies</strong> across 4 agile sprints to deliver a production-ready connector for the OneScor enterprise risk platform</li>
+                        </ul>
+                        <div class="collaborator">Collaborators: Sean Tomany, Abidul Islam, Vanshika Chaddha, Vincent Lin<br>Class: CS/DS 519 — Software Engineering (BU Spark!) — Spring 2026</div>
+                    </div>
+                </div>
+
+                <!-- Robust Cross-View 3D Pose Tracking (CS 585) -->
+                <div class="timeline-item" id="project-585">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-person-running"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="project-badge badge-class"><i class="fa-solid fa-graduation-cap"></i> Class</span>
+                        <div class="timeline-date">Jan – May 2026</div>
+                        <h3>Robust Cross-View 3D Pose Tracking</h3>
+                        <div class="project-tagline">Classical upgrades to multi-camera 3D human pose estimation that cut joint error 11× under occlusion — no neural networks in the evaluated pipeline.</div>
+                        <div class="project-links">
+                            <a href="https://github.com/seantomany/585Project" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
+                            <a href="Assets/projects/CS585/585_final_report__6_.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> Final Report</a>
+                        </div>
+                        <ul class="project-bullets">
+                            <li>Added <strong>IRLS robust triangulation</strong>, <strong>uncertainty-aware Mahalanobis affinity</strong>, and a per-joint <strong>Kalman filter</strong> — all classical, neural-network-free upgrades</li>
+                            <li>Cut joint error under 20% occlusion from <strong>219 mm → 20 mm (11×)</strong> and flipped tracking score (MOTA) from <strong>−0.76 → +0.87</strong></li>
+                            <li>Built a stress-test harness across four corruption types and <strong>multi-seed evaluation</strong> on two benchmarks; also shipped a real-time <strong>MediaPipe</strong> exercise feedback demo</li>
+                        </ul>
+                        <div class="collaborator">Collaborators: Sean Tomany, Jigar Kanakhara, Bhavya Bavishi, Harsha Basavaraj Beth<br>Class: CS 585 — Image and Video Computing — Spring 2026</div>
+                    </div>
+                </div>
+
+                <!-- Predicting Movie Ratings from Trailer Comments (CS 505) -->
+                <div class="timeline-item" id="project-505">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-film"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="project-badge badge-class"><i class="fa-solid fa-graduation-cap"></i> Class</span>
+                        <div class="timeline-date">Jan – May 2026</div>
+                        <h3>Predicting Movie Ratings from YouTube Trailer Comments</h3>
+                        <div class="project-tagline">Can pre-release YouTube comments predict a film's eventual Letterboxd rating? A 5-class NLP pipeline across 173 movies and 236K comments.</div>
+                        <div class="project-links">
+                            <a href="https://github.com/jonahr4/CS505-Final-Project" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
+                            <a href="Assets/projects/CS505/505_final_report__5_.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> Final Report</a>
+                        </div>
+                        <ul class="project-bullets">
+                            <li>Scraped <strong>TMDB, YouTube Data API, and Letterboxd</strong> to build a <strong>173-movie, 236K-comment</strong> dataset with strict pre-release filtering</li>
+                            <li>Benchmarked six models; <strong>TF-IDF + LogReg</strong> won at <strong>0.423 accuracy</strong> and <strong>0.401 macro F1</strong>, beating frozen and fine-tuned DistilBERT variants</li>
+                            <li>Engineered 25 features (VADER sentiment, hype/spam heuristics, credibility weighting) and confirmed via temporal ablation that <strong>late-window comments</strong> carry the strongest signal</li>
+                        </ul>
+                        <div class="collaborator">Collaborator: Sean Tomany<br>Class: CS 505 — Natural Language Processing — Spring 2026</div>
+                    </div>
+                </div>
+
                 <!-- The Task App -->
                 <div class="timeline-item" id="project-taskapp">
                     <div class="timeline-icon">
                         <i class="fa-solid fa-list-check"></i>
                     </div>
                     <div class="timeline-content">
-                        <div class="top-badge" aria-label="Top project">
-                            <i class="fa-solid fa-star"></i>
-                            <span class="top-tooltip">Top project</span>
-                        </div>
+                        <span class="project-badge badge-top"><i class="fa-solid fa-star"></i> Top</span>
+                        <span class="project-badge badge-personal" style="right: 80px"><i class="fa-solid fa-user"></i> Personal</span>
                         <div class="timeline-date">January 2026</div>
                         <h3>The Task App</h3>
                         <div class="project-tagline">AI-powered task manager combining natural language reminders,
@@ -503,10 +659,8 @@
                         <i class="fa-solid fa-briefcase"></i>
                     </div>
                     <div class="timeline-content">
-                        <div class="top-badge" aria-label="Top project">
-                            <i class="fa-solid fa-star"></i>
-                            <span class="top-tooltip">Top project</span>
-                        </div>
+                        <span class="project-badge badge-top"><i class="fa-solid fa-star"></i> Top</span>
+                        <span class="project-badge badge-personal" style="right: 80px"><i class="fa-solid fa-user"></i> Personal</span>
                         <div class="timeline-date">Dec 2025 – Jan 2026</div>
                         <h3>InternAtlas</h3>
                         <div class="project-tagline">Search thousands of tech company job boards in one place with live
@@ -536,6 +690,7 @@
                         <i class="fa-solid fa-utensils"></i>
                     </div>
                     <div class="timeline-content">
+                        <span class="project-badge badge-class"><i class="fa-solid fa-graduation-cap"></i> Class</span>
                         <div class="timeline-date">December 2025</div>
                         <h3>MealMap</h3>
                         <div class="project-tagline">Plan meals, discover recipes, auto-generate shopping lists, log via
@@ -565,10 +720,8 @@
                         <i class="fa-solid fa-brain"></i>
                     </div>
                     <div class="timeline-content">
-                        <div class="top-badge" aria-label="Top project">
-                            <i class="fa-solid fa-star"></i>
-                            <span class="top-tooltip">Top project</span>
-                        </div>
+                        <span class="project-badge badge-top"><i class="fa-solid fa-star"></i> Top</span>
+                        <span class="project-badge badge-personal" style="right: 80px"><i class="fa-solid fa-user"></i> Personal</span>
                         <div class="timeline-date">November 2025</div>
                         <h3>The Study Buddy</h3>
                         <div class="project-tagline">Upload notes, generate AI flashcards, play study games, and chat
@@ -603,6 +756,7 @@
                         <i class="fa-solid fa-basketball-ball"></i>
                     </div>
                     <div class="timeline-content">
+                        <span class="project-badge badge-class"><i class="fa-solid fa-graduation-cap"></i> Class</span>
                         <div class="timeline-date">November 2025</div>
                         <h3>NBA Team Outcome Prediction</h3>
                         <div class="project-tagline">Predicts team scores and winners with a linear regression pipeline
@@ -632,6 +786,7 @@
                         <i class="fa-solid fa-music"></i>
                     </div>
                     <div class="timeline-content">
+                        <span class="project-badge badge-personal"><i class="fa-solid fa-user"></i> Personal</span>
                         <div class="timeline-date">August 2025</div>
                         <h3>VibeScape</h3>
                         <div class="project-tagline">Interactive song map to compare playlists with friends, explore
@@ -659,6 +814,7 @@
                         <i class="fa-solid fa-gamepad"></i>
                     </div>
                     <div class="timeline-content">
+                        <span class="project-badge badge-class"><i class="fa-solid fa-graduation-cap"></i> Class</span>
                         <div class="timeline-date">Sep 2024 – Dec 2024</div>
                         <h3>Java Terminal Game Engine</h3>
                         <div class="project-tagline">Play everything from Tic-Tac-Toe to turn-based RPGs in a scalable,
@@ -695,6 +851,7 @@
                             <i class="fa-solid fa-chart-line"></i>
                         </div>
                         <div class="timeline-content">
+                            <span class="project-badge badge-personal"><i class="fa-solid fa-user"></i> Personal</span>
                             <div class="timeline-date">August 2024</div>
                             <h3>StockBot</h3>
                             <div class="project-tagline">Chat with an AI bot trained on top stocks to get quick
@@ -723,6 +880,7 @@
                             <i class="fa-solid fa-coins"></i>
                         </div>
                         <div class="timeline-content">
+                            <span class="project-badge badge-personal"><i class="fa-solid fa-user"></i> Personal</span>
                             <div class="timeline-date">August 2024</div>
                             <h3>Poker Payout Calculator</h3>
                             <div class="project-tagline">Calculate poker payouts and net results for your table in
@@ -747,6 +905,7 @@
                             <i class="fa-solid fa-headphones"></i>
                         </div>
                         <div class="timeline-content">
+                            <span class="project-badge badge-personal"><i class="fa-solid fa-user"></i> Personal</span>
                             <div class="timeline-date">July 2024</div>
                             <h3>Music Guesser Game</h3>
                             <div class="project-tagline">Guess the song from short audio clips—my first personal
@@ -774,6 +933,7 @@
                             <i class="fa-solid fa-cloud-sun-rain"></i>
                         </div>
                         <div class="timeline-content">
+                            <span class="project-badge badge-class"><i class="fa-solid fa-graduation-cap"></i> Class</span>
                             <div class="timeline-date">Sep 2023 – Dec 2023</div>
                             <h3>Rain or Shine</h3>
                             <div class="project-tagline">Find nearby events tailored to your date and local weather.
@@ -977,6 +1137,8 @@
                 toggle.classList.remove("expanded");
                 toggleText.textContent = "Show More Projects";
             }
+            // Recalculate timeline line after expand/collapse transition
+            setTimeout(updateTimelineLine, 400);
         }
 
     </script>
@@ -1015,6 +1177,15 @@
     <!-- Deployed Apps Script -->
     <script>
         const deployedData = {
+            internMlb: [
+                { src: 'https://img.mlbstatic.com/mlb-images/image/upload/t_w2208/mlb/gqesokcrwgvbbqiu1eet.png', label: 'MLB Ballpark App', desc: 'The ticketing and venue platform serving 70M+ fans across all 30 MLB ballparks.' },
+                { src: 'https://play-lh.googleusercontent.com/NKT1m5qgV-aQApK2qegpxLqbb1ptLRF-gvBtPUoQCqYucBJqH3Yp-5ID3iFRWWEiQCxl=w240-h480-rw', label: 'Ballpark Mobile', desc: 'Mobile app with embedded WebViews powering the ticketing flows tested by the QA team.' }
+            ],
+            internPanelclaw: [],
+            internClearwatt: [
+                { src: 'Assets/ClearWatts/ClearWatt1.png', label: 'ClearWatt App', desc: 'The EV battery health mobile app where Maestro automated 60+ UI test flows.' },
+                { src: 'Assets/ClearWatts/cleawatt2.png', label: 'Battery Report', desc: 'Detailed battery health report screen tested across staging, UAT, and production environments.' }
+            ],
             studyBuddy: [
                 { src: 'Assets/TheStudyBuddy/LandingPage.png', label: 'Landing Page', desc: 'Marketing page with feature overview, testimonials, and quick-start buttons for new users.' },
                 { src: 'Assets/TheStudyBuddy/Dashboard.png', label: 'Dashboard', desc: 'Central hub showing all subjects, flashcard sets, and recent AI chat conversations at a glance.' },
@@ -1044,9 +1215,9 @@
             ]
         };
 
-        const deployedIndex = { studyBuddy: 0, internAtlas: 0, taskAppWeb: 0, taskAppIos: 0 };
+        const deployedIndex = { internMlb: 0, internPanelclaw: 0, internClearwatt: 0, studyBuddy: 0, internAtlas: 0, taskAppWeb: 0, taskAppIos: 0 };
         const deployedTimers = {};
-        const deployedPlaying = { studyBuddy: true, internAtlas: true, taskAppWeb: true, taskAppIos: true };
+        const deployedPlaying = { internMlb: true, internPanelclaw: true, internClearwatt: true, studyBuddy: true, internAtlas: true, taskAppWeb: true, taskAppIos: true };
         const CAROUSEL_INTERVAL = 4000;
 
         // Build indicator bars and play/pause for each gallery
@@ -1054,7 +1225,7 @@
             Object.keys(deployedData).forEach(key => {
                 const items = deployedData[key];
                 const container = document.getElementById('deployed-indicators-' + key);
-                if (!container) return;
+                if (!container || items.length === 0) return;
 
                 // Create indicator wrapper with bars and play/pause
                 let html = '<div class="deployed-bars">';
@@ -1067,7 +1238,7 @@
 
                 // Set initial description
                 const descEl = document.getElementById('deployed-desc-' + key);
-                if (descEl && items[0].desc) descEl.textContent = items[0].desc;
+                if (descEl && items[0] && items[0].desc) descEl.textContent = items[0].desc;
 
                 // Start auto-cycling
                 startTimer(key);
@@ -1138,12 +1309,23 @@
         }
 
         function switchDeployedTab(tabKey) {
-            // Update tab buttons
-            document.querySelectorAll('.deployed-tab').forEach(t => t.classList.remove('active-deployed-tab'));
+            // Update tab buttons (scoped to deployed-apps section)
+            const deployedSection = document.getElementById('deployed-apps');
+            deployedSection.querySelectorAll('.deployed-tab').forEach(t => t.classList.remove('active-deployed-tab'));
             event.currentTarget.classList.add('active-deployed-tab');
             // Update panels
-            document.querySelectorAll('.deployed-panel').forEach(p => p.classList.remove('active-deployed-panel'));
+            deployedSection.querySelectorAll('.deployed-panel').forEach(p => p.classList.remove('active-deployed-panel'));
             document.getElementById('panel-' + tabKey).classList.add('active-deployed-panel');
+        }
+
+        function switchInternshipTab(tabKey) {
+            // Update tab buttons (scoped to internships section)
+            const internSection = document.getElementById('internships');
+            internSection.querySelectorAll('.deployed-tab').forEach(t => t.classList.remove('active-deployed-tab'));
+            event.currentTarget.classList.add('active-deployed-tab');
+            // Update panels
+            internSection.querySelectorAll('.deployed-panel').forEach(p => p.classList.remove('active-deployed-panel'));
+            document.getElementById('intern-panel-' + tabKey).classList.add('active-deployed-panel');
         }
 
         function switchPlatform(platform) {
@@ -1153,8 +1335,57 @@
             document.getElementById('platform-' + platform).classList.add('active-platform-panel');
         }
 
+        // Dynamic timeline line — always spans from center of first icon to center of last visible icon
+        function updateTimelineLine() {
+            const timeline = document.querySelector('.timeline');
+            const line = document.getElementById('timeline-line');
+            if (!timeline || !line) return;
+
+            // Get all visible timeline icons (skip items hidden by collapsed older-projects)
+            const allIcons = timeline.querySelectorAll('.timeline-icon');
+            const visibleIcons = [...allIcons].filter(icon => {
+                const item = icon.closest('.timeline-item');
+                if (!item) return false;
+                // Check if inside collapsed older-projects
+                const older = item.closest('.older-projects');
+                if (older && older.classList.contains('collapsed')) return false;
+                return item.offsetParent !== null;
+            });
+
+            if (visibleIcons.length < 2) { line.style.height = '0'; return; }
+
+            const first = visibleIcons[0];
+            const last = visibleIcons[visibleIcons.length - 1];
+            const timelineRect = timeline.getBoundingClientRect();
+            const firstRect = first.getBoundingClientRect();
+            const lastRect = last.getBoundingClientRect();
+
+            const topOffset = (firstRect.top + firstRect.height / 2) - timelineRect.top;
+            const bottomOffset = (lastRect.top + lastRect.height / 2) - timelineRect.top;
+
+            line.style.top = topOffset + 'px';
+            line.style.height = (bottomOffset - topOffset) + 'px';
+        }
+
+        // Global alternation — assigns .side-left / .side-right based on absolute
+        // index across ALL timeline items, regardless of container nesting.
+        // This follows the Open/Closed Principle: adding items anywhere in the
+        // DOM doesn't require manual CSS rule changes.
+        function updateTimelineAlternation() {
+            const items = document.querySelectorAll('.timeline .timeline-item');
+            items.forEach((item, i) => {
+                item.classList.remove('side-left', 'side-right');
+                item.classList.add(i % 2 === 0 ? 'side-left' : 'side-right');
+            });
+        }
+
         // Initialize on load
-        document.addEventListener('DOMContentLoaded', initGalleries);
+        document.addEventListener('DOMContentLoaded', () => {
+            initGalleries();
+            updateTimelineAlternation();
+            updateTimelineLine();
+        });
+        window.addEventListener('resize', () => requestAnimationFrame(updateTimelineLine));
     </script>
 
 </body>
