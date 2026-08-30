@@ -128,8 +128,7 @@
                                     <span class="resume-location"><i class="fa-solid fa-location-dot"></i> New
                                         York, NY</span>
                                 </div>
-                                <p class="resume-desc">Building Playwright test automation for MLB's ticketing
-                                    platform serving 70M+ annual fans across all 30 ballparks.</p>
+                                <p class="resume-desc">Architected a multi-agent AI automation pipeline to generate PR-ready Playwright tests, ensuring ticketing reliability for 70M+ annual fans.</p>
                             </article>
                             <article class="resume-card">
                                 <div class="resume-top">
@@ -235,10 +234,11 @@
                                 <h3 class="deployed-title">Major League Baseball (MLB)</h3>
                                 <p class="deployed-tagline">Software Engineer Intern, Test Engineering — New York, NY · Jun – Aug 2026</p>
                                 <ul class="internship-details">
-                                    <li>Engineered automated test coverage for MLB's ticketing and venue web platform serving <strong>70M+ annual fans</strong> across all 30 MLB ballparks</li>
-                                    <li>Built <strong>100+ end-to-end test cases in Playwright with TypeScript</strong>, integrated with GitHub Actions CI/CD to gate every production deploy</li>
-                                    <li>Architected <strong>AI-assisted test generation workflows</strong> using Claude and GPT-based agents to auto-draft Playwright specs from product requirement docs</li>
-                                    <li>Migrated legacy Selenium suites to Playwright, leveraging native auto-waiting and parallel execution to <strong>reduce full regression runtime by over 60%</strong></li>
+                                    <li>Architected an <strong>AI pipeline (Author, Explorer, Self-healing agents)</strong> to create Playwright specs and POMs from Jira tickets</li>
+                                    <li>Engineered automated test coverage for MLB’s <strong>MyProVenue Ticketing platform</strong>, ensuring reliability for <strong>70M+ annual fans</strong></li>
+                                    <li>Authored <strong>80+ E2E test cases in Playwright with JavaScript</strong>, building new page coverage utilizing best POM standards</li>
+                                    <li>Created automation scripts to improve test data maintainability and creation, <strong>rapidly provisioning 140+ test accounts</strong></li>
+                                    <li>Integrated test suites into <strong>GitHub Actions CI/CD</strong> to catch bugs across ticket voucher, exchanges, and forwarding flows</li>
                                 </ul>
                                 <div class="deployed-links">
                                     <a href="https://www.mlb.com" target="_blank"><i class="fa-solid fa-globe"></i> MLB.com</a>
@@ -247,10 +247,10 @@
                             <div class="deployed-section-gallery" data-gallery-key="internMlb">
                                 <div class="deployed-gallery">
                                     <div class="deployed-img-wrap">
-                                        <img id="deployed-img-internMlb" src="https://img.mlbstatic.com/mlb-images/image/upload/t_w2208/mlb/gqesokcrwgvbbqiu1eet.png" alt="MLB Ballpark">
+                                        <img id="deployed-img-internMlb" src="Assets/MLB/Presentation.png" alt="MLB Internship Presentation">
                                     </div>
                                 </div>
-                                <div class="deployed-caption" id="deployed-caption-internMlb">MLB Ballpark App</div>
+                                <div class="deployed-caption" id="deployed-caption-internMlb">Presentation</div>
                                 <div class="deployed-caption-desc" id="deployed-desc-internMlb"></div>
                                 <div class="deployed-indicators" id="deployed-indicators-internMlb"></div>
                             </div>
@@ -348,10 +348,15 @@
                         <span class="deployed-tab-name">The Task App</span>
                         <span class="deployed-tab-sub">AI Task Manager</span>
                     </button>
+                    <button class="deployed-tab " onclick="switchDeployedTab('rezzy')">
+                        <span class="deployed-tab-name">Rezzy</span>
+                        <span class="deployed-tab-sub">AI Resume Tailor</span>
+                    </button>
                 </div>
 
                 <!-- Right Content -->
                 <div class="deployed-content">
+
                     <!-- Study Buddy Panel -->
                     <div class="deployed-panel active-deployed-panel" id="panel-studyBuddy">
                         <div class="deployed-panel-row">
@@ -513,6 +518,35 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Rezzy Panel -->
+                    <div class="deployed-panel " id="panel-rezzy">
+                        <div class="deployed-panel-row">
+                            <div class="deployed-section-info">
+                                <h3 class="deployed-title">Rezzy</h3>
+                                <p class="deployed-tagline">AI-Powered Resume Tailoring & Management</p>
+                                <p>Stop spending hours manually editing your resume for every application. Rezzy does it in seconds. Paste a job description and the AI automatically suggests targeted improvements for your resume bullets without hallucinating experience.</p>
+                                <p>Features a Source Bank for all work experiences, a Smart Skills Engine to extract and highlight relevant skills, and a built-in Application Tracker Kanban board. Generates beautiful, ATS-friendly PDF resumes using a custom LaTeX engine.</p>
+                                <p>Built with Next.js 19 and Tailwind CSS on the frontend, and a Python/FastAPI backend powered by LangGraph for multi-agent AI orchestration. Uses Azure OpenAI and OpenRouter for LLM access, and Firebase for auth and data storage. Deployed on Vercel and Azure Container Apps.</p>
+                                <div class="deployed-links">
+                                    <a href="https://github.com/jonahr4/Rezzy" target="_blank"><i
+                                            class="fa-brands fa-github"></i> Repository</a>
+                                    <a href="https://rezzy-eight.vercel.app/" target="_blank"><i
+                                            class="fa-solid fa-globe"></i> Visit Site</a>
+                                </div>
+                            </div>
+                            <div class="deployed-section-gallery" data-gallery-key="rezzy">
+                                <div class="deployed-gallery">
+                                    <div class="deployed-img-wrap">
+                                        <img id="deployed-img-rezzy" src="Rezzy/dashboard.png"
+                                            alt="Rezzy Dashboard">
+                                    </div>
+                                </div>
+                                <div class="deployed-caption" id="deployed-caption-rezzy">Dashboard</div>
+                                <div class="deployed-caption-desc" id="deployed-desc-rezzy"></div>
+                                <div class="deployed-indicators" id="deployed-indicators-rezzy"></div>
+                            </div>
+                        </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -551,6 +585,33 @@
             </div>
             <div class="timeline">
                 <div id="timeline-line"></div>
+                <!-- Rezzy -->
+                <div class="timeline-item" id="project-rezzy">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-file-invoice"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="project-badge badge-personal"><i class="fa-solid fa-user"></i> Personal</span>
+                        <div class="timeline-date">Jul 2026 – Present</div>
+                        <h3>Rezzy</h3>
+                        <div class="project-tagline">Multi-agent LangGraph pipeline for AI resume tailoring that preserves the applicant's own wording.</div>
+                        <div class="project-links">
+                            <a href="https://github.com/jonahr4/Rezzy" target="_blank"><i
+                                    class="fa-brands fa-github"></i> Repository</a>
+                            <a href="https://rezzy-eight.vercel.app/" target="_blank"><i class="fa-solid fa-globe"></i> Visit
+                                Site</a>
+                            <a class="gallery-btn" type="button" onclick="openGallery('rezzy')"><i
+                                    class="fa-solid fa-images"></i> View Pictures</a>
+                        </div>
+                        <ul class="project-bullets">
+                            <li>Designed a multi-agent AI pipeline in Python/FastAPI using LangGraph, with dedicated resume tailoring agents</li>
+                            <li>Built an evaluation harness that validates generated LaTeX PDF output for formatting errors and auto-recompiles</li>
+                            <li>Engineered prompts to prevent metric and skill hallucination, grounding generated content against a verified source bank</li>
+                            <li>Containerized the backend with Docker and deployed to Azure Container Apps, with a Next.js/Firebase frontend and auth</li>
+                        </ul>
+                    </div>
+                </div>
+
                 <!-- Iroko Connector — BU Spark! (CS 519) -->
                 <div class="timeline-item" id="project-iroko">
                     <div class="timeline-icon">
@@ -626,8 +687,7 @@
                         <i class="fa-solid fa-list-check"></i>
                     </div>
                     <div class="timeline-content">
-                        <span class="project-badge badge-top"><i class="fa-solid fa-star"></i> Top</span>
-                        <span class="project-badge badge-personal" style="right: 80px"><i class="fa-solid fa-user"></i> Personal</span>
+                        <span class="project-badge badge-personal"><i class="fa-solid fa-user"></i> Personal</span>
                         <div class="timeline-date">January 2026</div>
                         <h3>The Task App</h3>
                         <div class="project-tagline">AI-powered task manager combining natural language reminders,
@@ -659,8 +719,7 @@
                         <i class="fa-solid fa-briefcase"></i>
                     </div>
                     <div class="timeline-content">
-                        <span class="project-badge badge-top"><i class="fa-solid fa-star"></i> Top</span>
-                        <span class="project-badge badge-personal" style="right: 80px"><i class="fa-solid fa-user"></i> Personal</span>
+                        <span class="project-badge badge-personal"><i class="fa-solid fa-user"></i> Personal</span>
                         <div class="timeline-date">Dec 2025 – Jan 2026</div>
                         <h3>InternAtlas</h3>
                         <div class="project-tagline">Search thousands of tech company job boards in one place with live
@@ -720,8 +779,7 @@
                         <i class="fa-solid fa-brain"></i>
                     </div>
                     <div class="timeline-content">
-                        <span class="project-badge badge-top"><i class="fa-solid fa-star"></i> Top</span>
-                        <span class="project-badge badge-personal" style="right: 80px"><i class="fa-solid fa-user"></i> Personal</span>
+                        <span class="project-badge badge-personal"><i class="fa-solid fa-user"></i> Personal</span>
                         <div class="timeline-date">November 2025</div>
                         <h3>The Study Buddy</h3>
                         <div class="project-tagline">Upload notes, generate AI flashcards, play study games, and chat
@@ -994,10 +1052,9 @@
                     <p><i class="fa-regular fa-paper-plane"></i> jonahrothman@me.com</p>
                     <div class="social-icons">
                         <a href="https://www.linkedin.com/in/jonah-rothman/"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/jonah_rothman/"><i
-                                class="fa-brands fa-square-instagram"></i></a>
+                        <a href="https://github.com/jonahr4" target="_blank"><i class="fa-brands fa-github"></i></a>
                     </div>
-                    <a href="Jonah_Rothman_Resume_Spring_2026.pdf" download class="btn btn2">Download Resume</a>
+                    <a href="Jonah_Rothman_Resume_Fall_2026.pdf" download class="btn btn2">Download Resume</a>
                 </div>
                 <div class="contact-right">
                     <form name="submit-to-google-sheet">
@@ -1016,6 +1073,13 @@
 
     <script>
         const galleries = {
+            rezzy: [
+                { src: 'Rezzy/dashboard.png', label: 'Dashboard', description: 'Interactive step-by-step UI to review AI suggestions, drag-and-drop elements, and preview your tailored resume in real-time.' },
+                { src: 'Rezzy/pipeline.png', label: 'AI Pipeline', description: 'LangGraph orchestrated multi-step workflow including JD Parsing, Job/Bullet Selector, AI Suggestion Generator, and QA Critic.' },
+                { src: 'Rezzy/sourcebank.png', label: 'Source Bank', description: 'Centralized repository for all your work experiences, projects, and education to ground the AI and prevent hallucination.' },
+                { src: 'Rezzy/runhistory.png', label: 'Run History', description: 'View past tailored resumes, track application status, and download LaTeX-generated ATS-optimized PDFs.' },
+                { src: 'Rezzy/ApplicationTracker.png', label: 'Application Tracker', description: 'Built-in Kanban board with drag-and-drop columns to track jobs from Wishlist to Offer.' }
+            ],
             taskApp: [
                 { src: 'Assets/TheTaskApp/main-tasks-page.png', label: 'Main Tasks', description: 'Main task list view with groups, priorities, and quick actions' },
                 { src: 'Assets/TheTaskApp/Ai-screen.png', label: 'AI Assistant', description: 'AI-powered natural language task creation and scheduling' },
@@ -1178,13 +1242,22 @@
     <script>
         const deployedData = {
             internMlb: [
-                { src: 'https://img.mlbstatic.com/mlb-images/image/upload/t_w2208/mlb/gqesokcrwgvbbqiu1eet.png', label: 'MLB Ballpark App', desc: 'The ticketing and venue platform serving 70M+ fans across all 30 MLB ballparks.' },
-                { src: 'https://play-lh.googleusercontent.com/NKT1m5qgV-aQApK2qegpxLqbb1ptLRF-gvBtPUoQCqYucBJqH3Yp-5ID3iFRWWEiQCxl=w240-h480-rw', label: 'Ballpark Mobile', desc: 'Mobile app with embedded WebViews powering the ticketing flows tested by the QA team.' }
+                { src: 'Assets/MLB/Presentation.png', label: 'Presentation', desc: 'Presenting my summer work to the MLB technology department.' },
+                { src: 'Assets/MLB/Auditorium.png', label: 'MLB Office', desc: 'Working from the MLB Headquarters in New York City.' },
+                { src: 'Assets/MLB/JackieRobinsonMuseum.png', label: 'Jackie Robinson Museum', desc: 'Visiting the Jackie Robinson Museum with the summer intern class.' },
+                { src: 'Assets/MLB/NBA-HQ.png', label: 'NBA Headquarters', desc: 'Cross-league tech exchange at the NBA Headquarters.' }
             ],
             internPanelclaw: [],
             internClearwatt: [
                 { src: 'Assets/ClearWatts/ClearWatt1.png', label: 'ClearWatt App', desc: 'The EV battery health mobile app where Maestro automated 60+ UI test flows.' },
                 { src: 'Assets/ClearWatts/cleawatt2.png', label: 'Battery Report', desc: 'Detailed battery health report screen tested across staging, UAT, and production environments.' }
+            ],
+            rezzy: [
+                { src: 'Rezzy/dashboard.png', label: 'Dashboard', desc: 'Interactive step-by-step UI to review AI suggestions, drag-and-drop elements, and preview your tailored resume in real-time.' },
+                { src: 'Rezzy/pipeline.png', label: 'AI Pipeline', desc: 'LangGraph orchestrated multi-step workflow including JD Parsing, Job/Bullet Selector, AI Suggestion Generator, and QA Critic.' },
+                { src: 'Rezzy/sourcebank.png', label: 'Source Bank', desc: 'Centralized repository for all your work experiences, projects, and education to ground the AI and prevent hallucination.' },
+                { src: 'Rezzy/runhistory.png', label: 'Run History', desc: 'View past tailored resumes, track application status, and download LaTeX-generated ATS-optimized PDFs.' },
+                { src: 'Rezzy/ApplicationTracker.png', label: 'Application Tracker', desc: 'Built-in Kanban board with drag-and-drop columns to track jobs from Wishlist to Offer.' }
             ],
             studyBuddy: [
                 { src: 'Assets/TheStudyBuddy/LandingPage.png', label: 'Landing Page', desc: 'Marketing page with feature overview, testimonials, and quick-start buttons for new users.' },
@@ -1215,9 +1288,9 @@
             ]
         };
 
-        const deployedIndex = { internMlb: 0, internPanelclaw: 0, internClearwatt: 0, studyBuddy: 0, internAtlas: 0, taskAppWeb: 0, taskAppIos: 0 };
+        const deployedIndex = { internMlb: 0, internPanelclaw: 0, internClearwatt: 0, rezzy: 0, studyBuddy: 0, internAtlas: 0, taskAppWeb: 0, taskAppIos: 0 };
         const deployedTimers = {};
-        const deployedPlaying = { internMlb: true, internPanelclaw: true, internClearwatt: true, studyBuddy: true, internAtlas: true, taskAppWeb: true, taskAppIos: true };
+        const deployedPlaying = { internMlb: true, internPanelclaw: true, internClearwatt: true, rezzy: true, studyBuddy: true, internAtlas: true, taskAppWeb: true, taskAppIos: true };
         const CAROUSEL_INTERVAL = 4000;
 
         // Build indicator bars and play/pause for each gallery

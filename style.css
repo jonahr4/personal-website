@@ -1273,7 +1273,8 @@ nav ul li a:hover::after {
 .intern-video-wrap {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
     height: 0;
     border-radius: 10px;
     overflow: hidden;
@@ -1440,7 +1441,7 @@ nav ul li a:hover::after {
 
 /* Info section — left column */
 .deployed-section-info {
-    flex: 1 1 40%;
+    flex: 55;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1477,7 +1478,7 @@ nav ul li a:hover::after {
 
 /* Gallery section — right column */
 .deployed-section-gallery {
-    flex: 1 1 50%;
+    flex: 45;
     background: #f0f1ff;
     border-radius: 14px;
     padding: 14px 14px 12px;
