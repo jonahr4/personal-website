@@ -2152,6 +2152,10 @@ nav .fa-solid {
 
 }
 /* ===== 2026-09-29 audit: accessibility + hero CTA additions ===== */
+/* Images carrying width/height attributes for CLS must keep aspect ratio:
+   the height presentation attribute would otherwise win where no CSS
+   height is set (logo, about photo). */
+.logo, .about-photo { height: auto; }
 .skip-link {
     position: absolute; left: -9999px; top: auto;
     width: 1px; height: 1px; overflow: hidden;
