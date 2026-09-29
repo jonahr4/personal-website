@@ -1822,15 +1822,15 @@ nav .fa-solid {
     #header {
         background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e8ba3 100%);
         overflow-x: hidden;
-        padding: 120px 0 60px;
+        padding: 112px 0 48px;
     }
 
     .header-content {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 80px 5% 40px 5%;
-        gap: 30px;
+        padding: 24px 5% 32px 5%;
+        gap: 24px;
         height: auto;
         max-height: none;
         width: 100%;
