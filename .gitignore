@@ -1,0 +1,6 @@
+# Dependencies
+node_modules/
+
+# Build files
+# Note: dist/ is intentionally NOT ignored because it contains the built analytics bundle
+# that needs to be deployed with the static site

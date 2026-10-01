@@ -1,0 +1,27 @@
+{
+  "name": "primary",
+  "version": "1.0.0",
+  "description": "This repository contains the source files for my personal website, available at [https://jonahrothman.com/](https://jonahrothman.com/).",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild analytics.js --bundle --outfile=dist/analytics.bundle.js --format=iife",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonahr4/personal-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonahr4/personal-website/issues"
+  },
+  "homepage": "https://github.com/jonahr4/personal-website#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
