@@ -1510,7 +1510,10 @@
             document.getElementById('platform-' + platform).classList.add('active-platform-panel');
         }
 
-        // Dynamic timeline line — always spans from center of first icon to center of last visible icon
+        // Dynamic timeline line — spans from center of first icon down through the
+        // "Show More" toggle button while it is visible, so the bar never stops
+        // mid-air. When the older projects are expanded (toggle hidden), it ends
+        // at the center of the last visible icon.
         function updateTimelineLine() {
             const timeline = document.querySelector('.timeline');
             const line = document.getElementById('timeline-line');
@@ -1530,16 +1533,21 @@
             if (visibleIcons.length < 2) { line.style.height = '0'; return; }
 
             const first = visibleIcons[0];
-            const last = visibleIcons[visibleIcons.length - 1];
             const timelineRect = timeline.getBoundingClientRect();
             const firstRect = first.getBoundingClientRect();
-            const lastRect = last.getBoundingClientRect();
-
             const topOffset = (firstRect.top + firstRect.height / 2) - timelineRect.top;
-            const bottomOffset = (lastRect.top + lastRect.height / 2) - timelineRect.top;
+
+            // Bottom endpoint: the toggle button while it is shown, else the last icon.
+            let bottomEl = visibleIcons[visibleIcons.length - 1];
+            const toggleBtn = timeline.querySelector('#timeline-toggle .timeline-toggle-btn');
+            if (toggleBtn && toggleBtn.offsetParent !== null) {
+                bottomEl = toggleBtn;
+            }
+            const bottomRect = bottomEl.getBoundingClientRect();
+            const bottomOffset = (bottomRect.top + bottomRect.height / 2) - timelineRect.top;
 
             line.style.top = topOffset + 'px';
-            line.style.height = (bottomOffset - topOffset) + 'px';
+            line.style.height = Math.max(0, bottomOffset - topOffset) + 'px';
         }
 
         // Global alternation — assigns .side-left / .side-right based on absolute
@@ -1559,6 +1567,15 @@
             initGalleries();
             updateTimelineAlternation();
             updateTimelineLine();
+            // Re-position once everything (images, fonts) is loaded, and
+            // whenever the timeline's layout shifts afterwards (lazy-loaded
+            // images, font swaps). The line is absolutely positioned so
+            // resizing it never re-triggers the observer.
+            window.addEventListener('load', () => requestAnimationFrame(updateTimelineLine));
+            if ('ResizeObserver' in window) {
+                new ResizeObserver(() => requestAnimationFrame(updateTimelineLine))
+                    .observe(document.querySelector('.timeline'));
+            }
         });
         window.addEventListener('resize', () => requestAnimationFrame(updateTimelineLine));
     </script>
