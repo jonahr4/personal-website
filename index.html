@@ -7,7 +7,7 @@
 
     <!-- Primary SEO -->
     <title>Jonah Rothman | Software Engineer & CS Student at Boston University</title>
-    <meta name="description" content="Jonah Rothman — MS/BA Computer Science student at Boston University specializing in full-stack development, AI, and QA automation. Former intern at MLB, PanelClaw, and ClearWatt.">
+    <meta name="description" content="Jonah Rothman is a software engineer and computer science student at Boston University. He builds web and mobile apps and has interned at MLB, PanelClaw, and ClearWatt.">
     <meta name="keywords" content="Jonah Rothman, software engineer, computer science, Boston University, full-stack developer, AI developer, QA automation, web development, internship, portfolio">
     <meta name="author" content="Jonah Rothman">
     <meta name="robots" content="index, follow">
@@ -16,8 +16,10 @@
     <!-- Open Graph (Facebook / LinkedIn previews) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jonahrothman.com/">
-    <meta property="og:title" content="Jonah Rothman | Software Engineer & CS Student">
-    <meta property="og:description" content="MS/BA Computer Science student at Boston University. Full-stack developer, AI enthusiast, and QA automation engineer. Interned at MLB, PanelClaw, and ClearWatt.">
+    <meta property="og:title" content="Jonah Rothman | Software Engineer & CS Student at Boston University">
+    <meta property="og:description" content="Jonah Rothman is a software engineer and computer science student at Boston University. He builds web and mobile apps and has interned at MLB, PanelClaw, and ClearWatt.">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="800">
     <meta property="og:image" content="https://jonahrothman.com/photos/headshot-compressed.jpg">
     <meta property="og:image:alt" content="Jonah Rothman headshot">
     <meta property="og:site_name" content="Jonah Rothman Portfolio">
@@ -25,31 +27,54 @@
 
     <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Jonah Rothman | Software Engineer & CS Student">
-    <meta name="twitter:description" content="MS/BA CS student at Boston University. Full-stack dev, AI, and QA automation. Interned at MLB, PanelClaw & ClearWatt.">
+    <meta name="twitter:title" content="Jonah Rothman | Software Engineer & CS Student at Boston University">
+    <meta name="twitter:description" content="Jonah Rothman is a software engineer and computer science student at Boston University. He builds web and mobile apps and has interned at MLB, PanelClaw, and ClearWatt.">
     <meta name="twitter:image" content="https://jonahrothman.com/photos/headshot-compressed.jpg">
     <meta name="twitter:image:alt" content="Jonah Rothman headshot">
 
     <!-- JSON-LD Structured Data (Person schema) -->
+    <link rel="me" href="https://www.linkedin.com/in/jonah-rothman/">
+    <link rel="me" href="https://github.com/jonahr4">
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Jonah Rothman",
-      "url": "https://jonahrothman.com",
-      "image": "https://jonahrothman.com/photos/headshot-compressed.jpg",
-      "sameAs": [
-        "https://www.linkedin.com/in/jonah-rothman/",
-        "https://github.com/jonahr4"
-      ],
-      "jobTitle": "Software Engineer",
-      "description": "MS/BA Computer Science student at Boston University specializing in full-stack development, AI, and QA automation.",
-      "email": "jonahrothman@me.com",
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "Boston University"
-      },
-      "knowsAbout": ["Full-Stack Development", "Artificial Intelligence", "QA Automation", "Web Development", "CI/CD Pipelines"]
+      "@type": "ProfilePage",
+      "url": "https://jonahrothman.com/",
+      "mainEntity": {
+        "@type": "Person",
+        "@id": "https://jonahrothman.com/#jonah-rothman",
+        "name": "Jonah Rothman",
+        "givenName": "Jonah",
+        "familyName": "Rothman",
+        "url": "https://jonahrothman.com/",
+        "image": "https://jonahrothman.com/photos/headshot-compressed.jpg",
+        "email": "jonahrothman@me.com",
+        "jobTitle": "Software Engineer",
+        "description": "Jonah Rothman is a software engineer and computer science student at Boston University. He builds web and mobile apps and has interned at MLB, PanelClaw, and ClearWatt.",
+        "homeLocation": {
+          "@type": "Place",
+          "name": "Boston, Massachusetts"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Boston University",
+          "url": "https://www.bu.edu/"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/jonah-rothman/",
+          "https://github.com/jonahr4"
+        ],
+        "knowsAbout": [
+          "Web Development",
+          "React",
+          "Next.js",
+          "React Native",
+          "Test Automation",
+          "Playwright",
+          "Artificial Intelligence"
+        ]
+      }
     }
     </script>
 
@@ -85,7 +110,8 @@
                 <div class="header-text">
                     <p>MS/BA Computer Science Student at Boston University</p>
                     <h1>Hi, I'm <span>Jonah</span><br> Rothman from Boston</h1>
-                    <p class="hero-value">I build AI-powered products that actually ship &mdash; from an MLB test-automation pipeline to apps with real users. Seeking full-time SWE roles for 2027.</p>
+                    <p class="hero-status">Seeking full-time SWE roles for 2027</p>
+                    <p class="hero-value">I ship AI products for myself, friends, and family, built around what they actually need.</p>
                     <div class="hero-cta">
                         <a href="#portfolio" class="btn hero-btn">View Projects</a>
                         <a href="Jonah_Rothman_Resume_Fall_2026.pdf" class="btn hero-btn hero-btn-outline" target="_blank" rel="noopener">Resume</a>
@@ -105,11 +131,12 @@
                 </div>
                 <div class="about-col-2">
                     <h2 class="subtitle">About Me</h2>
-                    <p>Hi, I'm Jonah Rothman. Studying Computer Science (BA/MS) with a minor in Economics at Boston
-                        University. I specialize in web development and AI, with hands-on experience in QA automation,
-                        full-stack development, and CI/CD pipelines. I've completed three technical internships &mdash; most recently an AI test-automation pipeline at Major League Baseball (summer 2026), plus engineering roles at PanelClaw and ClearWatt &mdash; and built production applications like The Task App, The Study Buddy,
-                        and InternAtlas. I'm currently seeking full-time software engineering roles for 2027. Passionate about creating scalable software solutions and exploring new
-                        technologies.</p>
+                    <p>Hi, I'm Jonah Rothman. I'm studying Computer Science (BA/MS) with a minor in Economics at Boston
+                        University. Most of my time goes to web apps, AI, and test automation. I've done three technical
+                        internships. Most recently I created an AI test automation pipeline at Major League Baseball in
+                        the summer of 2026, after engineering roles at PanelClaw and ClearWatt. I also built The Task App,
+                        The Study Buddy, and InternAtlas. I'm looking for full-time software engineering roles for 2027.
+                        I like making things the people around me will actually use.</p>
 
                     <div class="tab-titles" role="tablist" aria-label="About sections">
                         <button type="button" class="tab-links active-link" role="tab" aria-selected="true" onclick="opentab('skills')">Skills</button>
@@ -125,10 +152,11 @@
                                 <div class="chip-row">
                                     <span class="chip">Java</span>
                                     <span class="chip">Python</span>
-                                    <span class="chip">C/C++</span>
                                     <span class="chip">JavaScript</span>
                                     <span class="chip">TypeScript</span>
+                                    <span class="chip">C/C++</span>
                                     <span class="chip">Kotlin</span>
+                                    <span class="chip">Swift</span>
                                     <span class="chip">OCaml</span>
                                 </div>
                             </div>
@@ -137,10 +165,12 @@
                                 <div class="chip-row">
                                     <span class="chip">React</span>
                                     <span class="chip">Next.js</span>
-                                    <span class="chip">Express.js</span>
+                                    <span class="chip">React Native</span>
+                                    <span class="chip">Expo</span>
                                     <span class="chip">Node.js</span>
-                                    <span class="chip">HTML/CSS</span>
-                                    <span class="chip">TailwindCSS</span>
+                                    <span class="chip">Express.js</span>
+                                    <span class="chip">FastAPI</span>
+                                    <span class="chip">Tailwind CSS</span>
                                     <span class="chip">Jetpack Compose</span>
                                 </div>
                             </div>
@@ -148,12 +178,14 @@
                                 <div class="skill-heading"><i class="fa-solid fa-sitemap"></i> Tools</div>
                                 <div class="chip-row">
                                     <span class="chip">GitHub Actions</span>
-                                    <span class="chip">MongoDB Atlas</span>
-                                    <span class="chip">Azure</span>
                                     <span class="chip">Firebase</span>
-                                    <span class="chip">Supabase</span>
+                                    <span class="chip">Azure</span>
                                     <span class="chip">PostgreSQL</span>
+                                    <span class="chip">MongoDB</span>
+                                    <span class="chip">Docker</span>
+                                    <span class="chip">Prisma</span>
                                     <span class="chip">Vercel</span>
+                                    <span class="chip">DigitalOcean</span>
                                 </div>
                             </div>
                             <div class="skill-card">
@@ -161,7 +193,6 @@
                                 <div class="chip-row">
                                     <span class="chip">Playwright</span>
                                     <span class="chip">Cypress</span>
-                                    <span class="chip">Selenium</span>
                                     <span class="chip">Jest</span>
                                     <span class="chip">Maestro</span>
                                     <span class="chip">Azure DevOps</span>
