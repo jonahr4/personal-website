@@ -1225,23 +1225,25 @@ nav ul li a:hover::after {
     display: block;
     margin: 50px auto;
     width: fit-content;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 16px 50px;
-    border-radius: 50px;
+    background: #1e3c72;
+    padding: 14px 32px;
+    border-radius: 10px;
     text-decoration: none;
     color: white;
     font-weight: 600;
     font-size: 16px;
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-    transition: all 0.3s ease;
-    border: none;
-    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(30, 60, 114, 0.18);
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #1e3c72;
+    letter-spacing: 0;
     text-align: center;
+    cursor: pointer;
 }
 
 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+    background: #16325f;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(30, 60, 114, 0.22);
 }
 
 
@@ -1743,18 +1745,18 @@ nav ul li a:hover::after {
     color: white;
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #1e3c72;
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    transition: background 0.2s ease, transform 0.2s ease;
+    box-shadow: none;
 }
 
 .social-icons a:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    background: #16325f;
+    transform: translateY(-2px);
 }
 
 .contact-right form {
@@ -1822,15 +1824,15 @@ nav .fa-solid {
     #header {
         background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e8ba3 100%);
         overflow-x: hidden;
-        padding: 120px 0 60px;
+        padding: 112px 0 48px;
     }
 
     .header-content {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 80px 5% 40px 5%;
-        gap: 30px;
+        padding: 24px 5% 32px 5%;
+        gap: 24px;
         height: auto;
         max-height: none;
         width: 100%;
@@ -2150,4 +2152,105 @@ nav .fa-solid {
         font-size: 18px;
     }
 
+}
+/* ===== 2026-09-29 audit: accessibility + hero CTA additions ===== */
+/* Images carrying width/height attributes for CLS must keep aspect ratio:
+   the height presentation attribute would otherwise win where no CSS
+   height is set (logo, about photo). */
+.logo, .about-photo { height: auto; }
+.skip-link {
+    position: absolute; left: -9999px; top: auto;
+    width: 1px; height: 1px; overflow: hidden;
+}
+.skip-link:focus {
+    left: 16px; top: 16px; width: auto; height: auto;
+    padding: 12px 20px; background: #667eea; color: #fff;
+    border-radius: 8px; z-index: 10000; text-decoration: none; font-weight: 600;
+}
+.visually-hidden {
+    position: absolute !important; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+button.tab-links {
+    background: none;
+    border: 0;
+    font-family: inherit;
+    cursor: pointer;
+}
+nav .menu-btn { display: none; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid #667eea; outline-offset: 2px;
+}
+.header-text h1 {
+    margin-bottom: 14px;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+}
+.header-text p.hero-status,
+.header-text p.hero-value {
+    text-transform: none;
+    letter-spacing: 0;
+    color: #fff;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+}
+.header-text p.hero-status {
+    margin: 0 0 8px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+.header-text p.hero-value {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 34rem;
+    color: rgba(255, 255, 255, 0.95);
+}
+.hero-cta { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+.btn.hero-btn {
+    margin: 0;
+    padding: 12px 22px;
+    display: inline-block;
+    background: #fff;
+    color: #1e3c72;
+    border: 1px solid #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+.btn.hero-btn:hover {
+    background: #f3f6fb;
+    color: #1e3c72;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+}
+.btn.hero-btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid rgba(255, 255, 255, 0.95);
+    box-shadow: none;
+}
+.btn.hero-btn-outline:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    box-shadow: none;
+}
+@media only screen and (max-width: 840px) {
+    nav .menu-btn {
+        display: block; background: none; border: 0; padding: 0;
+        cursor: pointer; color: inherit; font-size: 25px;
+    }
+    nav ul .menu-btn { position: absolute; top: 25px; left: 25px; }
+    .hero-cta { margin-top: 18px; }
+}
+@media only screen and (max-width: 665px) {
+    .header-text p.hero-status { font-size: 14px; }
+    .header-text p.hero-value { font-size: 15px; max-width: none; }
+    .hero-cta { justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
